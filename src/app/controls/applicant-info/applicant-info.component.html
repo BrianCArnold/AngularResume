@@ -1,0 +1,48 @@
+
+<div class="card-header">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h2 class="resumeTitle">
+        {{applicant.firstName}} {{applicant.middleNameOrInitial}} {{applicant.lastName}}
+      </h2>
+    </div>
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col-sm-12 text-right">
+          <span>
+            {{applicant.address1}}
+          </span>
+        </div>
+        <div class="col-sm-12 text-right">
+          <span>
+            {{applicant.city}},
+            {{applicant.state}}
+            {{applicant.postalCode}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col-sm-12 text-left">
+          <span>
+            <u>
+              <a class="text-dark" [href]="'tel:' + applicant.phoneNumber">
+                {{applicant.phoneNumber}}
+              </a>
+            </u>
+          </span>
+        </div>
+        <div class="col-sm-12 text-left">
+          <span>
+            <u>
+              <a class="text-dark" [href]="'mailto:' + applicant.email">
+                {{applicant.email}}
+              </a>
+            </u>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
