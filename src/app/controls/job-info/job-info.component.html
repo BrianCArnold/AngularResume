@@ -1,47 +1,56 @@
-<div class="card">
-  <div class="card-header">
+<div class="card my-1">
+  <div class="card-header py-1">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-xl-12 col-sm-12 jobAchievementHeader">
         <div class="row">
-          <div class="col-sm-12">
-            <u>{{jobModel.company}}</u>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-sm-12">
+                <u>{{jobModel.company}}</u>
+              </div>
+              <div class="col-sm-12">
+                {{jobModel.title}}
+              </div>
+            </div>
           </div>
-          <div class="col-sm-12">
-            {{jobModel.title}}
+          <div class="col-sm-6 text-right">
+            <div class="row">
+              <div class="col-sm-12">
+                {{jobModel.location}}
+              </div>
+              <div class="col-sm-12">
+                {{jobModel.startDate}} - {{jobModel.endDate}}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-6 text-right">
-        <div class="row">
-          <div class="col-sm-12">
-            {{jobModel.location}}
-          </div>
-          <div class="col-sm-12">
-            {{jobModel.startDate}} - {{jobModel.endDate}}
-          </div>
-        </div>
-      </div>
+      <!-- <div class="col-xl-3 col-lg-4 text-center jobSkillHeader align-bottom">
+        <span class="align-bottom">Skills</span>
+      </div> -->
     </div>
   </div>
   <div class="card-body">
     <div class="row">
-      <div class="col-xl-8">
-        <ul>
+      <div class="col-xl-9 col-lg-8 col-sm-8 jobAchievementSection">
+        <span class="codeish">public interface Experience</span>
+        <ul class="codeList list-unstyled">
           <li *ngFor="let achievement of jobModel.achievements">
             {{achievement.desc}}
-            <ol *ngIf="achievement.sub && achievement.sub.length > 0">
+            <ul *ngIf="achievement.sub && achievement.sub.length > 0" class="codeList list-unstyled subList">
               <li *ngFor="let subAchievement of achievement.sub">
                 {{subAchievement.desc}}
               </li>
-            </ol>
+            </ul>
           </li>
         </ul>
       </div>
-      <div class="col-xl-4">
-        <ul>
+      <div class="col-xl-3 col-lg-4 col-sm-4 jobSkillSection">
+        <span class="codeish">public enum Skills</span>
+        <ul class="codeList list-unstyled">
           <li *ngFor="let skill of jobModel.skills">
             {{skill.desc}}
-            <ul *ngIf="skill.sub && skill.sub.length > 0">
+            <ul *ngIf="skill.sub && skill.sub.length > 0" class="list-unstyled dashList subList">
               <li *ngFor="let subSkill of skill.sub || []">
                 {{subSkill.desc}}
               </li>
@@ -65,5 +74,4 @@
       </div>
     </div>
   </div>
-  <div class="card-footer"></div>
 </div>

@@ -1,3 +1,125 @@
-@media only screen and (max-width: 1200px) {
+/* @media print {
+  .jobAchievementSection > ul {
+    column-count: 1;
+  }
+  .jobSkillSection > ul {
+    column-count: 1;
+  }
+}
+@media only screen and (min-width: 1720px) {
 
+  .jobAchievementSection > ul {
+    column-count: 1;
+  }
+  .jobSkillSection > ul {
+    column-count: 1;
+  }
+}
+
+@media only screen and (max-width: 1719.99px) and (min-width: 1380px) {
+
+  .jobAchievementSection > ul {
+    column-count: 1;
+  }
+  .jobSkillSection > ul {
+    column-count: 1;
+  }
+}
+@media only screen and (max-width: 1379.99px) {
+
+  .jobAchievementSection > ul {
+    column-count: 1;
+  }
+  .jobSkillSection > ul {
+    column-count: 1;
+  }
+} */
+
+.jobAchievementSection > ul {
+  column-count: 1;
+}
+.jobSkillSection > ul {
+  column-count: 1;
+}
+.jobSkillSection {
+  font-size: 12px;
+}
+.codeish {
+  font-family: firaCode;
+  color:lightgray;
+}
+ul.codeList li {
+  font-family: firaCode;
+}
+
+ul.codeList::before {
+
+  color:gray;
+  content: '{';
+    font-family: firaCode;
+}
+ul.codeList::after {
+
+  color:gray;
+  content: '}';
+  font-family: firaCode;
+}
+ul.codeList li::before {
+      content: '\00a0\00a0';
+      padding-left: 2px;
+  color:gray;
+  font-family: firaCode;
+}
+ul.codeList li ul::before {
+
+  color:gray;
+  content: '\00a0\00a0\00a0{';
+    font-family: firaCode;
+}
+ul.codeList li ul::after {
+
+  color:gray;
+  content: '\00a0\00a0\00a0}';
+  font-family: firaCode;
+}
+ul.codeList li ul li::before {
+  content: '\00a0\00a0\00a0\00a0';
+  color:gray;
+  font-family: firaCode;
+}
+.card-header ul {
+  margin-bottom: 0;
+}
+.card-body ul {
+  margin-bottom: 0;
+}
+.jobSkillSection {
+  border-left-width:1px;
+  border-left-style: solid;
+  border-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      lightgray,
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+  font-family: firaCode;
+}
+.jobAchievementSection {
+
+}
+ul.subList {
+  list-style-type: circle;
+  padding-left: 20px;
+}
+ul.list-unstyled.subList {
+  list-style-type: none;
+  padding-left: 0;
+}
+ul.dashList li::before {
+
+  content: '- ';
+}
+li {
+  break-inside: avoid-column;
 }

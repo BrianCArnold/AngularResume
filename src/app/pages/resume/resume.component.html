@@ -1,14 +1,6 @@
-<div class="card">
-
-  <app-applicant-info [applicant]="applicant"></app-applicant-info>
-  <div class="card-body">
-    <div class="row">
-      <app-job-info class="col-sm-12" *ngFor="let jobModel of jobs" [jobModel]="jobModel"></app-job-info>
-    </div>
-
-
-    <!-- <div class="col-xl-6 col-sm-12">
-    </div> -->
+<app-applicant-info [applicant]="applicant"></app-applicant-info>
+<div class="containter">
+  <div class="row">
+    <app-job-info class="col-sm-12" *ngFor="let jobModel of jobs" [jobModel]="jobModel"></app-job-info>
   </div>
-  <div class="card-footer"></div>
 </div>
