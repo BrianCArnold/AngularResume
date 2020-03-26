@@ -72,7 +72,7 @@ export class ResumeService {
       startDate: 'Aug 2014',
       endDate: 'Apr 2018',
       achievements: [
-        { desc: 'Designed replacement message processing architecture for System Architect' },
+        { desc: 'Designed replacement message processing architecture' },
         { desc: 'Updated ASMX webservices to WebAPI' },
         { desc: 'Created a CosmosDB persisted flight status in-memory cache' },
         { desc: 'Managed network architecture for hybrid datacenter and cloud environment' },
@@ -96,7 +96,7 @@ export class ResumeService {
       title: 'Senior Software Engineer',
       location: 'Celebration, FL',
       startDate: 'Nov 2011',
-      endDate: 'August 2014',
+      endDate: 'Aug 2014',
       achievements: [
         { desc: 'Collaboration with Software Development VP for architecture design' },
         { desc: 'Implemented and maintained visitor management systems for military bases' },
@@ -126,8 +126,8 @@ export class ResumeService {
       company: 'GROWMARK, Inc.',
       title: 'Contractor',
       location: 'Bloomington, IL',
-      startDate: 'October 2010',
-      endDate: 'October 2011',
+      startDate: 'Oct 2010',
+      endDate: 'Oct 2011',
       achievements: [
         { desc: 'Implemented WebNow and ImageNow forms with XML, XSLT, and iScript' },
         { desc: 'Created image file processors to catalog file metadata on upload' }
@@ -150,7 +150,7 @@ export class ResumeService {
       startDate: 'Dec 2007',
       endDate: 'Oct 2010',
       achievements: [
-        { desc: 'Implemented SharePoint Features to dynamically provision SharePoint sites' },
+        { desc: 'Implemented SharePoint Features to provision SharePoint sites' },
         { desc: 'Created customized SharePoint workflows for Contract bidding' }
       ],
       skills: [
