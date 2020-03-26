@@ -1,25 +1,25 @@
-<div class="card my-1">
+<div class="card my-1 shadow-sm codeDisplay">
   <div class="card-header py-1">
     <div class="row">
       <div class="col-xl-12 col-sm-12 jobAchievementHeader">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-7">
             <div class="row">
-              <div class="col-sm-12">
-                <u>{{jobModel.company}}</u>
+              <div class="col-sm-12 jobTitleCell">
+                <span class="jobTitle">{{ jobModel.title }}</span>
               </div>
-              <div class="col-sm-12">
-                {{jobModel.title}}
+              <div class="col-sm-12 jobCompanyCell">
+                <span class="jobCompany">{{ jobModel.company }}</span>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 text-right">
-            <div class="row">
-              <div class="col-sm-12">
-                {{jobModel.location}}
+          <div class="col-sm-5 text-right">
+            <div class="row codeInfo">
+              <div class="col-sm-12 jobLocation">
+                {{ jobModel.location }}
               </div>
-              <div class="col-sm-12">
-                {{jobModel.startDate}} - {{jobModel.endDate}}
+              <div class="col-sm-12 jobDate">
+                {{ jobModel.startDate }} - {{ jobModel.endDate }}
               </div>
             </div>
           </div>
@@ -30,36 +30,41 @@
       </div> -->
     </div>
   </div>
-  <div class="card-body">
+  <div class="card-body py-0">
     <div class="row">
       <div class="col-xl-9 col-lg-8 col-sm-8 jobAchievementSection">
-        <span class="codeish">public interface Experience</span>
-        <ul class="codeList list-unstyled">
-          <li *ngFor="let achievement of jobModel.achievements">
-            {{achievement.desc}}
-            <ul *ngIf="achievement.sub && achievement.sub.length > 0" class="codeList list-unstyled subList">
-              <li *ngFor="let subAchievement of achievement.sub">
-                {{subAchievement.desc}}
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <div class="listContainer">
+          <ul class="codeList list-unstyled">
+            <li *ngFor="let achievement of jobModel.achievements">
+              {{ achievement.desc }}
+              <ul
+                *ngIf="achievement.sub && achievement.sub.length > 0"
+                class="codeList list-unstyled subList"
+              >
+                <li *ngFor="let subAchievement of achievement.sub">
+                  {{ subAchievement.desc }}
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="col-xl-3 col-lg-4 col-sm-4 jobSkillSection">
-        <span class="codeish">public enum Skills</span>
-        <ul class="codeList list-unstyled">
-          <li *ngFor="let skill of jobModel.skills">
-            {{skill.desc}}
-            <ul *ngIf="skill.sub && skill.sub.length > 0" class="list-unstyled dashList subList">
-              <li *ngFor="let subSkill of skill.sub || []">
-                {{subSkill.desc}}
-              </li>
-            </ul>
-
-          </li>
-
-        </ul>
-
+      <div class="col-xl-3 col-lg-4 col-sm-4 jobSkillSection pt-1">
+        <div class="listContainer">
+          <ul class="codeList list-unstyled">
+            <li *ngFor="let skill of jobModel.skills">
+              {{ skill.desc }}
+              <ul
+                *ngIf="skill.sub && skill.sub.length > 0"
+                class="list-unstyled dashList subList"
+              >
+                <li *ngFor="let subSkill of skill.sub || []">
+                  {{ subSkill.desc }}
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
         <!-- <ng-container *ngFor="let skill  of jobModel.skills">
           <div >
             {{skill.desc}}
@@ -70,7 +75,6 @@
             </div>
           </ng-container>
         </ng-container> -->
-
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
-.card-columns.column-xl {
-  column-count: 2;
-}
-.card-columns.column-lg, .card-columns.column-md, .card-columns.column-sm {
-  column-count: 1;
+@media screen {
+  .resumeAll {
+   margin: 1em;
+  }
+
 }

@@ -1,39 +1,61 @@
-/* @media print {
-  .jobAchievementSection > ul {
-    column-count: 1;
-  }
-  .jobSkillSection > ul {
-    column-count: 1;
-  }
-}
-@media only screen and (min-width: 1720px) {
 
-  .jobAchievementSection > ul {
-    column-count: 1;
+  /* @page { size: auto;  margin: 0mm; }1 */
+/*
+@media only screen and (min-width: 1720px) {
+  .jobSkillSection {
+    font-size: 10pt;
   }
-  .jobSkillSection > ul {
-    column-count: 1;
+  .jobAchievementSection {
+    font-size: 12pt;
+  }
+  .jobAchievementHeader {
+    font-size: 14pt;
   }
 }
 
 @media only screen and (max-width: 1719.99px) and (min-width: 1380px) {
+  .jobSkillSection {
+    font-size: 10pt;
+  }
+  .jobAchievementSection {
+    font-size: 12pt;
+  }
+  .jobAchievementHeader {
+    font-size: 14pt;
+  }
 
-  .jobAchievementSection > ul {
-    column-count: 1;
-  }
-  .jobSkillSection > ul {
-    column-count: 1;
-  }
 }
 @media only screen and (max-width: 1379.99px) {
 
-  .jobAchievementSection > ul {
-    column-count: 1;
+  .jobSkillSection {
+    font-size: 8pt;
   }
-  .jobSkillSection > ul {
-    column-count: 1;
+  .jobAchievementSection {
+    font-size: 10pt;
+  }
+  .jobAchievementHeader {
+    font-size: 12pt;
   }
 } */
+.codeDisplay .listContainer ul li {
+  margin-left: -15px;
+}
+.codeDisplay .listContainer ul li ul li {
+  margin-left: -5px;
+}
+.codeDisplay .jobSkillSection {
+  font-size: 11pt;
+}
+.codeDisplay .jobAchievementSection {
+  font-size: 11pt;
+}
+.codeDisplay .jobAchievementHeader {
+  font-size: 12pt;
+}
+
+ul {
+  list-style-position: outside !important;
+}
 
 .jobAchievementSection > ul {
   column-count: 1;
@@ -41,59 +63,93 @@
 .jobSkillSection > ul {
   column-count: 1;
 }
-.jobSkillSection {
-  font-size: 12px;
+.codeDisplay .jobTitle {
+  color: #17a2b8;
+
 }
-.codeish {
-  font-family: firaCode;
-  color:lightgray;
+.codeDisplay .jobTitle::before {
+  content:'[';
+
 }
-ul.codeList li {
+.codeDisplay .jobTitle::after {
+  content:']';
+
+}
+.codeDisplay .jobCompany {
+  color: #007bff;
+
+}
+.codeDisplay .jobCompany::after {
+  content: ' : Job Experience';
+  color: #17a2b8;
+}
+.codeDisplay {
   font-family: firaCode;
+}
+.codeDisplay .jobLocation::before, .codeDisplay .jobDate::before {
+  content: '//';
+}
+.codeDisplay .jobLocation, .codeDisplay .jobDate {
+  color: #28a745;
+  font-style: italic;
+  font-family: firaCode;
+}
+.codeDisplay .codeInfo {
+  color:black;
 }
 
-ul.codeList::before {
+.codeDisplay .jobSkillSection::before {
 
   color:gray;
-  content: '{';
-    font-family: firaCode;
+  font-family: firaCode;
+  content: 'Skills';
 }
-ul.codeList::after {
+.jobSkillSection ul {
+  column-count: 2;
+}
+.jobSkillSection ul ul {
+  column-count: 1;
+}
+.codeDisplay .listContainer::before {
+  color:gray;
+  content: '{';
+}
+.codeDisplay .listContainer::after {
 
   color:gray;
   content: '}';
-  font-family: firaCode;
 }
-ul.codeList li::before {
+
+.codeDisplay ul.codeList li::before {
       content: '\00a0\00a0';
       padding-left: 2px;
   color:gray;
   font-family: firaCode;
 }
-ul.codeList li ul::before {
+.codeDisplay ul.codeList li ul::before {
 
   color:gray;
   content: '\00a0\00a0\00a0{';
     font-family: firaCode;
 }
-ul.codeList li ul::after {
+.codeDisplay ul.codeList li ul::after {
 
   color:gray;
   content: '\00a0\00a0\00a0}';
   font-family: firaCode;
 }
-ul.codeList li ul li::before {
+.codeDisplay ul.codeList li ul li::before {
   content: '\00a0\00a0\00a0\00a0';
   color:gray;
   font-family: firaCode;
 }
-.card-header ul {
+.codeDisplay .card-header ul {
   margin-bottom: 0;
 }
-.card-body ul {
+.codeDisplay .card-body ul {
   margin-bottom: 0;
 }
-.jobSkillSection {
+.codeDisplay .jobSkillSection {
   border-left-width:1px;
   border-left-style: solid;
   border-image:
@@ -105,18 +161,15 @@ ul.codeList li ul li::before {
     ) 1 100%;
   font-family: firaCode;
 }
-.jobAchievementSection {
-
-}
-ul.subList {
+.codeDisplay ul.subList {
   list-style-type: circle;
   padding-left: 20px;
 }
-ul.list-unstyled.subList {
+.codeDisplay ul.list-unstyled.subList {
   list-style-type: none;
   padding-left: 0;
 }
-ul.dashList li::before {
+.codeDisplay ul.dashList li::before {
 
   content: '- ';
 }

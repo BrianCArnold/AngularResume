@@ -32,14 +32,14 @@ export class ResumeService {
       endDate: 'Current',
       achievements: [
         {
-          desc: 'Architected and developed three tiered pricing application for Cloud and Datacenter deployment',
+          desc: 'Architected and developed multitier application for Azure deployment',
           sub: [
             { desc: 'Database agnostic Data Context implemented with EF Core 2.1' },
             { desc: 'Microservice-compatible Business Logic System' },
             { desc: 'Dynamic Angular 8 site with context dependent display' }
           ]
         },
-        { desc: 'Created self-referential recursive serialization systems in C# and TypeScript' },
+        { desc: 'Created recursion serialization system for TypeScript' },
         { desc: 'Replaced flat file intra-system communication endpoints with modern APIs' },
         { desc: 'Configured DevOps CI/CD pipelines for separate tier deployment' },
         { desc: 'Utilized CI/CD pipelines to deploy bug fixes same-day' },
@@ -50,18 +50,17 @@ export class ResumeService {
       skills: [
         { desc: 'Angular 7/8/9' },
         { desc: 'Bootstrap 4.x' },
-        { desc: '.NET Core 2.1-3.1' },
+        { desc: '.NET Core 2.x' },
         { desc: 'Oracle 18c' },
         { desc: 'TypeScript 3.7' },
         { desc: 'Azure Functions' },
         { desc: 'Azure SQL ' },
-        { desc: 'Docker/Kubernetes' },
+        { desc: 'Kubernetes' },
         { desc: 'CDN' },
         { desc: 'Azure DevOps',
           sub: [
-            { desc: 'CI/CD Pipelines' },
-            { desc: 'Pull Requests' },
-            { desc: 'Branch Policies' }
+            { desc: 'CI/CD' },
+            { desc: 'Pull Requests' }
           ]
         }
       ]
@@ -73,7 +72,7 @@ export class ResumeService {
       startDate: 'Aug 2014',
       endDate: 'Apr 2018',
       achievements: [
-        { desc: 'Designed replacement message processing architecture for Solution Architect' },
+        { desc: 'Designed replacement message processing architecture for System Architect' },
         { desc: 'Updated ASMX webservices to WebAPI' },
         { desc: 'Created a CosmosDB persisted flight status in-memory cache' },
         { desc: 'Managed network architecture for hybrid datacenter and cloud environment' },
@@ -100,19 +99,18 @@ export class ResumeService {
       endDate: 'August 2014',
       achievements: [
         { desc: 'Collaboration with Software Development VP for architecture design' },
-        { desc: 'Implemented and maintained enterprise level visitor management systems for military and academic campuses with facial tracking, ID validation, fingerprint matching, and visitor pass printing' },
-        { desc: 'Designed and implemented centralized REST web service to unify accessing abstracted data from SOAP web services, external XML data files, Oracle 11g tables and views, and Microsoft SQL Server tables and views.' },
-        { desc: 'Participated in the design and implementation of SharePoint Online solutions accessing both local and web service data' },
-        { desc: 'Developed WPF application to interface RFID and fingerprint devices with integrated browser' }
-
+        { desc: 'Implemented and maintained visitor management systems for military bases' },
+        { desc: 'Designed and implemented REST interfaces for existing SOAP APIs' },
+        { desc: 'Designed and implemented SharePoint solution frontend for Oracle data' },
+        { desc: 'Developed WPF application to interface biometric devices with website' }
       ],
       skills: [
         { desc: 'C#/VB.NET' },
         { desc: 'ASP.NET 4.5.1' },
         { desc: 'MVC 5' },
-        { desc: 'Entity Framework 6' },
+        { desc: 'EF 6' },
         { desc: 'SQL Server 2014 ' },
-        { desc: 'SharePoint Online' },
+        { desc: 'SharePoint 2013' },
         { desc: 'Microsoft Azure' },
         { desc: 'WPF' },
         { desc: 'Oracle 11g' },
@@ -131,8 +129,8 @@ export class ResumeService {
       startDate: 'October 2010',
       endDate: 'October 2011',
       achievements: [
-        { desc: 'Implemented WebNow and ImageNow forms with XML, XSLT, and iScript.' },
-        { desc: 'Created image file processors to read and catalog all XMP, Exif, and IPTC metadata for common image formats when uploaded to SharePoint Document Library' }
+        { desc: 'Implemented WebNow and ImageNow forms with XML, XSLT, and iScript' },
+        { desc: 'Created image file processors to catalog file metadata on upload' }
       ],
       skills: [
         { desc: 'C#/F#' },
@@ -146,17 +144,14 @@ export class ResumeService {
       ]
     },
     {
-      company: 'Acme AtronOmatic LLC',
-      title: 'Senior Software Engineer',
-      location: 'Orlando, FL',
-      startDate: 'Aug 2014',
-      endDate: 'Apr 2018',
+      company: 'BAE Systems',
+      title: 'Contractor',
+      location: 'Huntsville',
+      startDate: 'Dec 2007',
+      endDate: 'Oct 2010',
       achievements: [
-        { desc: 'Designed replacement message processing architecture for Solution Architect' },
-        { desc: 'Updated ASMX webservices to WebAPI' },
-        { desc: 'Created a CosmosDB persisted flight status in-memory cache' },
-        { desc: 'Managed network architecture for hybrid datacenter and cloud environment' },
-        { desc: 'Developed server management applications in WPF' }
+        { desc: 'Implemented SharePoint Features to dynamically provision SharePoint sites' },
+        { desc: 'Created customized SharePoint workflows for Contract bidding' }
       ],
       skills: [
         { desc: 'C#'},
