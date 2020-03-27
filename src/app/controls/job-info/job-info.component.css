@@ -173,12 +173,12 @@ ul {
   background: linear-gradient(
     125deg,
     rgba(0, 0, 0, 0.03) 0%,
-    rgba(0, 0, 0, 0.07) 67.5%,
-    white 68%,
+    rgba(0, 0, 0, 0.07) 67.7%,
+    white 68.3%,
     rgba(0, 0, 0, 0.07) 78%,
     rgba(0, 0, 0, 0.07)
   );
-  /* background-color: rgb(0,0,0,0.07); */
+
 }
 .codeDisplay ul.dashList li::before {
 

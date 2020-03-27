@@ -1,50 +1,120 @@
-  <div class="card my-1">
-    <div class="card-header text-center pb-1">
-      <h2 class="resumeTitle">
-        {{ applicant.firstName }} {{ applicant.middleNameOrInitial }}
-        {{ applicant.lastName }}
-      </h2>
-    </div>
-    <div class="card-body py-2">
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="row">
-            <div class="col-sm-12 text-right">
-              <span>
-                {{ applicant.address1 }}
-              </span>
-            </div>
-            <div class="col-sm-12 text-right">
-              <span>
-                {{ applicant.city }},
-                {{ applicant.state }}
-                {{ applicant.postalCode }}
-              </span>
-            </div>
+<div class="card mt-1 noBorder extendBackgroundDown">
+  <div class="card-header text-center py-1 contactArea align-items-center">
+    <div class="row">
+      <div class="col-sm-6 justify-content-center align-self-center title">
+        <h2 class="resumeName">
+          {{ applicant.firstName }} {{ applicant.middleNameOrInitial }}
+          {{ applicant.lastName }}
+        </h2>
+      </div>
+
+      <div class="col-sm-3 addressInfo">
+        <div class="row">
+          <div class="col-sm-12 text-right">
+            <span>
+              {{ applicant.address1 }}
+            </span>
+          </div>
+          <div class="col-sm-12 text-right">
+            <span>
+              {{ applicant.city }},
+              {{ applicant.state }}
+              {{ applicant.postalCode }}
+            </span>
           </div>
         </div>
-        <div class="col-sm-6">
-          <div class="row">
-            <div class="col-sm-12 text-left">
-              <span>
-                <u>
-                  <a class="text-dark" [href]="'tel:' + applicant.phoneNumber">
-                    {{ applicant.phoneNumber }}
-                  </a>
-                </u>
-              </span>
-            </div>
-            <div class="col-sm-12 text-left">
-              <span>
-                <u>
-                  <a class="text-dark" [href]="'mailto:' + applicant.email">
-                    {{ applicant.email }}
-                  </a>
-                </u>
-              </span>
-            </div>
+      </div>
+      <div class="col-sm-3 contactInfo">
+        <div class="row">
+          <div class="col-sm-12 text-left">
+            <span>
+              <u>
+                <a class="text-dark" [href]="'tel:' + applicant.phoneNumber">
+                  {{ applicant.phoneNumber }}
+                </a>
+              </u>
+            </span>
+          </div>
+          <div class="col-sm-12 text-left">
+            <span>
+              <u>
+                <a class="text-dark" [href]="'mailto:' + applicant.email">
+                  {{ applicant.email }}
+                </a>
+              </u>
+            </span>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="card-body pt-0 pb-1 text-center skillArea glassBack">
+    <div class="row">
+			<div class="col-sm-3">
+				<div class="row">
+					<div class="col-sm-12 font-weight-bold">
+						Frontend
+					</div>
+					<div class="col-sm-12">
+						Angular
+					</div>
+					<div class="col-sm-12">
+						Bootstrap
+					</div>
+					<div class="col-sm-12">
+						RxJS
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="row">
+					<div class="col-sm-12 font-weight-bold">
+						Backend
+					</div>
+					<div class="col-sm-12">
+						C#
+					</div>
+					<div class="col-sm-12">
+						REST
+					</div>
+					<div class="col-sm-12">
+						Entity Framework
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="row">
+					<div class="col-sm-12 font-weight-bold">
+						Database
+					</div>
+					<div class="col-sm-12">
+						Oracle 18c
+					</div>
+					<div class="col-sm-12">
+						Microsft SQL Server
+					</div>
+					<div class="col-sm-12">
+						PostgreSQL
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="row">
+					<div class="col-sm-12 font-weight-bold">
+						Cloud
+					</div>
+					<div class="col-sm-12">
+						Azure Serverless
+					</div>
+					<div class="col-sm-12">
+						Azure CDN
+					</div>
+					<div class="col-sm-12">
+						DevOps
+					</div>
+				</div>
+			</div>
+
+    </div>
+  </div>
+</div>

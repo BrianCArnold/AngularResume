@@ -1,11 +1,35 @@
-.resumeTitle {
-
-}
 .card.layUnder {
   margin-bottom: -10px;
 }
-/*
- * {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.skillArea {
+  border-width: 0;
 }
-*/
+.contactInfo {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      #a0a0a0,
+      rgba(0, 0, 0, 0)
+    )
+    1 100%;
+}
+.contactArea {
+  border: 1px solid rgba(0,0,0,0.125);
+  border-radius: 10px 10px 0px 0px;
+}
+.noBorder {
+  border-width: 0px;
+}
+.resumeName {
+  margin-bottom: 0px;
+  margin-top: auto;
+}
+.extendBackgroundDown {
+  padding-bottom: 10px;
+  margin-bottom: -10px;
+}
+.glassBack {
+  background-color: rbga(0,0,0,0);
+}

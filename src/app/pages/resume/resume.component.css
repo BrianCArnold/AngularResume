@@ -1,12 +1,12 @@
 @media screen and (min-width: 1200px) {
   .resumeAll {
-   margin-top: 1em;
-   margin-bottom: 1em;
+   margin-top: 0.5em;
+   margin-bottom: 0.5em;
    margin-left: auto;
    margin-right: auto;
   }
   .resumeAll {
-    width: 1073px;
+    width: 1088px;
   }
 
 }
