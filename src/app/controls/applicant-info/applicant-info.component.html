@@ -50,67 +50,13 @@
   </div>
   <div class="card-body pt-0 pb-1 text-center skillArea glassBack">
     <div class="row">
-			<div class="col-sm-3">
+			<div class="col-sm-3" *ngFor="let skillArea of applicant.skillAreas">
 				<div class="row">
 					<div class="col-sm-12 font-weight-bold">
-						Frontend
+						{{skillArea.desc}}
 					</div>
-					<div class="col-sm-12">
-						Angular
-					</div>
-					<div class="col-sm-12">
-						Bootstrap
-					</div>
-					<div class="col-sm-12">
-						RxJS
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3">
-				<div class="row">
-					<div class="col-sm-12 font-weight-bold">
-						Backend
-					</div>
-					<div class="col-sm-12">
-						C#
-					</div>
-					<div class="col-sm-12">
-						REST
-					</div>
-					<div class="col-sm-12">
-						Entity Framework
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3">
-				<div class="row">
-					<div class="col-sm-12 font-weight-bold">
-						Database
-					</div>
-					<div class="col-sm-12">
-						Oracle 18c
-					</div>
-					<div class="col-sm-12">
-						Microsft SQL Server
-					</div>
-					<div class="col-sm-12">
-						PostgreSQL
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3">
-				<div class="row">
-					<div class="col-sm-12 font-weight-bold">
-						Cloud
-					</div>
-					<div class="col-sm-12">
-						Azure Serverless
-					</div>
-					<div class="col-sm-12">
-						Azure CDN
-					</div>
-					<div class="col-sm-12">
-						DevOps
+					<div class="col-sm-12" *ngFor="let skill of skillArea.skills">
+						{{skill.desc}}
 					</div>
 				</div>
 			</div>

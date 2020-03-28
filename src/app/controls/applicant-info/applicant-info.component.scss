@@ -33,3 +33,20 @@
 .glassBack {
   background-color: rbga(0,0,0,0);
 }
+.frontendSkills {
+}
+.backendSkills {
+}
+.databaseSkills {
+}
+.cloudSkills {
+  border-left-width:1px;
+  border-left-style: solid;
+  border-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      lightgray,
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+}

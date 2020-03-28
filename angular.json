@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "res": {
+    "Resume": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+			},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/res",
+            "outputPath": "dist/Resume",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,8 +29,7 @@
               "src/assets/FiraCode-Retina.woff"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.css"
+              "src/styles.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
@@ -68,18 +71,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "res:build"
+            "browserTarget": "Resume:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "res:build:production"
+              "browserTarget": "Resume:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "res:build"
+            "browserTarget": "Resume:build"
           }
         },
         "test": {
@@ -116,18 +119,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "res:serve"
+            "devServerTarget": "Resume:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "res:serve:production"
+              "devServerTarget": "Resume:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "res",
+  "defaultProject": "Resume",
   "cli": {
     "analytics": "579c2993-75f7-42c3-a709-23f73c29e02a"
   }

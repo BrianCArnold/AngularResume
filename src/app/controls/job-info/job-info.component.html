@@ -6,19 +6,19 @@
           <div class="col-sm-7">
             <div class="row">
               <div class="col-sm-12 jobTitleCell">
-                <span class="jobTitle">{{ jobModel.title }}</span>
+                <span class="jobTitle text-info">{{ jobModel.title }}</span>
               </div>
               <div class="col-sm-12 jobCompanyCell">
-                <span class="jobCompany">{{ jobModel.company }}</span>
+                <span class="jobCompany text-primary">{{ jobModel.company }}</span>
               </div>
             </div>
           </div>
           <div class="col-sm-5 text-right">
             <div class="row codeInfo">
-              <div class="col-sm-12 jobLocation">
+              <div class="col-sm-12 jobLocation text-success font-italic">
                 {{ jobModel.location }}
               </div>
-              <div class="col-sm-12 jobDate">
+              <div class="col-sm-12 jobDate text-success font-italic">
                 {{ jobModel.startDate }} - {{ jobModel.endDate }}
               </div>
             </div>
@@ -38,10 +38,10 @@
             <li *ngFor="let achievement of jobModel.achievements">
               {{ achievement.desc }}
               <ul
-                *ngIf="achievement.sub && achievement.sub.length > 0"
+                *ngIf="achievement.skills && achievement.skills.length > 0"
                 class="codeList list-unstyled subList"
               >
-                <li *ngFor="let subAchievement of achievement.sub">
+                <li *ngFor="let subAchievement of achievement.skills">
                   {{ subAchievement.desc }}
                 </li>
               </ul>
@@ -55,10 +55,10 @@
             <li *ngFor="let skill of jobModel.skills">
               {{ skill.desc }}
               <ul
-                *ngIf="skill.sub && skill.sub.length > 0"
+                *ngIf="skill.skills && skill.skills.length > 0"
                 class="list-unstyled dashList subList"
               >
-                <li *ngFor="let subSkill of skill.sub || []">
+                <li *ngFor="let subSkill of skill.skills || []">
                   {{ subSkill.desc }}
                 </li>
               </ul>

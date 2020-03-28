@@ -1,3 +1,5 @@
+import { Experience as SkillArea } from './Experience';
+
 export class Applicant {
   firstName: string;
   lastName: string;
@@ -9,4 +11,5 @@ export class Applicant {
   postalCode: string;
   phoneNumber: string;
   email: string;
+  skillAreas: SkillArea[];
 }

@@ -6,7 +6,7 @@ import { Applicant } from 'src/app/models/Applicant';
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.component.html',
-  styleUrls: ['./resume.component.css']
+  styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit {
   applicant: Applicant;

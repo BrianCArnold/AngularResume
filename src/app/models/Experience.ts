@@ -1,4 +1,6 @@
+import { Skill } from './Skill';
+
 export class Experience {
   desc: string;
-  sub?: Experience[];
+  skills?: Skill[];
 }

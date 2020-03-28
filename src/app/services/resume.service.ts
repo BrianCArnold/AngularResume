@@ -20,7 +20,65 @@ export class ResumeService {
     state: 'FL',
     postalCode: '35810',
     phoneNumber: '256-652-6754',
-    email: 'brian.ch.arnold@gmail.com'
+    email: 'brian.ch.arnold@gmail.com',
+    skillAreas: [
+      {
+        desc: 'Frontend',
+        skills: [
+          {
+            desc: 'Angular',
+          },
+          {
+            desc: 'Bootstrap'
+          },
+          {
+            desc: 'RxJS'
+          }
+        ]
+      },
+      {
+        desc: 'Backend',
+        skills: [
+          {
+            desc: 'C#',
+          },
+          {
+            desc: 'REST'
+          },
+          {
+            desc: 'Entity Framework'
+          }
+        ]
+      },
+      {
+        desc: 'Database',
+        skills: [
+          {
+            desc: 'Oracle 18c',
+          },
+          {
+            desc: 'Microsoft SQL Server'
+          },
+          {
+            desc: 'Cosmos DB'
+          }
+        ]
+      },
+      {
+        desc: 'Cloud',
+        skills: [
+          {
+            desc: 'Azure Functions',
+          },
+          {
+            desc: 'Azure CDN'
+          },
+          {
+            desc: 'Azure DevOps'
+          }
+        ]
+      }
+    ]
   };
 
   private constJobs: Job[] = [
@@ -33,7 +91,7 @@ export class ResumeService {
       achievements: [
         {
           desc: 'Architected and developed multitier application for Azure deployment',
-          sub: [
+          skills: [
             { desc: 'Database agnostic Data Context implemented with EF Core 2.1' },
             { desc: 'Microservice-compatible Business Logic System' },
             { desc: 'Dynamic Angular 8 site with context dependent display' }
@@ -58,7 +116,7 @@ export class ResumeService {
         { desc: 'Kubernetes' },
         { desc: 'CDN' },
         { desc: 'Azure DevOps',
-          sub: [
+          skills: [
             { desc: 'CI/CD' },
             { desc: 'Pull Requests' }
           ]
