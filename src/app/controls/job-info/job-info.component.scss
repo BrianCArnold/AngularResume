@@ -59,9 +59,6 @@ ul {
 .jobAchievementSection > ul {
   column-count: 1;
 }
-.jobSkillSection > ul {
-  column-count: 1;
-}
 .codeDisplay .jobTitle::before {
   content:'[';
 
@@ -82,7 +79,20 @@ ul {
 .codeDisplay .codeInfo {
   color:black;
 }
-
+.blockComment::before {
+  content: '/' '*';
+}
+.blockComment {
+  font-size: 12pt;
+}
+.blockComment::after {
+  content: '*' '/';
+}
+.hasDetails du {
+  text-decoration: underline;
+  text-decoration-color: lightgray;
+  cursor: pointer;
+}
 .codeDisplay .jobSkillSection::before {
   color:gray;
   content: 'Skills';
@@ -90,8 +100,24 @@ ul {
 .jobSkillSection ul {
   column-count: 2;
 }
-.jobSkillSection ul ul {
+.jobSkillSection ul ul, .jobSkillSection ul.singleColumn {
   column-count: 1;
+}
+.overlayDisplay .card-body {
+  padding: 10px;
+}
+.indentFirstLine::before {
+  text-indent: 1em;
+}
+.indentFirstLine:first-child {
+  padding-top: 2px;
+}
+.indentFirstLine {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.indentFirstLine:last-child {
+  padding-bottom: 2px;
 }
 .codeDisplay .listContainer::before {
   color:gray;
@@ -101,29 +127,24 @@ ul {
   color:gray;
   content: '}';
 }
-
 .codeDisplay ul.codeList li::before {
-      content: '\00a0\00a0';
-      padding-left: 2px;
   color:gray;
-  font-family: firaCode;
+  // padding-left: 3px;
+  content: '\00a0\00a0';
 }
 .codeDisplay ul.codeList li ul::before {
-
   color:gray;
+  // padding-left: 1px;
   content: '\00a0\00a0\00a0{';
-    font-family: firaCode;
 }
 .codeDisplay ul.codeList li ul::after {
-
   color:gray;
+  // padding-left: 1px;
   content: '\00a0\00a0\00a0}';
-  font-family: firaCode;
 }
 .codeDisplay ul.codeList li ul li::before {
-  content: '\00a0\00a0\00a0\00a0';
   color:gray;
-  font-family: firaCode;
+  content: '\00a0\00a0\00a0\00a0';
 }
 .codeDisplay .card-header ul {
   margin-bottom: 0;
@@ -160,10 +181,17 @@ ul {
     rgba(0, 0, 0, 0.07) 78%,
     rgba(0, 0, 0, 0.07)
   );
-
+}
+.codeDisplay .overlayDisplay .card-header {
+  background: linear-gradient(
+    125deg,
+    rgba(0, 0, 0, 0.03) 0%,
+    rgba(0, 0, 0, 0.07) 60%,
+    rgba(0, 0, 0, 0.04) 61%,
+    rgba(0, 0, 0, 0.07)
+  );
 }
 .codeDisplay ul.dashList li::before {
-
   content: '- ';
 }
 li {
@@ -180,7 +208,7 @@ li {
   z-index: 100;
   background-color: white;
   border: 1px solid rgba(0,0,0,0.125);
-  transition: opacity 0.5s;
+  transition: opacity 0.2s;
 }
 .overlayDisplay.on {
   opacity: 1;
