@@ -35,21 +35,34 @@
       <div class="col-lg-8 col-sm-8 jobAchievementSection">
         <div class="listContainer">
           <ul class="codeList list-unstyled">
-            <li *ngFor="let achievement of jobModel.achievements" title="Work Experience">
-              {{ achievement.desc }}
+            <li *ngFor="let achievement of jobModel.achievements">
+              <span (mouseover)="setExperienceDetail(achievement)" (mouseout)="setExperienceDetail(null)">
+                {{ achievement.desc }}
+              </span>
               <ul
                 *ngIf="achievement.skills && achievement.skills.length > 0"
                 class="codeList list-unstyled subList"
               >
-                <li *ngFor="let subAchievement of achievement.skills" title="Work Experience Details">
-                  {{ subAchievement.desc }}
+                <li *ngFor="let subAchievement of achievement.skills">
+                  <span (mouseover)="setExperienceDetail(subAchievement)" (mouseout)="setExperienceDetail(null)">
+                    {{ subAchievement.desc }}
+                  </span>
                 </li>
               </ul>
             </li>
           </ul>
         </div>
       </div>
-      <div class="col-lg-4 col-sm-4 jobSkillSection pt-1">
+      <div class="col-lg-4 col-sm-4 overlayContainer jobSkillSection pt-1">
+
+        <div class="overlayDisplay shadow-lg card" [ngClass]="{'on': experienceDetail && experienceDetail.details}">
+          <div class="card-header" *ngIf="experienceDetail && experienceDetail.details">
+            {{experienceDetail.desc}}
+          </div>
+          <div class="card-body" *ngIf="experienceDetail && experienceDetail.details">
+            {{experienceDetail.details}}
+          </div>
+        </div>
         <div class="listContainer">
           <ul class="codeList list-unstyled">
             <li *ngFor="let skill of jobModel.skills">
@@ -65,16 +78,7 @@
             </li>
           </ul>
         </div>
-        <!-- <ng-container *ngFor="let skill  of jobModel.skills">
-          <div >
-            {{skill.desc}}
-          </div>
-          <ng-container *ngFor="let subskill of skill.sub">
-            <div >
-              {{subskill.desc}}
-            </div>
-          </ng-container>
-        </ng-container> -->
+
       </div>
     </div>
   </div>

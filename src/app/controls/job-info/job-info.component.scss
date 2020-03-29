@@ -169,3 +169,19 @@ ul {
 li {
   break-inside: avoid-column;
 }
+.overlayContainer {
+  position: relative;
+}
+.overlayDisplay {
+  opacity: 0;
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  z-index: 100;
+  background-color: white;
+  border: 1px solid rgba(0,0,0,0.125);
+  transition: opacity 0.5s;
+}
+.overlayDisplay.on {
+  opacity: 1;
+}

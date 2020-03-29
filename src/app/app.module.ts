@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { JobInfoComponent } from './controls/job-info/job-info.component';
 import { ResumeComponent } from './pages/resume/resume.component';
 import { ApplicantInfoComponent } from './controls/applicant-info/applicant-info.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TooltipModule } from 'ngx-bootstrap/tooltip'
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ApplicantInfoComponent } from './controls/applicant-info/applicant-info
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+		BrowserAnimationsModule,
+		TooltipModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
