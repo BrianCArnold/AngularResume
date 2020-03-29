@@ -35,13 +35,13 @@
       <div class="col-lg-8 col-sm-8 jobAchievementSection">
         <div class="listContainer">
           <ul class="codeList list-unstyled">
-            <li *ngFor="let achievement of jobModel.achievements">
+            <li *ngFor="let achievement of jobModel.achievements" title="Work Experience">
               {{ achievement.desc }}
               <ul
                 *ngIf="achievement.skills && achievement.skills.length > 0"
                 class="codeList list-unstyled subList"
               >
-                <li *ngFor="let subAchievement of achievement.skills">
+                <li *ngFor="let subAchievement of achievement.skills" title="Work Experience Details">
                   {{ subAchievement.desc }}
                 </li>
               </ul>
