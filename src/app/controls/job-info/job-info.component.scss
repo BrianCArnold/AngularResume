@@ -37,6 +37,30 @@
   }
 } */
 
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .jobSkillSection ul {
+    column-count: 3;
+  }
+  .jobSkillSection ul ul, .jobSkillSection ul.singleColumn {
+    column-count: 1;
+  }
+  .jobAchievementSection > ul {
+    column-count: 1;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .jobSkillSection ul {
+    column-count: 1;
+  }
+  .jobSkillSection ul ul, .jobSkillSection ul.singleColumn {
+    column-count: 1;
+  }
+  .jobAchievementSection > ul {
+    column-count: 1;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .jobSkillSection ul {
     column-count: 2;
@@ -49,9 +73,10 @@
   }
 }
 
-@media screen and (min-width: 992px) and (max-width: 1199.99px) {
+
+@media print {
   .jobSkillSection ul {
-    column-count: 1;
+    column-count: 2;
   }
   .jobSkillSection ul ul, .jobSkillSection ul.singleColumn {
     column-count: 1;
@@ -61,23 +86,12 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 991.99px) {
-  .jobSkillSection ul {
-    column-count: 3;
-  }
-  .jobSkillSection ul ul, .jobSkillSection ul.singleColumn {
-    column-count: 1;
-  }
-  .jobAchievementSection > ul {
-    column-count: 1;
-  }
-}
-.codeDisplay .listContainer ul li {
-  margin-left: -15px;
-}
-.codeDisplay .listContainer ul li ul li {
-  margin-left: -5px;
-}
+// .codeDisplay .listContainer ul li {
+//   margin-left: -15px;
+// }
+// .codeDisplay .listContainer ul li ul li {
+//   margin-left: -5px;
+// }
 .codeDisplay .jobSkillSection {
   font-size: 11pt;
 }
@@ -94,15 +108,18 @@ ul {
 
 .codeDisplay .jobTitle::before {
   content:'[';
-
 }
+
 .codeDisplay .jobTitle::after {
   content:']';
+}
 
+@media only screen and (min-width: 992px) {
+  .codeDisplay .jobCompany::after {
+    content: ' : Job Experience';
+  }
 }
-.codeDisplay .jobCompany::after {
-  content: ' : Job Experience';
-}
+
 .codeDisplay {
   font-family: firaCode;
 }
@@ -121,10 +138,20 @@ ul {
 .blockComment::after {
   content: '*' '/';
 }
-.hasDetails du {
-  text-decoration: underline;
-  text-decoration-color: lightgray;
-  cursor: pointer;
+
+@media only screen  {
+  .hasDetails {
+    cursor: default;
+    text-decoration: underline #c0c0c0;
+  }
+  sup.hasDetailsInfo {
+    color: blue;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .hasDetails {
+    cursor: pointer;
+  }
 }
 .codeDisplay .jobSkillSection::before {
   color:gray;
@@ -154,24 +181,23 @@ ul {
   color:gray;
   content: '}';
 }
-.codeDisplay ul.codeList li::before {
-  color:gray;
+.codeDisplay ul.codeList li {
+  padding-left: 1em;
   // padding-left: 3px;
-  content: '\00a0\00a0';
 }
 .codeDisplay ul.codeList li ul::before {
   color:gray;
-  // padding-left: 1px;
-  content: '\00a0\00a0\00a0{';
-}
-.codeDisplay ul.codeList li ul::after {
-  color:gray;
-  // padding-left: 1px;
-  content: '\00a0\00a0\00a0}';
+  margin-left:-2px;
+  content: '{';
+  }
+  .codeDisplay ul.codeList li ul::after {
+    color:gray;
+    margin-left:-2px;
+  content: '}';
 }
 .codeDisplay ul.codeList li ul li::before {
   color:gray;
-  content: '\00a0\00a0\00a0\00a0';
+  content: '';
 }
 .codeDisplay .card-header ul {
   margin-bottom: 0;
@@ -236,6 +262,16 @@ li {
   background-color: white;
   border: 1px solid rgba(0,0,0,0.125);
   transition: opacity 0.2s;
+}
+@media only screen and (max-width: 1199px) and (min-width: 768px) {
+  .overlayDisplay {
+    left: -14em;
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 576px) {
+  .overlayDisplay {
+    left: -14em;
+  }
 }
 .overlayDisplay.on {
   opacity: 1;

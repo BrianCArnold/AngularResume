@@ -1,3 +1,42 @@
+@media screen and (max-width: 575px) {
+  .resumeAll {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .resumeAll {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 540px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .resumeAll {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 720px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .resumeAll {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 942px;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .resumeAll {
     margin-top: 0.5em;
@@ -8,22 +47,12 @@
   }
 }
 
-@media screen and (min-width: 992px) and (max-width: 1199.99px) {
+@media print {
   .resumeAll {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     margin-left: auto;
     margin-right: auto;
-    width: 942px;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991.99px) {
-  .resumeAll {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    width: 720px;
+    width: 1088px;
   }
 }

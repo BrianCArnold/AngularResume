@@ -1,7 +1,7 @@
 <div class="card mt-1 noBorder extendBackgroundDown">
   <div class="card-header text-center py-1 contactArea align-items-center">
     <div class="row">
-      <div class="col-sm-4 justify-content-center align-self-center title">
+      <div class="col-sm-4 col-lg-6 col-print-6 justify-content-center align-self-center title">
         <h2 class="resumeName d-md-none d-lg-inline" >
           {{ applicant.firstName }} {{ applicant.middleNameOrInitial }}
           {{ applicant.lastName }}
@@ -10,9 +10,13 @@
           {{ applicant.firstName }} {{ applicant.middleNameOrInitial }}
           {{ applicant.lastName }}
         </h3>
+        <!-- <h4 class="resumeName d-md-inline d-lg-none" >
+          {{ applicant.firstName }} {{ applicant.middleNameOrInitial }}
+          {{ applicant.lastName }}
+        </h4> -->
       </div>
 
-      <div class="col-sm-4 addressInfo">
+      <div class="col-print-3 col-sm-4 col-lg-3 addressInfo">
         <div class="row">
           <div class="col-sm-12 text-right">
             <span>
@@ -28,7 +32,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-4 contactInfo">
+      <div class="col-print-3 col-sm-4 col-lg-3 contactInfo">
         <div class="row">
           <div class="col-sm-12 text-left">
             <span>
@@ -52,9 +56,9 @@
       </div>
     </div>
   </div>
-  <div class="card-body pt-0 pb-1 text-center skillArea glassBack">
+  <div class="card-body py-2 text-center skillArea glassBack">
     <div class="row">
-      <div class="col-lg-3 col-md-6" *ngFor="let skillArea of applicant.skillAreas">
+      <div class="col-print-3 col-lg-3 col-md-6" *ngFor="let skillArea of applicant.skillAreas">
         <div class="row">
           <div class="col-sm-12 font-weight-bold">
             {{skillArea.desc}}

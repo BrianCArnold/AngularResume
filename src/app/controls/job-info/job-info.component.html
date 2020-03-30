@@ -1,7 +1,7 @@
 <div class="card mb-2 shadow-sm codeDisplay">
   <div class="card-header py-1">
     <div class="row">
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 jobAchievementHeader">
+      <div class="col-xl-12 col-print-12 col-lg-12 col-md-12 col-sm-12 jobAchievementHeader">
         <div class="row">
           <div class="col-sm-7">
             <div class="row">
@@ -32,20 +32,22 @@
   </div>
   <div class="card-body py-0">
     <div class="row">
-      <div class="col-xl-8 col-lg-9 col-md-12 jobAchievementSection" (mouseout)="setExperienceDetail(null)">
+      <div class="col-xl-8 col-lg-9 py-1 col-print-8 jobAchievementSection" (mouseout)="setExperienceDetail(null)">
         <div class="listContainer">
           <ul class="codeList list-unstyled">
             <li *ngFor="let achievement of jobModel.achievements">
-              <span (mouseover)="setExperienceDetail(achievement)" [ngClass]="{'hasDetails': achievement && achievement.details}">
-                {{ achievement.desc }}
+              <span (mouseover)="setExperienceDetail(achievement)"
+                [ngClass]="{'hasDetails': achievement && achievement.details}">
+                {{ achievement.desc }}<sup *ngIf="achievement && achievement.details">i</sup>
               </span>
               <ul
                 *ngIf="achievement.skills && achievement.skills.length > 0"
                 class="codeList list-unstyled subList"
               >
                 <li *ngFor="let subAchievement of achievement.skills">
-                  <span (mouseover)="setExperienceDetail(subAchievement)" [ngClass]="{'hasDetails': subAchievement && subAchievement.details}">
-                    {{ subAchievement.desc }}
+                  <span (mouseover)="setExperienceDetail(subAchievement)"
+                  [ngClass]="{'hasDetails': subAchievement && subAchievement.details}">
+                    {{ subAchievement.desc }}<sup class="hasDetailsInfo" *ngIf="subAchievement && subAchievement.details">i</sup>
                   </span>
                 </li>
               </ul>
@@ -53,8 +55,8 @@
           </ul>
         </div>
       </div>
-      <div class="col-xl-4 col-lg-3 col-md-12 overlayContainer jobSkillSection pt-1">
-        <div class="overlayDisplay shadow-lg card" *ngIf="experienceDetail" [ngClass]="{'on': showExperienceDetail && experienceDetail && experienceDetail.details}">
+      <div class="col-xl-4 col-lg-3 py-1 col-print-4 overlayContainer jobSkillSection">
+        <div class="overlayDisplay d-sm-none d-xl-block shadow-lg card" *ngIf="experienceDetail" [ngClass]="{'on': showExperienceDetail && experienceDetail && experienceDetail.details}">
           <div class="card-header text-success blockComment">
             {{experienceDetail.desc}}
           </div>
