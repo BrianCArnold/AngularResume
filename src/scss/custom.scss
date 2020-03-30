@@ -11,6 +11,9 @@ $tooltip-max-width: 400px;
         float: left;
     }
   }
+  .d-print-none {
+    display: none;
+  }
 }
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
