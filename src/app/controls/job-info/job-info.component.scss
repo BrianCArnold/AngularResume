@@ -36,6 +36,42 @@
     font-size: 12pt;
   }
 } */
+
+@media screen and (min-width: 1200px) {
+  .jobSkillSection ul {
+    column-count: 2;
+  }
+  .jobSkillSection ul ul, .jobSkillSection ul.singleColumn {
+    column-count: 1;
+  }
+  .jobAchievementSection > ul {
+    column-count: 1;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199.99px) {
+  .jobSkillSection ul {
+    column-count: 2;
+  }
+  .jobSkillSection ul ul, .jobSkillSection ul.singleColumn {
+    column-count: 1;
+  }
+  .jobAchievementSection > ul {
+    column-count: 1;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.99px) {
+  .jobSkillSection ul {
+    column-count: 3;
+  }
+  .jobSkillSection ul ul, .jobSkillSection ul.singleColumn {
+    column-count: 1;
+  }
+  .jobAchievementSection > ul {
+    column-count: 1;
+  }
+}
 .codeDisplay .listContainer ul li {
   margin-left: -15px;
 }
@@ -56,9 +92,6 @@ ul {
   list-style-position: outside !important;
 }
 
-.jobAchievementSection > ul {
-  column-count: 1;
-}
 .codeDisplay .jobTitle::before {
   content:'[';
 
@@ -96,12 +129,6 @@ ul {
 .codeDisplay .jobSkillSection::before {
   color:gray;
   content: 'Skills';
-}
-.jobSkillSection ul {
-  column-count: 2;
-}
-.jobSkillSection ul ul, .jobSkillSection ul.singleColumn {
-  column-count: 1;
 }
 .overlayDisplay .card-body {
   padding: 10px;
