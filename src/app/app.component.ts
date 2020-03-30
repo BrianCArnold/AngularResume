@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Job } from './models/Job';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {APP_BASE_HREF} from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { JobInfoComponent } from './controls/job-info/job-info.component';
@@ -29,7 +29,8 @@ import { ExperienceDetailsComponent } from './controls/experience-details/experi
     ModalModule.forRoot()
   ],
   providers: [
-    BsModalRef
+    BsModalRef,
+    {provide: APP_BASE_HREF, useValue : '/' }
   ],
   bootstrap: [AppComponent]
 })

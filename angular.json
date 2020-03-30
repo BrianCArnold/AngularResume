@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Resume": {
+    "resume": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Resume",
+            "outputPath": "dist/resume",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,18 +73,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Resume:build"
+            "browserTarget": "resume:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Resume:build:production"
+              "browserTarget": "resume:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Resume:build"
+            "browserTarget": "resume:build"
           }
         },
         "test": {
@@ -123,18 +123,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Resume:serve"
+            "devServerTarget": "resume:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Resume:serve:production"
+              "devServerTarget": "resume:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "Resume",
+  "defaultProject": "resume",
   "cli": {
     "analytics": "579c2993-75f7-42c3-a709-23f73c29e02a"
   }
