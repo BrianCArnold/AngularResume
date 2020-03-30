@@ -12,7 +12,7 @@ export class JobsResolverService implements Resolve<Job[]> {
   constructor(private resumeService: ResumeService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Job[]> {
-    return this.resumeService.getResume();
+    return this.resumeService.getJobs();
   }
 
 

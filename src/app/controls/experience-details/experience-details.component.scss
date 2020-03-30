@@ -1,0 +1,30 @@
+* {
+  font-family: firaCode;
+}
+@media only screen and (max-width: 991px) {
+  * {
+    font-size: 10pt;
+  }
+}
+.blockComment::before {
+  content: '/' '*';
+}
+.blockComment {
+  // font-size: 12pt;
+}
+.blockComment::after {
+  content: '*' '/';
+}
+.indentFirstLine::before {
+  text-indent: 1em;
+}
+.indentFirstLine:first-child {
+  padding-top: 2px;
+}
+.indentFirstLine {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.indentFirstLine:last-child {
+  padding-bottom: 2px;
+}

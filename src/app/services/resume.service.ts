@@ -260,7 +260,7 @@ export class ResumeService {
       ]
     },
     {
-      company: 'BAE Systems',
+      company: 'BAE Systems Inc.',
       title: 'Contractor',
       location: 'Huntsville',
       startDate: 'Dec 2007',
@@ -280,7 +280,7 @@ export class ResumeService {
     }
   ];
 
-  public getResume(): Observable<Job[]> {
+  public getJobs(): Observable<Job[]> {
     return of(this.constJobs);
   }
   public getApplicant(): Observable<Applicant> {

@@ -5,20 +5,20 @@
         <div class="row">
           <div class="col-sm-7">
             <div class="row">
-              <div class="col-sm-12 jobTitleCell">
+              <div class="col-sm-12 jobTitleCell md-small">
                 <span class="jobTitle text-info">{{ jobModel.title }}</span>
               </div>
-              <div class="col-sm-12 jobCompanyCell">
+              <div class="col-sm-12 jobCompanyCell md-small">
                 <span class="jobCompany text-primary">{{ jobModel.company }}</span>
               </div>
             </div>
           </div>
           <div class="col-sm-5 text-right">
             <div class="row codeInfo">
-              <div class="col-sm-12 jobLocation text-success font-italic">
+              <div class="col-sm-12 jobLocation text-success font-italic md-small">
                 {{ jobModel.location }}
               </div>
-              <div class="col-sm-12 jobDate text-success font-italic">
+              <div class="col-sm-12 jobDate text-success font-italic md-small">
                 {{ jobModel.startDate }} - {{ jobModel.endDate }}
               </div>
             </div>
@@ -37,8 +37,9 @@
           <ul class="codeList list-unstyled">
             <li *ngFor="let achievement of jobModel.achievements">
               <span (mouseover)="setExperienceDetail(achievement)"
+                (click)="clickExperienceDetail(achievement)"
                 [ngClass]="{'hasDetails': achievement && achievement.details}">
-                {{ achievement.desc }}<sup *ngIf="achievement && achievement.details">i</sup>
+                {{ achievement.desc }}<sup class="hasDetailsInfo" *ngIf="achievement && achievement.details">i</sup>
               </span>
               <ul
                 *ngIf="achievement.skills && achievement.skills.length > 0"
@@ -46,6 +47,7 @@
               >
                 <li *ngFor="let subAchievement of achievement.skills">
                   <span (mouseover)="setExperienceDetail(subAchievement)"
+                    (click)="clickExperienceDetail(subAchievement)"
                   [ngClass]="{'hasDetails': subAchievement && subAchievement.details}">
                     {{ subAchievement.desc }}<sup class="hasDetailsInfo" *ngIf="subAchievement && subAchievement.details">i</sup>
                   </span>
@@ -57,16 +59,7 @@
       </div>
       <div class="col-xl-4 col-lg-3 py-1 col-print-4 overlayContainer jobSkillSection">
         <div class="overlayDisplay d-sm-none d-xl-block shadow-lg card" *ngIf="experienceDetail" [ngClass]="{'on': showExperienceDetail && experienceDetail && experienceDetail.details}">
-          <div class="card-header text-success blockComment">
-            {{experienceDetail.desc}}
-          </div>
-          <div class="card-body">
-            <ul class="list-unstyled singleColumn">
-              <li class="indentFirstLine" *ngFor="let detail of experienceDetail.details">
-                {{detail}}
-              </li>
-            </ul>
-          </div>
+          <app-experience-details [experienceDetail]="experienceDetail"></app-experience-details>
         </div>
         <div class="listContainer">
           <ul class="codeList list-unstyled">
@@ -84,3 +77,7 @@
     </div>
   </div>
 </div>
+
+<ng-template #modalDetails>
+  <app-experience-details [experienceDetail]="experienceDetail"></app-experience-details>
+</ng-template>

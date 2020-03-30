@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header text-success blockComment">
+    {{experienceDetail.desc}}
+  </div>
+  <div class="card-body">
+    <ul class="list-unstyled singleColumn">
+      <li class="indentFirstLine" *ngFor="let detail of experienceDetail.details">
+        {{detail}}
+      </li>
+    </ul>
+  </div>
+</div>

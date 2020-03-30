@@ -12,4 +12,22 @@ $tooltip-max-width: 400px;
     }
   }
 }
-@import "../../node_modules/bootstrap/scss/bootstrap.scss"
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@media only screen and (max-width: 991px) {
+  .md-small {
+    font-size: 0.85em;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sm-small {
+    font-size: 0.75em;
+  }
+}
+
+@media only screen and (max-width: 575px){
+  .xs-small {
+    font-size: 0.7em;
+  }
+}

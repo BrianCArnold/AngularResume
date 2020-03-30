@@ -1,22 +1,22 @@
 <div class="card mt-1 noBorder extendBackgroundDown">
   <div class="card-header text-center py-1 contactArea align-items-center">
-    <div class="row">
-      <div class="col-sm-4 col-lg-6 col-print-6 justify-content-center align-self-center title">
-        <h2 class="resumeName d-md-none d-lg-inline" >
+    <div class="form-row">
+      <div class="col-sm-4 col-lg-6 col-12 col-print-6 justify-content-center align-self-center title sm-small xs-small">
+        <h2 class="resumeName d-none d-lg-inline" >
           {{ applicant.firstName }} {{ applicant.middleNameOrInitial }}
           {{ applicant.lastName }}
         </h2>
-        <h3 class="resumeName d-md-inline d-lg-none" >
+        <h3 class="resumeName d-none d-md-inline d-lg-none" >
           {{ applicant.firstName }} {{ applicant.middleNameOrInitial }}
           {{ applicant.lastName }}
         </h3>
-        <!-- <h4 class="resumeName d-md-inline d-lg-none" >
+        <h5 class="resumeName d-inline d-md-none" >
           {{ applicant.firstName }} {{ applicant.middleNameOrInitial }}
           {{ applicant.lastName }}
-        </h4> -->
+        </h5>
       </div>
 
-      <div class="col-print-3 col-sm-4 col-lg-3 addressInfo">
+      <div class="col-print-3 col-sm-4 col-lg-3 col-6 addressInfo xs-small sm-small">
         <div class="row">
           <div class="col-sm-12 text-right">
             <span>
@@ -32,7 +32,7 @@
           </div>
         </div>
       </div>
-      <div class="col-print-3 col-sm-4 col-lg-3 contactInfo">
+      <div class="col-print-3 col-sm-4 col-lg-3 col-6 contactInfo xs-small sm-small">
         <div class="row">
           <div class="col-sm-12 text-left">
             <span>
@@ -56,9 +56,9 @@
       </div>
     </div>
   </div>
-  <div class="card-body py-2 text-center skillArea glassBack">
+  <div class="card-body py-2 text-center skillArea sm-small xs-small">
     <div class="row">
-      <div class="col-print-3 col-lg-3 col-md-6" *ngFor="let skillArea of applicant.skillAreas">
+      <div class="col-print-3 col-lg-3 col-md-6 col-6" *ngFor="let skillArea of applicant.skillAreas">
         <div class="row">
           <div class="col-sm-12 font-weight-bold">
             {{skillArea.desc}}

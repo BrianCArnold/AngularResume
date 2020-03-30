@@ -49,6 +49,18 @@
   }
 }
 
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .jobSkillSection ul {
+    column-count: 2;
+  }
+  .jobSkillSection ul ul, .jobSkillSection ul.singleColumn {
+    column-count: 1;
+  }
+  .jobAchievementSection > ul {
+    column-count: 1;
+  }
+}
+
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   .jobSkillSection ul {
     column-count: 1;
@@ -181,6 +193,14 @@ ul {
   color:gray;
   content: '}';
 }
+@media only screen and (max-width: 767px) {
+  .codeDisplay li {
+    list-style: circle;
+    list-style-position: inside;
+    // margin-left: 1em;
+    // text-indent: -1em;
+  }
+}
 .codeDisplay ul.codeList li {
   padding-left: 1em;
   // padding-left: 3px;
@@ -189,15 +209,14 @@ ul {
   color:gray;
   margin-left:-2px;
   content: '{';
-  }
-  .codeDisplay ul.codeList li ul::after {
-    color:gray;
-    margin-left:-2px;
+}
+.codeDisplay ul.codeList li ul::after {
+  color:gray;
+  // margin-left:-2px;
   content: '}';
 }
 .codeDisplay ul.codeList li ul li::before {
   color:gray;
-  content: '';
 }
 .codeDisplay .card-header ul {
   margin-bottom: 0;
@@ -243,9 +262,6 @@ ul {
     rgba(0, 0, 0, 0.04) 61%,
     rgba(0, 0, 0, 0.07)
   );
-}
-.codeDisplay ul.dashList li::before {
-  content: '- ';
 }
 li {
   break-inside: avoid-column;
