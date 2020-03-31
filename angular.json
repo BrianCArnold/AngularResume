@@ -24,8 +24,11 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
+
               "src/favicon.ico",
               "src/assets",
+              "src/api/applicant",
+              "src/api/jobs",
               "src/assets/FiraCode-Retina.woff"
             ],
             "styles": [

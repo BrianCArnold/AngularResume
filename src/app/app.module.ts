@@ -12,6 +12,7 @@ import { ModalModule, BsModalRef } from 'ngx-bootstrap/modal';
 import { SizeDetectorComponent } from './controls/size-detector/size-detector.component';
 import { ExperienceDetailsComponent } from './controls/experience-details/experience-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserAnimationsModule,
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [
     BsModalRef,

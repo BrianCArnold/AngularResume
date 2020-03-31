@@ -39,7 +39,7 @@
               <span (mouseover)="setExperienceDetail(achievement)"
                 (click)="clickExperienceDetail(achievement)"
                 [ngClass]="{'hasDetails': achievement && achievement.details}">
-                {{ achievement.desc }}<sup class="hasDetailsInfo" *ngIf="achievement && achievement.details">i</sup>
+                {{ achievement.desc }}<sup class="hasDetailsInfo d-print-none" *ngIf="achievement && achievement.details">i</sup>
               </span>
               <ul
                 *ngIf="achievement.skills && achievement.skills.length > 0"
@@ -49,7 +49,7 @@
                   <span (mouseover)="setExperienceDetail(subAchievement)"
                     (click)="clickExperienceDetail(subAchievement)"
                   [ngClass]="{'hasDetails': subAchievement && subAchievement.details}">
-                    {{ subAchievement.desc }}<sup class="hasDetailsInfo" *ngIf="subAchievement && subAchievement.details">i</sup>
+                    {{ subAchievement.desc }}<sup class="hasDetailsInfo d-print-none" *ngIf="subAchievement && subAchievement.details">i</sup>
                   </span>
                 </li>
               </ul>

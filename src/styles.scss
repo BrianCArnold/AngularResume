@@ -7,3 +7,36 @@
 
 
 @import "scss/custom.scss";
+
+.btn.btn-git {
+  color: #fff;
+  background-color: #f14e32;
+  border-color: #f14e32;
+}
+.btn.btn-git:hover {
+
+  background-color: #d9311f;
+  border-color: #d9311f;
+}
+
+.btn.btn-bootstrap {
+  color: #fff;
+  background-color: #563d7c;
+  border-color: #563d7c;
+}
+.btn.btn-bootstrap:hover {
+
+  background-color: #36264d;
+  border-color: #36264d;
+}
+
+.btn.btn-sass {
+  color: #fff;
+  background-color: #bf4080;
+  border-color: #bf4080;
+}
+.btn.btn-sass:hover {
+
+  background-color: #772850;
+  border-color: #772850;
+}

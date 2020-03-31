@@ -1,21 +1,86 @@
 <div style="width: 100%;">
   <div class="resumeAll">
-    <div class="row d-print-none">
-      <div class="col-6 text-center">
-        <img src="https://vsrm.dev.azure.com/mercsofscience/_apis/public/Release/badge/3e87fc4e-0bbb-42f5-b0af-d58102c13f95/1/1" />
-      </div>
-      <div class="col-6 text-center">
-        <a class="btn btn-sm btn-primary" href="resume.pdf">
-          <fa-icon [icon]="faFilePdf" ></fa-icon>
-        </a>
-      </div>
-    </div>
 
     <app-applicant-info [applicant]="applicant">
     </app-applicant-info>
     <div class="row">
       <app-job-info class="col-sm-12" *ngFor="let jobModel of jobs" [jobModel]="jobModel"></app-job-info>
     </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <span class="d-none d-print-inline font-italic">
+          Live Resume available at https://resume.brian-arnold.dev/
+        </span>
+      </div>
+    </div>
+    <div class="row d-print-none">
+      <div class="col-xl-3">
+        <a class="btn btn-sm btn-primary mt-2" href="resume.pdf">
+          PDF version <fa-icon [icon]="faFilePdf" size=""></fa-icon>
+        </a>
+      </div>
+      <div class="col-xl-9 d-xl-block d-none">
+        <div class="row">
+          <div class="col-xl-6 text-right mt-2 codeText">
+            Frontend in
+            <a class="techBadge btn btn-danger align-middle" href="https://angular.io/">
+              Angular 9
+              <fa-icon size="lg" [icon]="faAngular"></fa-icon>
+            </a>
+          </div>
+          <div class="col-xl-6 text-right mt-2 codeText">
+            PDF generator in
+            <a class="techBadge btn btn-success" href="https://nodejs.org">
+              Node.js
+              <fa-icon size="lg" [icon]="faNodeJs" ></fa-icon>
+            </a>
+          </div>
+          <div class="col-xl-6 text-right mt-2 codeText">
+            CI/CD mananged in
+
+            <a class="techBadge btn btn-primary" href="https://dev.azure.com" >
+              Azure DevOps
+              <fa-icon size="lg" [icon]="faMicrosoft"></fa-icon>
+            </a>
+          </div>
+          <div class="col-xl-6 text-right mt-2 codeText">
+            Hosted by
+
+            <a class="techBadge btn btn-primary" href="https://azure.microsoft.com/en-us/services/cdn/" >
+              Azure CDN
+              <fa-icon size="lg" [icon]="faMicrosoft"></fa-icon>
+            </a>
+          </div>
+          <div class="col-xl-6 text-right mt-2 codeText">
+            Source Control in
+            <a class="techBadge btn btn-git" href="https://git-scm.com/" >
+              Git
+              <fa-icon size="lg" [icon]="faGitAlt"></fa-icon>
+            </a>
+          </div>
+          <div class="col-xl-6 text-right mt-2 codeText">
+            Iconography by
+            <a class="techBadge btn btn-primary" href="https://fontawesome.com/" >
+              Font Awesome
+              <fa-icon size="lg" [icon]="faFontAwesome"></fa-icon>
+            </a>
+          </div>
+          <div class="col-xl-6 text-right mt-2 codeText">
+            Base Styles from
+            <a class="techBadge btn btn-bootstrap" href="https://getbootstrap.com/" >
+              Bootstrap
+              <fa-icon size="lg" [icon]="faBootstrap"></fa-icon>
+            </a>
+          </div>
+          <div class="col-xl-6 text-right mt-2 codeText">
+            Custom Styles in
+            <a class="techBadge btn btn-sass" href="https://sass-lang.com/" >
+              Sass
+              <fa-icon size="lg" [icon]="faSass"></fa-icon>
+            </a>
+          </div>
+        </div>
+      </div>
 
   </div>
 
