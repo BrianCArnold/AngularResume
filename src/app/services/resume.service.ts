@@ -20,7 +20,7 @@ export class ResumeService {
     state: 'FL',
     postalCode: '35810',
     phoneNumber: '256-652-6754',
-    email: 'brian.ch.arnold@gmail.com',
+    email: 'connect@brian-arnold.dev',
     skillAreas: [
       {
         desc: 'Frontend',
