@@ -21,8 +21,11 @@ steps:
 - script: npm install
   displayName: 'Install NPM Packages'
 
-- script: ng build --prod
+- script: npm run prod
   displayName: 'Build App'
+
+- script: npm run genPdf
+  displayName: 'Generate PDF'
 
 - task: CopyFiles@2
   inputs:
