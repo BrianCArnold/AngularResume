@@ -225,17 +225,19 @@ ul {
 .codeDisplay .card-body ul {
   margin-bottom: 0;
 }
-.codeDisplay .jobSkillSection {
-  border-left-width:1px;
-  border-left-style: solid;
-  border-image:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0),
-      lightgray,
-      rgba(0, 0, 0, 0)
-    ) 1 100%;
-  font-family: firaCode;
+@media only screen and (min-width: 992px) {
+  .codeDisplay .jobSkillSection {
+    border-left-width:1px;
+    border-left-style: solid;
+    border-image:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        lightgray,
+        rgba(0, 0, 0, 0)
+      ) 1 100%;
+    font-family: firaCode;
+  }
 }
 .codeDisplay ul.subList {
   list-style-type: circle;
