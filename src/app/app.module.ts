@@ -10,7 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule, BsModalRef } from 'ngx-bootstrap/modal';
 import { SizeDetectorComponent } from './controls/size-detector/size-detector.component';
-import { ExperienceDetailsComponent } from './controls/experience-details/experience-details.component'
+import { ExperienceDetailsComponent } from './controls/experience-details/experience-details.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ExperienceDetailsComponent } from './controls/experience-details/experi
     AppRoutingModule,
     BrowserAnimationsModule,
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    FontAwesomeModule
   ],
   providers: [
     BsModalRef,

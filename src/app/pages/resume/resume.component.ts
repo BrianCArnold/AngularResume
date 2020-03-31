@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Job } from 'src/app/models/Job';
 import { Applicant } from 'src/app/models/Applicant';
-
+import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.component.html',
@@ -11,6 +11,7 @@ import { Applicant } from 'src/app/models/Applicant';
 export class ResumeComponent implements OnInit {
   applicant: Applicant;
   jobs: Job[];
+  faFilePdf = faFilePdf;
 
   constructor(private activatedRoute: ActivatedRoute) {
   }
