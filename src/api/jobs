@@ -26,7 +26,7 @@
             "desc": "Microservice-compatible Business Logic System",
             "details": [
               "This ASP.NET MVC WebAPI tier was written with the ability to be optionally deployed in Azure Functions.",
-              "Each WebAPI method defined also had a Azure Function method defined that will be deployed to Azure Functions when the application is deployed using Azure Functions."
+              "Each WebAPI method defined also had a Azure Function method defined that will be deployed to Azure Functions when the application is deployed to Azure Serverless Architecture."
             ]
           },
           { "desc": "Dynamic Angular 9 site with context dependent display",

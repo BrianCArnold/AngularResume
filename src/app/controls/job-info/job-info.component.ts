@@ -19,53 +19,53 @@ export class JobInfoComponent implements OnInit {
   nextExperienceDetail: Experience | Skill;
   experienceDetail: Experience | Skill;
   showExperienceDetail: boolean;
-  size: SCREEN_SIZE;
+  // size: SCREEN_SIZE;
 
   constructor(private resizeService: ResizeService, private modalService: BsModalService) {
-    this.resizeService.onResize$.subscribe(x => {
-      this.size = x;
-    });
+    // this.resizeService.onResize$.subscribe(x => {
+    //   this.size = x;
+    // });
   }
 
   ngOnInit(): void {
   }
 
   clickExperienceDetail(detail: Experience | Skill) {
-    if (this.size !== SCREEN_SIZE.XL) {
+    // if (this.size !== SCREEN_SIZE.XL) {
       this.experienceDetail = detail;
       this.modalService.show(this.modalDetails);
-    }
+    // }
   }
 
   getExperienceDetail(): Experience | Skill {
     return this.experienceDetail;
   }
   setExperienceDetail(v: Experience | Skill) {
-    if (this.size === SCREEN_SIZE.XL) {
-      if (v != null && v.details) {
-        if (this.experienceDetail) {
-          this.nextExperienceDetail = v;
-        } else {
-          this.experienceDetail = v;
-        }
-      } else {
-        if (this.experienceDetail) {
-          this.nextExperienceDetail = v;
-        } else {
-          this.experienceDetail = v;
-        }
-      }
-      setTimeout(() => {
-        if (v && v.details && this.nextExperienceDetail) {
-          this.experienceDetail = this.nextExperienceDetail;
-          this.nextExperienceDetail = null;
-          this.showExperienceDetail = true;
-        } else if (v && v.details && this.experienceDetail) {
-          this.showExperienceDetail = true;
-        } else {
-          this.showExperienceDetail = false;
-        }
-      }, 200);
-    }
+    // if (this.size === SCREEN_SIZE.XL) {
+    //   if (v != null && v.details) {
+    //     if (this.experienceDetail) {
+    //       this.nextExperienceDetail = v;
+    //     } else {
+    //       this.experienceDetail = v;
+    //     }
+    //   } else {
+    //     if (this.experienceDetail) {
+    //       this.nextExperienceDetail = v;
+    //     } else {
+    //       this.experienceDetail = v;
+    //     }
+    //   }
+    //   setTimeout(() => {
+    //     if (v && v.details && this.nextExperienceDetail) {
+    //       this.experienceDetail = this.nextExperienceDetail;
+    //       this.nextExperienceDetail = null;
+    //       this.showExperienceDetail = true;
+    //     } else if (v && v.details && this.experienceDetail) {
+    //       this.showExperienceDetail = true;
+    //     } else {
+    //       this.showExperienceDetail = false;
+    //     }
+    //   }, 200);
+    // }
   }
 }
