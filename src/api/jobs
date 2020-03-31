@@ -98,7 +98,7 @@
     "endDate": "Apr 2018",
     "achievements": [
       { "desc": "Designed replacement message processing architecture" },
-      { "desc": "Updated ASMX webservices to WebAPI" },
+      { "desc": "Updated ASMX web services to WebAPI" },
       { "desc": "Created a CosmosDB persisted flight status in-memory cache" },
       { "desc": "Managed network architecture for hybrid datacenter and cloud environment" },
       { "desc": "Developed server management applications in WPF" }
