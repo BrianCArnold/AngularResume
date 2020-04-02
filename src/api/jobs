@@ -7,7 +7,7 @@
     "endDate": "Current",
     "achievements": [
       {
-        "desc": "Architected and developed multitier application for Azure deployment",
+        "desc": "Architected and developed multitier Azure application as Lead",
         "details": [
           "Legacy application utilized ASP.NET 2.0 WebForms technology with a Lightspeed ORM repository front end for Oracle 11g.",
           "The replacement application utilized Angular 7 (later upgraded to Angular 8 and then 9) with Bootstrap styles.",
