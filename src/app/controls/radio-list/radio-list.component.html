@@ -1,0 +1,29 @@
+<div class="btn-group" [ngClass]="{
+  'disabled': disabled
+}" style="width:100%" btnRadioGroup onchange="fireOnChange()" [(ngModel)]="model">
+  <button *ngFor="let item of options"
+      class="btn"
+      [ngClass]="{
+        'btn-success': model != null && model == item.id,
+        'btn-secondary': model != null && model != item.id,
+        'btn-unsel': model == null,
+        'd-none': model == null && disabled
+      }"
+      [btnRadio]="item.id"
+      [disabled]="disabled"
+      tabindex="1"
+      role="button">
+
+
+      {{item.value}}
+  </button>
+  <button *ngIf="model == null && disabled"
+      class="btn btn-unsel"
+      disabled
+      tabindex="1"
+      role="button">
+
+
+
+  </button>
+</div>

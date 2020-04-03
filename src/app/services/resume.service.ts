@@ -11,8 +11,11 @@ export class ResumeService {
 
   constructor(private http: HttpClient) { }
 
-  public getJobs(): Observable<Job[]> {
-    return this.http.get<Job[]>('/api/jobs');
+  public getJobsSimple(): Observable<Job[]> {
+    return this.http.get<Job[]>('/api/jobs_simple');
+  }
+  public getJobsDetail(): Observable<Job[]> {
+    return this.http.get<Job[]>('/api/jobs_detail');
   }
   public getApplicant(): Observable<Applicant> {
     return this.http.get<Applicant>('/api/applicant');

@@ -13,6 +13,9 @@ import { SizeDetectorComponent } from './controls/size-detector/size-detector.co
 import { ExperienceDetailsComponent } from './controls/experience-details/experience-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
+import { RadioListComponent } from './controls/radio-list/radio-list.component';
+import { ButtonsModule } from 'ngx-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     ResumeComponent,
     ApplicantInfoComponent,
     SizeDetectorComponent,
-    ExperienceDetailsComponent
+    ExperienceDetailsComponent,
+    RadioListComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,9 @@ import { HttpClientModule } from '@angular/common/http';
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ButtonsModule.forRoot()
   ],
   providers: [
     BsModalRef,

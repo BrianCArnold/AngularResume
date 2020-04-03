@@ -1,4 +1,4 @@
-<div class="card mb-2 shadow-sm codeDisplay">
+<div class="card mb-2 shadow-sm"  [ngClass]="{ 'codeDisplay': !showBulletsWhenFull }">
   <div class="card-header py-1">
     <div class="row">
       <div class="col-xl-12 col-print-12 col-lg-12 col-md-12 col-sm-12 jobAchievementHeader">
@@ -6,19 +6,19 @@
           <div class="col-sm-7">
             <div class="row">
               <div class="col-sm-12 jobTitleCell md-small">
-                <span class="jobTitle text-info">{{ jobModel.title }}</span>
+                <span class="jobTitle" [ngClass]="{ 'text-info': !showBulletsWhenFull, 'font-weight-bold': showBulletsWhenFull }">{{ jobModel.title }}</span>
               </div>
               <div class="col-sm-12 jobCompanyCell md-small">
-                <span class="jobCompany text-primary">{{ jobModel.company }}</span>
+                <span class="jobCompany"  [ngClass]="{ 'text-primary': !showBulletsWhenFull, 'font-weight-bold': showBulletsWhenFull }">{{ jobModel.company }}</span>
               </div>
             </div>
           </div>
           <div class="col-sm-5 text-right">
             <div class="row codeInfo">
-              <div class="col-sm-12 jobLocation text-success font-italic md-small">
+              <div class="col-sm-12 jobLocation md-small" [ngClass]="{ 'text-success font-italic ': !showBulletsWhenFull, 'font-weight-bold': showBulletsWhenFull }">
                 {{ jobModel.location }}
               </div>
-              <div class="col-sm-12 jobDate text-success font-italic md-small">
+              <div class="col-sm-12 jobDate md-small"  [ngClass]="{ 'text-success font-italic ': !showBulletsWhenFull, 'font-weight-bold': showBulletsWhenFull }">
                 {{ jobModel.startDate }} - {{ jobModel.endDate }}
               </div>
             </div>
@@ -34,7 +34,7 @@
     <div class="row">
       <div class="col-xl-8 col-lg-9 py-1 col-print-8 jobAchievementSection" (mouseout)="setExperienceDetail(null)">
         <div class="listContainer">
-          <ul class="codeList list-unstyled">
+          <ul class="codeList " [ngClass]="{ 'list-unstyled': !showBulletsWhenFull }">
             <li *ngFor="let achievement of jobModel.achievements">
               <span (mouseover)="setExperienceDetail(achievement)"
                 (click)="clickExperienceDetail(achievement)"
@@ -43,7 +43,7 @@
               </span>
               <ul
                 *ngIf="achievement.skills && achievement.skills.length > 0"
-                class="codeList list-unstyled subList"
+                class="codeList subList" [ngClass]="{ 'list-unstyled': !showBulletsWhenFull }"
               >
                 <li *ngFor="let subAchievement of achievement.skills">
                   <span (mouseover)="setExperienceDetail(subAchievement)"
