@@ -48,6 +48,18 @@
   }
 }
 
+@media screen {
+  .resumePage {
+    box-shadow: 5px 5px 10px 0px #888888;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 2rem;
+  }
+}
+.resumePage.calibri {
+  font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  font-size: 15pt;
+}
 @media print {
   .resumeAll {
     margin-top: 0.5em;
@@ -56,6 +68,7 @@
     margin-right: auto;
     width: 1088px;
   }
+
 
 }
 

@@ -1,77 +1,95 @@
-<div class="card mb-2 shadow-sm"  [ngClass]="{ 'codeDisplay': !showBulletsWhenFull }">
-  <div class="card-header py-1">
-    <div class="row">
-      <div class="col-xl-12 col-print-12 col-lg-12 col-md-12 col-sm-12 jobAchievementHeader">
-        <div class="row">
-          <div class="col-sm-7">
-            <div class="row">
-              <div class="col-sm-12 jobTitleCell md-small">
-                <span class="jobTitle" [ngClass]="{ 'text-info': !showBulletsWhenFull, 'font-weight-bold': showBulletsWhenFull }">{{ jobModel.title }}</span>
-              </div>
-              <div class="col-sm-12 jobCompanyCell md-small">
-                <span class="jobCompany"  [ngClass]="{ 'text-primary': !showBulletsWhenFull, 'font-weight-bold': showBulletsWhenFull }">{{ jobModel.company }}</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-5 text-right">
-            <div class="row codeInfo">
-              <div class="col-sm-12 jobLocation md-small" [ngClass]="{ 'text-success font-italic ': !showBulletsWhenFull, 'font-weight-bold': showBulletsWhenFull }">
-                {{ jobModel.location }}
-              </div>
-              <div class="col-sm-12 jobDate md-small"  [ngClass]="{ 'text-success font-italic ': !showBulletsWhenFull, 'font-weight-bold': showBulletsWhenFull }">
-                {{ jobModel.startDate }} - {{ jobModel.endDate }}
+<div class="jobInfo" [ngClass]="{ 'codeDisplay': programmingDisplay }">
+  <div class="card mb-2" [ngClass]="{ 'shadow-sm': programmingDisplay }">
+    <div class="card-header py-1">
+      <div class="row">
+        <div class="col-xl-12 col-print-12 col-lg-12 col-md-12 col-sm-12 jobAchievementHeader">
+          <div class="row">
+            <div class="col-sm-7 jobHeaderLeft">
+              <div class="row">
+                <div class="col-sm-12 jobTitleCell md-small">
+                  <span class="jobTitle" [ngClass]="{ 'text-info': programmingDisplay, 'font-weight-bold': !programmingDisplay }">{{ jobModel.title }}</span>
+                </div>
+                <div class="col-sm-12 jobCompanyCell md-small">
+                  <span class="jobCompany"  [ngClass]="{ 'text-primary': programmingDisplay, 'font-weight-bold': !programmingDisplay }">{{ jobModel.company }}</span>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="col-xl-3 col-lg-4 text-center jobSkillHeader align-bottom">
-        <span class="align-bottom">Skills</span>
-      </div> -->
-    </div>
-  </div>
-  <div class="card-body py-0">
-    <div class="row">
-      <div class="col-xl-8 col-lg-9 py-1 col-print-8 jobAchievementSection" (mouseout)="setExperienceDetail(null)">
-        <div class="listContainer">
-          <ul class="codeList " [ngClass]="{ 'list-unstyled': !showBulletsWhenFull }">
-            <li *ngFor="let achievement of jobModel.achievements">
-              <span (mouseover)="setExperienceDetail(achievement)"
-                (click)="clickExperienceDetail(achievement)"
-                [ngClass]="{'hasDetails': achievement && achievement.details}">
-                {{ achievement.desc }}<sup class="hasDetailsInfo d-print-none" *ngIf="achievement && achievement.details">i</sup>
-              </span>
-              <ul
-                *ngIf="achievement.skills && achievement.skills.length > 0"
-                class="codeList subList" [ngClass]="{ 'list-unstyled': !showBulletsWhenFull }"
-              >
-                <li *ngFor="let subAchievement of achievement.skills">
-                  <span (mouseover)="setExperienceDetail(subAchievement)"
-                    (click)="clickExperienceDetail(subAchievement)"
-                  [ngClass]="{'hasDetails': subAchievement && subAchievement.details}">
-                    {{ subAchievement.desc }}<sup class="hasDetailsInfo d-print-none" *ngIf="subAchievement && subAchievement.details">i</sup>
+            <div class="col-sm-5 text-right jobHeaderRight">
+              <div class="row">
+                <div class="col-sm-12 jobLocation md-small" [ngClass]="{ 'text-success font-italic ': programmingDisplay, 'font-weight-bold': !programmingDisplay }">
+                  <span>
+                    {{ jobModel.location }}
                   </span>
-                </li>
-              </ul>
-            </li>
-          </ul>
+                </div>
+                <div class="col-sm-12 jobDate md-small"  [ngClass]="{ 'text-success font-italic ': programmingDisplay, 'font-weight-bold': !programmingDisplay }">
+                  <span>
+                    {{ jobModel.startDate }} - {{ jobModel.endDate }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <!-- <div class="col-xl-3 col-lg-4 text-center jobSkillHeader align-bottom">
+          <span class="align-bottom">Skills</span>
+        </div> -->
       </div>
-      <div class="col-xl-4 col-lg-3 py-1 col-print-4 overlayContainer jobSkillSection">
-        <div class="overlayDisplay d-sm-none d-xl-block shadow-lg card" *ngIf="experienceDetail" [ngClass]="{'on': showExperienceDetail && experienceDetail && experienceDetail.details}">
-          <app-experience-details [experienceDetail]="experienceDetail"></app-experience-details>
+    </div>
+    <div class="card-body py-0">
+      <div class="row">
+        <div class="py-1 jobAchievementSection"
+          [ngClass]="{ 'col-xl-8 col-lg-9 col-print-8': !showDetails, 'col-sm-12 col-print-12': showDetails }"
+          (mouseout)="setExperienceDetail(null)">
+          <div class="listContainer">
+            <ul class="codeList " [ngClass]="{ 'list-unstyled': programmingDisplay }">
+              <li *ngFor="let achievement of jobModel.achievements">
+                <span (mouseover)="setExperienceDetail(achievement)"
+                  (click)="clickExperienceDetail(achievement)"
+                  [ngClass]="{'hasDetails': achievement && achievement.details}">
+                  {{ achievement.desc }}<sup class="hasDetailsInfo d-print-none" *ngIf="achievement && achievement.details">i</sup>
+                </span>
+                <ul
+                  *ngIf="achievement.skills && achievement.skills.length > 0"
+                  class="codeList subList" [ngClass]="{ 'list-unstyled': programmingDisplay }"
+                >
+                  <li *ngFor="let subAchievement of achievement.skills">
+                    <span (mouseover)="setExperienceDetail(subAchievement)"
+                      (click)="clickExperienceDetail(subAchievement)"
+                    [ngClass]="{'hasDetails': subAchievement && subAchievement.details}">
+                      {{ subAchievement.desc }}<sup class="hasDetailsInfo d-print-none" *ngIf="subAchievement && subAchievement.details">i</sup>
+                    </span>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="listContainer">
-          <ul class="codeList list-unstyled">
-            <li *ngFor="let skill of jobModel.skills">
-              {{ skill.desc }}
-              <ul *ngIf="skill.skills && skill.skills.length > 0" class="list-unstyled dashList subList" >
-                <li *ngFor="let subSkill of skill.skills || []">
-                  {{ subSkill.desc }}
-                </li>
-              </ul>
-            </li>
-          </ul>
+        <div class="py-1 overlayContainer jobSkillSection"
+          [ngClass]="{ 'col-xl-4 col-lg-3 col-print-4': !showDetails, 'd-none': showDetails }"
+          >
+          <div class="listContainer">
+            <ul class="codeList" [ngClass]="{ 'list-unstyled': programmingDisplay, 'd-none': showDetails && !programmingDisplay }">
+              <li *ngFor="let skill of jobModel.skills">
+                {{ skill.desc }}
+                <ul *ngIf="skill.skills && skill.skills.length > 0" [ngClass]="{ 'list-unstyled': programmingDisplay }" class="dashList subList" >
+                  <li *ngFor="let subSkill of skill.skills || []">
+                    {{ subSkill.desc }}
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        <div [ngClass]="{ 'd-none': !showDetails, 'd-block col-sm-12': showDetails}">
+          <div class="font-weight-bold ml-3" >
+            Skills:
+            <span *ngFor="let skill of jobModel.skills" class="skillCsl">
+              {{skill.desc}}<span *ngFor="let subSkill of skill.skills || []" class="subSkillCsl">
+                {{ subSkill.desc }}
+              </span>
+            </span>
+          </div>
         </div>
       </div>
     </div>

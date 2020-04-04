@@ -1,14 +1,27 @@
 <div style="width: 100%;">
   <div class="resumeAll">
     <div class="row d-print-none">
-      <app-radio-list class="col-sm-12" name="resumeDetail" [(ngModel)]="showDetails" [options]="toggles"></app-radio-list>
+      <h4 class="col-xl-1 col-lg-2 my-1">
+        Details:
+      </h4>
+      <app-radio-list class="col-xl-5 col-lg-10 my-1" name="resumeDetail" [(ngModel)]="showDetails"
+      [options]="[{ id: true, value: 'Detailed' },{ id: false, value: 'Minimalist' }]">
+      </app-radio-list>
+      <h4 class="col-xl-1 col-lg-2 my-1">
+        Display:
+      </h4>
+      <app-radio-list class="col-xl-5 col-lg-10 my-1" name="resumeDetail" [(ngModel)]="programmingDisplay"
+      [options]="[{ id: true, value: 'Programming' },{ id: false, value: 'Standard' }]">
+      </app-radio-list>
 
     </div>
 
-    <app-applicant-info [applicant]="applicant">
-    </app-applicant-info>
-    <div class="row" style="page-break-inside: avoid;" *ngFor="let jobModel of jobs">
-      <app-job-info  [showBulletsWhenFull]="showDetails" class="col-sm-12" [jobModel]="jobModel"></app-job-info>
+    <div class="resumePage" [ngClass]="{'calibri': !programmingDisplay}">
+      <app-applicant-info [applicant]="applicant" [showDetails]="showDetails" [programmingDisplay]="programmingDisplay" >
+      </app-applicant-info>
+      <div class="row" style="page-break-inside: avoid;" *ngFor="let jobModel of jobs">
+        <app-job-info [showDetails]="showDetails" [programmingDisplay]="programmingDisplay" class="col-sm-12" [jobModel]="jobModel"></app-job-info>
+      </div>
     </div>
     <div class="row">
       <div class="col-12 text-center">

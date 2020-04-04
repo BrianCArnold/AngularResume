@@ -19,8 +19,11 @@ export class JobInfoComponent implements OnInit {
   nextExperienceDetail: Experience | Skill;
   experienceDetail: Experience | Skill;
   showExperienceDetail: boolean;
+
   @Input()
-  showBulletsWhenFull: false;
+  showDetails: boolean;
+  @Input()
+  programmingDisplay: false;
   // size: SCREEN_SIZE;
 
   constructor(private resizeService: ResizeService, private modalService: BsModalService) {

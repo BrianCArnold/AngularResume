@@ -24,16 +24,16 @@ export class ResumeComponent implements OnInit {
   faFileWord = faFileWord;
   constructor(private activatedRoute: ActivatedRoute, private resumeService: ResumeService) {
   }
-  toggles: any[] = [
-    { id: true, value: 'Detailed' },
-    { id: false, value: 'Minimalist' },
-  ];
+  programmingDisplay = false;
   internalShowDetails = false;
   get showDetails(): boolean {
     return this.internalShowDetails;
   }
   set showDetails(v: boolean) {
     this.internalShowDetails = v;
+    if (v) {
+      this.programmingDisplay = false;
+    }
     (v ? this.resumeService.getJobsDetail() : this.resumeService.getJobsSimple()).toPromise().then(j => {
       this.jobs = j;
       console.log(this.jobs);

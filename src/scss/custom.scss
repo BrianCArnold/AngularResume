@@ -17,6 +17,9 @@ $tooltip-max-width: 400px;
   .d-print-inline {
     display: inline;
   }
+  .d-print-block {
+    display: block;
+  }
 }
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 

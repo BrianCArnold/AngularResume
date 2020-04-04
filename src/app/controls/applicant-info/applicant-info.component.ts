@@ -9,6 +9,10 @@ import { Applicant } from 'src/app/models/Applicant';
 export class ApplicantInfoComponent implements OnInit {
 
   @Input()
+  programmingDisplay: boolean;
+  @Input()
+  showDetails: boolean;
+  @Input()
   applicant: Applicant;
 
   constructor() { }

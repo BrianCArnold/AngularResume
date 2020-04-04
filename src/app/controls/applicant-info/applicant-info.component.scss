@@ -1,53 +1,79 @@
-
-.card.layUnder {
-  margin-bottom: -10px;
-}
 .skillArea {
   border-width: 0;
 }
-.contactInfo {
-  border-left-width: 1px;
-  border-left-style: solid;
-  border-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0),
-      #a0a0a0,
-      rgba(0, 0, 0, 0)
-    )
-    1 100%;
+.applicant:not(.codeDisplay)
+{
+  .title {
+    height: 61px;
+    border-bottom: 1px solid black;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+  }
+  .title h1,
+  .title h2,
+  .title h3,
+  .title h4,
+  .title h5,
+  .title h6 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 0;
+  }
+  .addressInfo {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+  }
+  .card {
+    border: 0px solid transparent;
+  }
+  .card .card-header {
+    border: 0px solid transparent;
+    background-color: transparent;
+  }
 }
-.contactArea {
-  border: 1px solid rgba(0,0,0,0.125);
-  border-radius: 10px 10px 0px 0px;
-}
-.noBorder {
-  border-width: 0px;
-}
-.resumeName {
-  margin-bottom: 0px;
-  margin-top: auto;
-}
-.extendBackgroundDown {
-  padding-bottom: 10px;
-  margin-bottom: -10px;
-}
-.glassBack {
-  background-color: rbga(0,0,0,0);
-}
-.frontendSkills {
-}
-.backendSkills {
-}
-.databaseSkills {
-}
-.cloudSkills {
-  border-left-width:1px;
-  border-left-style: solid;
-  border-image:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0),
-      lightgray,
-      rgba(0, 0, 0, 0)
-    ) 1 100%;
+
+.applicant.codeDisplay
+{
+  .contactInfo {
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        #a0a0a0,
+        rgba(0, 0, 0, 0)
+      )
+      1 100%;
+  }
+  .card.layUnder {
+    margin-bottom: -10px;
+  }
+  .contactArea {
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: 10px 10px 0px 0px;
+  }
+  .noBorder {
+    border-width: 0px;
+  }
+  .resumeName {
+    margin-bottom: 0px;
+    margin-top: auto;
+  }
+  .extendBackgroundDown {
+    padding-bottom: 10px;
+    margin-bottom: -10px;
+  }
+  .glassBack {
+    background-color: rbga(0,0,0,0);
+  }
+  .frontendSkills {
+  }
+  .backendSkills {
+  }
+  .databaseSkills {
+  }
+  .cloudSkills {
+  }
 }
