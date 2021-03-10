@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class ApplicantResolverService implements Resolve<Applicant> {
 
   constructor(private resumeService: ResumeService) { }
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Applicant> {
-    return this.resumeService.getApplicant();
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<Applicant> {
+    return this.resumeService.getApplicantAsync();
   }
 }

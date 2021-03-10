@@ -1,4 +1,5 @@
 import { Experience } from './Experience';
+import { Skill } from './Skill';
 export class Job {
   company: string;
   title: string;
@@ -6,5 +7,5 @@ export class Job {
   startDate: string;
   endDate: string;
   achievements: Experience[];
-  skills: Experience[];
+  skills: Skill[];
 }

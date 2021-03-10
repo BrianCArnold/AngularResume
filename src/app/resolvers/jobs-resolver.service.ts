@@ -11,8 +11,8 @@ export class JobsResolverService implements Resolve<Job[]> {
 
   constructor(private resumeService: ResumeService) { }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Job[]> {
-    return this.resumeService.getJobsSimple();
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<Job[]> {
+    return this.resumeService.getJobsSimpleAsync();
   }
 
 

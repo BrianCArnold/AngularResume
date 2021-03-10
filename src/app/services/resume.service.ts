@@ -3,6 +3,8 @@ import { Observable, of } from 'rxjs';
 import { Job } from '../models/Job';
 import { Applicant } from '../models/Applicant';
 import { HttpClient, JsonpClientBackend } from '@angular/common/http';
+import { jobs } from '../data/jobs';
+import { applicant } from '../data/applicant';
 
 @Injectable({
   providedIn: 'root'
@@ -13,13 +15,10 @@ export class ResumeService {
 
   apiBaseUrl = '/api/';
 
-  public getJobsSimple(): Observable<Job[]> {
-    return this.http.get<Job[]>(this.apiBaseUrl + 'jobs_simple');
+  public async getJobsSimpleAsync(): Promise<Job[]> {
+    return jobs;
   }
-  public getJobsDetail(): Observable<Job[]> {
-    return this.http.get<Job[]>(this.apiBaseUrl + 'jobs_detail');
-  }
-  public getApplicant(): Observable<Applicant> {
-    return this.http.get<Applicant>(this.apiBaseUrl + 'applicant');
+  public async getApplicantAsync(): Promise<Applicant> {
+    return applicant;
   }
 }

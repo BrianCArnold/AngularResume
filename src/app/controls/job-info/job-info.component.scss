@@ -114,6 +114,9 @@ li {
   break-inside: avoid-column;
 }
 .codeDisplay {
+  .highlight {
+    text-shadow: 0 0 2px #00ff00;
+  }
   font-family: firaCode;
 // .codeDisplay .listContainer ul li {
 //   margin-left: -15px;

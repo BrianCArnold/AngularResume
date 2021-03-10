@@ -1,11 +1,8 @@
-import { JobSkill } from "./JobSkill";
 import { SkillTag } from "./SkillTag";
 
-export class Experience {
+
+export class JobSkill {
   desc: string;
   details?: string[];
-  skills?: JobSkill[];
   skillTags: SkillTag[];
 }
-
-

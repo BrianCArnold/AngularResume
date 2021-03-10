@@ -45,7 +45,7 @@
               <li *ngFor="let achievement of jobModel.achievements">
                 <span (mouseover)="setExperienceDetail(achievement)"
                   (click)="clickExperienceDetail(achievement)"
-                  [ngClass]="{'hasDetails': achievement && achievement.details}">
+                  [ngClass]="{'hasDetails': achievement && achievement.details, 'highlight': achievement.skillTags.includes(currentSkill)}">
                   {{ achievement.desc }}<sup class="hasDetailsInfo d-print-none" *ngIf="achievement && achievement.details">i</sup>
                 </span>
                 <ul
@@ -55,7 +55,7 @@
                   <li *ngFor="let subAchievement of achievement.skills">
                     <span (mouseover)="setExperienceDetail(subAchievement)"
                       (click)="clickExperienceDetail(subAchievement)"
-                    [ngClass]="{'hasDetails': subAchievement && subAchievement.details}">
+                    [ngClass]="{'hasDetails': subAchievement && subAchievement.details, 'highlight': achievement.skillTags.includes(currentSkill)}">
                       {{ subAchievement.desc }}<sup class="hasDetailsInfo d-print-none" *ngIf="subAchievement && subAchievement.details">i</sup>
                     </span>
                   </li>
@@ -69,7 +69,7 @@
           >
           <div class="listContainer">
             <ul class="codeList" [ngClass]="{ 'list-unstyled': programmingDisplay, 'd-none': showDetails && !programmingDisplay }">
-              <li *ngFor="let skill of jobModel.skills">
+              <li *ngFor="let skill of jobModel.skills" (mouseover)="highlightSkill(skill)" (mouseout)="unhighlightSkill(skill)" >
                 {{ skill.desc }}
                 <ul *ngIf="skill.skills && skill.skills.length > 0" [ngClass]="{ 'list-unstyled': programmingDisplay }" class="dashList subList" >
                   <li *ngFor="let subSkill of skill.skills || []">
@@ -84,8 +84,9 @@
         <div [ngClass]="{ 'd-none': !showDetails, 'd-block col-sm-12': showDetails}">
           <div class="font-weight-bold ml-3" >
             Skills:
-            <span *ngFor="let skill of jobModel.skills" class="skillCsl">
-              {{skill.desc}}<span *ngFor="let subSkill of skill.skills || []" class="subSkillCsl">
+            <span *ngFor="let skill of jobModel.skills" (mouseover)="highlightSkill(skill)" (mouseout)="unhighlightSkill(skill)" class="skillCsl">
+              {{skill.desc}}
+              <span *ngFor="let subSkill of skill.skills || []" class="subSkillCsl">
                 {{ subSkill.desc }}
               </span>
             </span>

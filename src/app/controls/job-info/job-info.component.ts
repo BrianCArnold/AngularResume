@@ -5,6 +5,7 @@ import { Skill } from 'src/app/models/Skill';
 import { ResizeService } from 'src/app/services/resize.service';
 import { SCREEN_SIZE } from 'src/app/models/SCREEN_SIZE';
 import { BsModalService } from 'ngx-bootstrap';
+import { SkillTag } from 'src/app/models/SkillTag';
 
 @Component({
   selector: 'app-job-info',
@@ -35,10 +36,23 @@ export class JobInfoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  currentSkill: SkillTag;
+  highlightSkill(skill: Skill) {
+    this.currentSkill = skill.skillTag;
+    console.log(this.currentSkill);
+  }
+  unhighlightSkill(skill: Skill) {
+    if (this.currentSkill == skill.skillTag) {
+      this.currentSkill = null;
+    }
+  }
+
   clickExperienceDetail(detail: Experience | Skill) {
     // if (this.size !== SCREEN_SIZE.XL) {
       this.experienceDetail = detail;
-      this.modalService.show(this.modalDetails);
+      this.modalService.show(this.modalDetails, {
+        class: 'modal-lg'
+      });
     // }
   }
 

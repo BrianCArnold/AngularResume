@@ -28,8 +28,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/api/applicant",
-              "src/api/jobs_detail",
-              "src/api/jobs_simple",
+              "src/api/jobs",
               "src/assets/FiraCode-Retina.woff"
             ],
             "styles": [

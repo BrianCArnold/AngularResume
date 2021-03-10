@@ -1,4 +1,4 @@
-import { Experience as SkillArea } from './Experience';
+import { SkillArea } from "./SkillArea";
 
 export class Applicant {
   firstName: string;

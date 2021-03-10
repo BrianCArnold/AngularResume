@@ -24,7 +24,7 @@ export class ResumeComponent implements OnInit {
   faFileWord = faFileWord;
   constructor(private activatedRoute: ActivatedRoute, private resumeService: ResumeService) {
   }
-  programmingDisplay = false;
+  programmingDisplay = true;
   internalShowDetails = false;
   get showDetails(): boolean {
     return this.internalShowDetails;
@@ -34,7 +34,7 @@ export class ResumeComponent implements OnInit {
     if (v) {
       this.programmingDisplay = false;
     }
-    (v ? this.resumeService.getJobsDetail() : this.resumeService.getJobsSimple()).toPromise().then(j => {
+    this.resumeService.getJobsSimpleAsync().then(j => {
       this.jobs = j;
       console.log(this.jobs);
       console.log('Setting Jobs.');
