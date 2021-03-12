@@ -97,12 +97,12 @@ ul {
     border-top-width:1px;
     border-top-style: solid;
     border-image:
-    linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0),
-      lightgray,
-      rgba(0, 0, 0, 0)
-    ) 1;
+      linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        lightgray,
+        rgba(0, 0, 0, 0)
+      ) 1;
   }
 }
 ul.subList {
@@ -117,6 +117,12 @@ ul.list-unstyled.subList {
 li {
   break-inside: avoid-column;
 }
+
+
+.jobSkillSection {
+  font-size: 12pt;
+}
+
 .codeDisplay {
   .highlight {
     text-shadow: 0 0 2px #00ff00;
