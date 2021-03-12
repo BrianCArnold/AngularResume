@@ -185,36 +185,39 @@ export const jobs: Job[] =
     ],
     skills: [
       {
-        desc: 'Angular 9'  ,
+        desc: 'Angular 9',
         skillTag: 'angular'
       },
       {
         desc: 'Bootstrap 4.x',
-        skillTag: 'css'
+        skillTag: 'css',
+        url: 'https://getbootstrap.com/'
       },
       {
-        desc: '.NET Core 2.x'  ,
+        desc: '.NET Core 2.x',
         skillTag: 'dotnet'
       },
       {
-        desc: 'Oracle 18c'  ,
+        desc: 'Oracle 18c',
         skillTag: 'oracle'
       },
       {
-        desc: 'TypeScript 3.7'  ,
-        skillTag: 'typescript'
+        desc: 'TypeScript 3.7',
+        skillTag: 'typescript',
+        url: 'https://www.typescriptlang.org/'
       },
       {
-        desc: 'Azure Functions'  ,
+        desc: 'Azure Functions',
         skillTag: 'serverless'
       },
       {
-        desc: 'Azure SQL '  ,
+        desc: 'Azure SQL',
         skillTag: 'sqlserver'
       },
       {
-        desc: 'CDN'  ,
-        skillTag: 'serverless'
+        desc: 'CDN',
+        skillTag: 'serverless',
+        url: 'https://azure.microsoft.com/en-us/services/cdn/'
       },
       {
         desc: 'Azure DevOps',
@@ -248,8 +251,9 @@ export const jobs: Job[] =
       {
         desc: 'Updated ASMX web services to WebAPI',
         skillTags:[
-          'flight',
-          'rest'
+          'rest',
+          'mvc',
+          'dotnet'
         ]
       },
       {
@@ -292,21 +296,29 @@ export const jobs: Job[] =
         skillTag: 'sqlserver'
       },
       {
-        desc: 'Redis' ,
-        skillTag: 'nosql'
+        desc: 'REST' ,
+        skillTag: 'rest'
+      },
+      {
+        desc: 'Redis',
+        skillTag: 'nosql',
+        url: 'https://redis.io/'
+      },
+      {
+        desc: 'CosmosDB',
+        skillTag: 'nosql',
+        url: 'https://azure.microsoft.com/en-us/services/cosmos-db/'
       },
       {
         desc: 'ASDI' ,
-        skillTag: 'flight'
+        skillTag: 'flight',
+        url: 'https://www.fly.faa.gov/ASDI/asdi.html'
       },
       {
-        desc: 'FLTD/SWIM' ,
-        skillTag: 'flight'
+        desc: 'FLTD/SWIM',
+        skillTag: 'flight',
+        url: 'https://www.faa.gov/air_traffic/technology/swim/overview/'
       },
-      {
-        desc: 'REST' ,
-        skillTag: 'rest'
-      }
     ]
   },
   {
@@ -319,7 +331,15 @@ export const jobs: Job[] =
       {
         desc: 'Collaboration with Software Development VP for architecture design',
         skillTags:[
-          'architecture'
+          'architecture',
+          'dotnet',
+          'mvc',
+          'entityframework',
+          'sqlserver',
+          'sharepoint',
+          'azure',
+          'oracle',
+          'rest'
         ]
       },
       {
@@ -389,8 +409,9 @@ export const jobs: Job[] =
         skillTag: 'oracle'
       },
       {
-        desc: 'Toad for Oracle' ,
-        skillTag: 'oracle'
+        desc: 'Toad for Oracle',
+        skillTag: 'oracle',
+        url: 'https://www.quest.com/products/toad-for-oracle/'
       },
       {
         desc: 'REST',
@@ -430,6 +451,11 @@ export const jobs: Job[] =
       {
         desc: 'HTML 5' ,
         skillTag: 'web'
+      },
+      {
+        desc: 'ImageNow',
+        skillTag: 'web',
+        url: 'https://www.hyland.com/en/platform/product-suite/perceptive-content'
       },
       {
         desc: 'JQuery ' ,
