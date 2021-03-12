@@ -2,45 +2,52 @@ import { Job } from '../models/Job';
 
 export const jobs: Job[] =
 [
-  {
-    company: 'BNY Mellon',
-    title: 'Contractor',
-    location: 'Pittsburg, PA',
-    startDate: 'April 2020',
-    endDate: 'Current',
-    achievements:[],
-    skills: [
-      {
-        desc: 'Angular 9-11',
-        skillTag: 'angular',
-        url: 'https://golden-layout.com/',
-        skills: [
-          {
-            desc: 'PrimeNG',
-          },
-          {
-            desc: 'Shared Libs'
-          },
-          {
-            desc: 'GoldenLayout',
-            url: 'https://golden-layout.com/'
-          },
-        ]
-      },
-      {
-        desc: 'Docker',
-        skillTag: 'serverless'
-      },
-      {
-        desc: 'SQL Server',
-        skillTag: 'sqlserver'
-      },
-      {
-        desc: '.NET Core 3.1',
-        skillTag: 'dotnet'
-      },
-    ]
-  },
+  // {
+  //   company: 'BNY Mellon',
+  //   title: 'Contractor',
+  //   location: 'Pittsburg, PA',
+  //   startDate: 'April 2020',
+  //   endDate: 'Current',
+  //   achievements:[],
+  //   skills: [
+  //     {
+  //       desc: 'SQL Server 2019',
+  //       skillTag: 'sqlserver'
+  //     },
+  //     {
+  //       desc: '.NET Core 3.1',
+  //       skillTag: 'dotnet'
+  //     },
+  //     {
+  //       desc: 'Dapper ORM',
+  //       skillTag: 'entityframework',
+  //       url: 'https://github.com/StackExchange/Dapper'
+  //     },
+  //     {
+  //       desc: 'Docker 19.03',
+  //       skillTag: 'serverless'
+  //     },
+  //     {
+  //       desc: 'Traefik 2.4',
+  //       url: 'https://traefik.io/traefik/',
+  //       skillTag: 'serverless'
+  //     },
+  //     {
+  //       desc: 'Angular 9+',
+  //       skillTag: 'angular',
+  //       skills: [
+  //         {
+  //           desc: 'PrimeNG 9',
+  //           url: 'https://www.primefaces.org/primeng/'
+  //         },
+  //         {
+  //           desc: 'GoldenLayout',
+  //           url: 'https://golden-layout.com/'
+  //         },
+  //       ]
+  //     },
+  //   ]
+  // },
   {
     company: 'Red Lobster LLC',
     title: 'Senior Systems Engineer',

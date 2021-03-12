@@ -58,6 +58,10 @@
   .jobAchievementSection > ul {
     column-count: 1;
   }
+
+  .noPrint {
+    display: none;
+  }
 }
 ul {
   list-style-position: outside !important;
@@ -69,10 +73,6 @@ ul {
   }
   sup.hasDetailsInfo {
     color: blue;
-  }
-  .skillUrl {
-    color: inherit;
-    text-decoration: lightgreen underline dotted;
   }
 }
 
@@ -121,6 +121,22 @@ li {
 
 .jobSkillSection {
   font-size: 12pt;
+  ul {
+    column-gap: 0;
+  }
+}
+
+
+@media only screen  {
+  .codeDisplay {
+    .skillUrl {
+      color: inherit;
+      text-decoration: lightgreen underline dotted;
+    }
+    .lightExternal {
+      color: rgba(0, 0, 0, 0.25)
+    }
+  }
 }
 
 .codeDisplay {
@@ -220,6 +236,8 @@ li {
     color:gray;
     // margin-left:-2px;
     content: '}';
+    position: relative;
+    left: -2px;
   }
   ul.codeList li ul li::before {
     color:gray;

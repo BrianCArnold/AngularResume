@@ -73,6 +73,9 @@
                 <div *ngIf="skill.url; then urlSkill; else plainSkill">{{ skill.desc }}</div>
                 <ng-template #urlSkill>
                   <a class="skillUrl" [href]="skill.url" >{{ skill.desc }}</a>
+                  <sup class="noPrint">
+                      <fa-icon class="lightExternal" size="xs" [icon]="faExternalLinkSquareAlt"></fa-icon>
+                  </sup>
                 </ng-template>
                 <ng-template #plainSkill>{{ skill.desc }}</ng-template>
                 <ul *ngIf="skill.skills && skill.skills.length > 0" [ngClass]="{ 'list-unstyled': programmingDisplay }" class="dashList subList" >
@@ -80,6 +83,9 @@
                     <div *ngIf="subSkill.url; then urlSubSkill; else plainSubSkill">{{ subSkill.desc }}</div>
                     <ng-template #urlSubSkill>
                       <a class="skillUrl" [href]="subSkill.url" >{{ subSkill.desc }}</a>
+                      <sup class="noPrint">
+                          <fa-icon class="lightExternal" size="xs" [icon]="faExternalLinkSquareAlt"></fa-icon>
+                      </sup>
                     </ng-template>
                     <ng-template #plainSubSkill>{{ subSkill.desc }}</ng-template>
                   </li>
