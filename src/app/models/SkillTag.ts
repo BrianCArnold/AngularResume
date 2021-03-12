@@ -1,7 +1,7 @@
 
-export type SkillTag = 
+export type SkillTag =
   'angular' |
-  'bootstrap' |
+  'css' |
   'dotnet' |
   'typescript' |
   'serverless' |
@@ -16,7 +16,7 @@ export type SkillTag =
   'sharepoint' |
   'azure' |
   'entityframework' |
-  'rest' | 
-  'nosql' | 
+  'rest' |
+  'nosql' |
   'architecture' |
   'web'

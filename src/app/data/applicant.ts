@@ -21,7 +21,7 @@ export const applicant: Applicant = {
         },
         {
           desc: "Bootstrap",
-          skillTag: 'bootstrap'
+          skillTag: 'css'
         },
         {
           desc: "RxJS",

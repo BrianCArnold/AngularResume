@@ -5,9 +5,10 @@ export class Skill {
   skills?: SubSkill[];
   details?: string[];
   skillTag: SkillTag;
+  url?: string;
 }
 
 export class SubSkill {
   desc: string;
-
+  url?: string;
 }

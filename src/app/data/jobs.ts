@@ -1,13 +1,52 @@
 import { Job } from '../models/Job';
 
-export const jobs: Job[] = 
+export const jobs: Job[] =
 [
+  {
+    company: 'BNY Mellon',
+    title: 'Contractor',
+    location: 'Pittsburg, PA',
+    startDate: 'April 2020',
+    endDate: 'Current',
+    achievements:[],
+    skills: [
+      {
+        desc: 'Angular 9-11',
+        skillTag: 'angular',
+        url: 'https://golden-layout.com/',
+        skills: [
+          {
+            desc: 'PrimeNG',
+          },
+          {
+            desc: 'Shared Libs'
+          },
+          {
+            desc: 'GoldenLayout',
+            url: 'https://golden-layout.com/'
+          },
+        ]
+      },
+      {
+        desc: 'Docker',
+        skillTag: 'serverless'
+      },
+      {
+        desc: 'SQL Server',
+        skillTag: 'sqlserver'
+      },
+      {
+        desc: '.NET Core 3.1',
+        skillTag: 'dotnet'
+      },
+    ]
+  },
   {
     company: 'Red Lobster LLC',
     title: 'Senior Systems Engineer',
     location: 'Orlando, FL',
     startDate: 'May 2018',
-    endDate: 'Current',
+    endDate: 'March 2020',
     achievements: [
       {
         desc: 'Architected and developed multitier Azure application as Lead',
@@ -28,7 +67,7 @@ export const jobs: Job[] =
               'oracle',
               'dotnet',
               'entityframework'
-            ]            
+            ]
           },
           {
             desc: 'Microservice-compatible Business Logic System',
@@ -41,9 +80,9 @@ export const jobs: Job[] =
               'rest',
               'serverless',
               'azure'
-            ]    
+            ]
           },
-          { 
+          {
             desc: 'Dynamic Angular 9 site with context dependent display',
             details: [
               'The front end was originally written with Angular 7, but upgraded in place to 8 during development, and then later to 9 after initial deployment.',
@@ -53,7 +92,7 @@ export const jobs: Job[] =
               'angular',
               'typescript',
               'rest',
-              'bootstrap'
+              'css'
             ]
           }
         ],
@@ -66,7 +105,7 @@ export const jobs: Job[] =
           'azure',
           'angular',
           'typescript',
-          'bootstrap'
+          'css'
         ]
       },
       {
@@ -82,7 +121,7 @@ export const jobs: Job[] =
           'rest'
         ]
       },
-      { 
+      {
         desc: 'Replaced flat file communication endpoints with modern APIs',
         details: [
           'All previous supply chain systems utilized CSV export and import for communication with other systems.',
@@ -105,7 +144,7 @@ export const jobs: Job[] =
           'devops'
         ]
       },
-      { 
+      {
         desc: 'Utilized CI/CD pipelines to deploy bug fixes same-day',
         details: [
           'Due to the nature of the application and the high variability of business logic in place, the application was written to stratify business rules based on workflow, product properties, and supplier information.',
@@ -116,19 +155,19 @@ export const jobs: Job[] =
           'devops'
         ]
       },
-      { 
+      {
         desc: 'Reduced known regression occurrence to zero',
         skillTags:[]
       },
-      { 
+      {
         desc: 'Upgraded frontend from Angular 7 to Angular 9 during development',
         skillTags:[
           'angular',
           'typescript',
-          'bootstrap'
+          'css'
         ]
       },
-      { 
+      {
         desc: 'Upgraded backend from EF 6.1 to EF Core 2.1',
         skillTags:[
           'entityframework',
@@ -138,45 +177,45 @@ export const jobs: Job[] =
        }
     ],
     skills: [
-      { 
+      {
         desc: 'Angular 9'  ,
         skillTag: 'angular'
       },
-      { 
-        desc: 'Bootstrap 4.x'  ,
-        skillTag: 'bootstrap'
+      {
+        desc: 'Bootstrap 4.x',
+        skillTag: 'css'
       },
-      { 
+      {
         desc: '.NET Core 2.x'  ,
         skillTag: 'dotnet'
       },
-      { 
+      {
         desc: 'Oracle 18c'  ,
         skillTag: 'oracle'
       },
-      { 
+      {
         desc: 'TypeScript 3.7'  ,
         skillTag: 'typescript'
       },
-      { 
+      {
         desc: 'Azure Functions'  ,
         skillTag: 'serverless'
       },
-      { 
+      {
         desc: 'Azure SQL '  ,
         skillTag: 'sqlserver'
       },
-      { 
+      {
         desc: 'CDN'  ,
         skillTag: 'serverless'
       },
-      { 
+      {
         desc: 'Azure DevOps',
         skills: [
-          { 
+          {
             desc: 'CI/CD'
           },
-          { 
+          {
             desc: 'Pull Requests'
           }
         ] ,
@@ -191,35 +230,35 @@ export const jobs: Job[] =
     startDate: 'Aug 2014',
     endDate: 'Apr 2018',
     achievements: [
-      { 
+      {
         desc: 'Designed replacement message processing architecture',
         skillTags:[
-          'flight',          
+          'flight',
           'entityframework',
           'dotnet'
         ]
       },
-      { 
+      {
         desc: 'Updated ASMX web services to WebAPI',
         skillTags:[
           'flight',
           'rest'
         ]
       },
-      { 
+      {
         desc: 'Created a Cosmos DB persisted flight status in-memory cache',
         skillTags:[
           'nosql',
           'azure'
         ]
       },
-      { 
+      {
         desc: 'Managed network architecture for hybrid datacenter and cloud environment',
         skillTags:[
           'architecture'
         ]
       },
-      { 
+      {
         desc: 'Developed server management applications in WPF',
         skillTags:[
           'dotnet',
@@ -270,31 +309,31 @@ export const jobs: Job[] =
     startDate: 'Nov 2011',
     endDate: 'Aug 2014',
     achievements: [
-      { 
+      {
         desc: 'Collaboration with Software Development VP for architecture design',
         skillTags:[
           'architecture'
         ]
       },
-      { 
+      {
         desc: 'Implemented and maintained visitor management systems for military bases',
         skillTags:[
           'oracle'
         ]
       },
-      { 
+      {
         desc: 'Designed and implemented REST interfaces for existing SOAP APIs',
         skillTags:[
           'rest'
         ]
       },
-      { 
+      {
         desc: 'Designed and implemented SharePoint solution frontend for Oracle data',
         skillTags:[
           'sharepoint'
         ]
       },
-      { 
+      {
         desc: 'Developed WPF application to interface biometric devices with website',
         skillTags:[
           'dotnet'
@@ -302,51 +341,51 @@ export const jobs: Job[] =
       }
     ],
     skills: [
-      { 
+      {
         desc: 'C#/VB.NET' ,
         skillTag: 'dotnet'
       },
-      { 
+      {
         desc: 'ASP.NET 4.5.1' ,
         skillTag: 'dotnet'
       },
-      { 
+      {
         desc: 'MVC 5' ,
         skillTag: 'mvc'
       },
-      { 
+      {
         desc: 'EF 6' ,
         skillTag: 'entityframework'
       },
-      { 
+      {
         desc: 'SQL Server 2014 ' ,
         skillTag: 'sqlserver'
       },
-      { 
+      {
         desc: 'SharePoint 2013' ,
         skillTag: 'sharepoint'
       },
-      { 
+      {
         desc: 'Microsoft Azure' ,
         skillTag: 'azure'
       },
-      { 
+      {
         desc: 'WPF' ,
         skillTag: 'dotnet'
       },
-      { 
+      {
         desc: 'Oracle 11g' ,
         skillTag: 'oracle'
       },
-      { 
+      {
         desc: 'PL/SQL' ,
         skillTag: 'oracle'
       },
-      { 
+      {
         desc: 'Toad for Oracle' ,
         skillTag: 'oracle'
       },
-      { 
+      {
         desc: 'REST',
         skillTag: 'rest'
       }
@@ -359,45 +398,45 @@ export const jobs: Job[] =
     startDate: 'Oct 2010',
     endDate: 'Oct 2011',
     achievements: [
-      { 
+      {
         desc: 'Implemented WebNow and ImageNow forms with XML, XSLT, and iScript',
         skillTags:[]
       },
-      { 
+      {
         desc: 'Created image file processors to catalog file metadata on upload',
         skillTags:[]
       }
     ],
     skills: [
-      { 
+      {
         desc: 'C#/F#',
         skillTag: 'dotnet'
       },
-      { 
+      {
         desc: 'ASP.NET 4.0' ,
         skillTag: 'dotnet'
       },
-      { 
+      {
         desc: 'SharePoint 2010' ,
         skillTag: 'sharepoint'
       },
-      { 
+      {
         desc: 'HTML 5' ,
         skillTag: 'web'
       },
-      { 
+      {
         desc: 'JQuery ' ,
         skillTag: 'web'
       },
-      { 
+      {
         desc: 'XML' ,
         skillTag: 'web'
       },
-      { 
+      {
         desc: 'XSLT' ,
         skillTag: 'web'
       },
-      { 
+      {
         desc: 'XSD' ,
         skillTag: 'web'
       }
@@ -410,40 +449,40 @@ export const jobs: Job[] =
     startDate: 'Dec 2007',
     endDate: 'Oct 2010',
     achievements: [
-      { 
+      {
         desc: 'Implemented SharePoint Features to provision SharePoint sites',
         skillTags:[]
       },
-      { 
+      {
         desc: 'Created customized SharePoint workflows for Contract bidding',
         skillTags:[]
       }
     ],
     skills: [
-      { 
+      {
         desc: 'C#',
         skillTag: 'dotnet'
-      }, 
-      { 
+      },
+      {
         desc: 'SharePoint 2007',
         skillTag: 'sharepoint'
-      }, 
-      { 
+      },
+      {
         desc: 'ASP.NET 3.5',
         skillTag: 'dotnet'
-      }, 
-      { 
+      },
+      {
         desc: 'HTML 4',
         skillTag: 'web'
-      }, 
-      { 
+      },
+      {
         desc: 'XML',
         skillTag: 'web'
-      }, 
-      { 
+      },
+      {
         desc: 'SOAP',
         skillTag: 'web'
-      } 
+      }
     ]
   }
 ]
