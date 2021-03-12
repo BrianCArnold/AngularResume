@@ -3,7 +3,7 @@ const handler = require('serve-handler');
 const http = require('http');
 
 const defaultPrintOptions = {
-path: 'dist/Resume/resume.pdf',// string;
+path: 'dist/resume/resume.pdf',// string;
 displayHeaderFooter: false,// boolean;
 printBackground: true,// boolean;
 margin: {
