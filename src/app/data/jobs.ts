@@ -17,7 +17,7 @@ export const jobs: Job[] =
   //     {
   //       desc: '.NET Core 3.1',
   //       skillTag: 'dotnet'
-  //     },
+  //     },on
   //     {
   //       desc: 'Dapper ORM',
   //       skillTag: 'entityframework',
