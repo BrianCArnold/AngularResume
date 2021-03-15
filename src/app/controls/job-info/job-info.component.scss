@@ -68,9 +68,6 @@
   .jobInfo {
     break-inside: avoid;
   }
-  .noPrint {
-    display: none;
-  }
 }
 ul {
   list-style-position: outside !important;
@@ -166,14 +163,16 @@ a {
   border-bottom: none;
 }
 
-.card-header:hover .jobHeaderRight {
+
+
+.jobHeaderRight:hover .jobLocationDate {
   display:none;
 }
-.detailSelectorRight {
+.jobHeaderRight .detailSelectorRight {
   display:none;
 }
 
-.card-header:hover .detailSelectorRight {
+.jobHeaderRight:hover .detailSelectorRight {
   display:inherit;
 }
 
@@ -191,10 +190,6 @@ ul {
 }
 .jobAchievementHeader {
   font-size: 12pt;
-}
-
-.noPrint {
-  display: none;
 }
 
 .codeDisplay.denseCode {
@@ -227,9 +222,6 @@ ul {
   }
 }
 .codeDisplay {
-  .noPrint {
-    display: initial;
-  }
   .jobTitle::before {
     content:'[';
   }
@@ -330,4 +322,15 @@ ul.codeList li ul li::before {
 }
 .skillCsl:last-child::after {
   content: '';
+}
+
+
+@media print {
+  .noPrint {
+    display: none;
+  }
+  .text-info, .text-primary {
+    color: initial !important;
+  }
+  
 }

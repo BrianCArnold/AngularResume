@@ -15,8 +15,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-5 text-right jobHeaderRight">
-              <div class="row">
+            <div class="col-sm-5 jobHeaderRight">
+              <div class="row text-right jobLocationDate">
                 <div class="col-sm-12 jobLocation md-small" [ngClass]="{ 'text-success font-italic ': programmingDisplay, 'font-weight-bold': !programmingDisplay }">
                   <span>
                     {{ jobModel.location }}
@@ -28,9 +28,7 @@
                   </span>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-5 detailSelectorRight">
-              <div class="container">
+              <div class="container detailSelectorRight">
                 <div class="pt-1">
                   <app-radio-list class="col-sm-12 my-1" name="resumeDetail" [(ngModel)]="specificDetailLevel"
                     [allowNull]="true"
@@ -40,6 +38,7 @@
                 </div>
 
               </div>
+
             </div>
 
           </div>
@@ -114,8 +113,8 @@
                  >{{ skill.desc }}</div>
                 <ng-template #urlSkill>
                   <a class="skillUrl" [href]="skill.url" >{{ skill.desc }}</a>
-                  <sup class="noPrint">
-                      <fa-icon class="lightExternal" size="xs" [icon]="faExternalLinkSquareAlt"></fa-icon>
+                  <sup class="">
+                      <fa-icon class="noPrint lightExternal" size="xs" [icon]="faExternalLinkSquareAlt"></fa-icon>
                   </sup>
                 </ng-template>
                 <ng-template #plainSkill>
@@ -130,8 +129,8 @@
                     >{{ subSkill.desc }}</div>
                     <ng-template #urlSubSkill>
                       <a class="skillUrl" [href]="subSkill.url" >{{ subSkill.desc }}</a>
-                      <sup class="noPrint">
-                          <fa-icon class="lightExternal" size="xs" [icon]="faExternalLinkSquareAlt"></fa-icon>
+                      <sup class="">
+                          <fa-icon class="noPrint lightExternal" size="xs" [icon]="faExternalLinkSquareAlt"></fa-icon>
                       </sup>
                     </ng-template>
                     <ng-template #plainSubSkill>

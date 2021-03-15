@@ -349,7 +349,7 @@ export const jobs: Job[] =
     startDate: 'Aug 2014',
     endDate: 'Apr 2018',
     detailLevel: 1,
-    detailLevels: [1,2,3],
+    detailLevels: [1,2,4],
     achievements: [
       {
         desc: 'Designed replacement message processing architecture',
@@ -463,7 +463,7 @@ export const jobs: Job[] =
     startDate: 'Nov 2011',
     endDate: 'Aug 2014',
     detailLevel: 1,
-    detailLevels: [1,2,3],
+    detailLevels: [1,2,4],
     achievements: [
       {
         desc: 'Collaboration with Software Development VP for architecture design',
@@ -593,7 +593,7 @@ export const jobs: Job[] =
     startDate: 'Oct 2010',
     endDate: 'Oct 2011',
     detailLevel: 1,
-    detailLevels: [1,2,3],
+    detailLevels: [1,2,4],
     achievements: [
       {
         desc: 'Implemented WebNow and ImageNow forms with XML, XSLT, and iScript.',
