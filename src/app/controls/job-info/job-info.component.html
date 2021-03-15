@@ -64,7 +64,7 @@
                       'hasDetails': achievement && achievement.details && effectiveDetailLevel < 4,
                       'highlight': achievement.skillTags.includes(currentSkill)
                     }">
-                    {{ achievement.desc }}<sup *ngIf="achievement && achievement.details" class="hasDetailsInfo d-print-none">i</sup>
+                    {{ achievement.desc }}<sup *ngIf="achievement && achievement.details && effectiveDetailLevel < 4" class="hasDetailsInfo d-print-none">i</sup>
                   </div>
 
                   <div *ngIf="effectiveDetailLevel >= 4">
@@ -86,7 +86,7 @@
                           'hasDetails': subAchievement && subAchievement.details && effectiveDetailLevel < 4,
                           'highlight': achievement.skillTags.includes(currentSkill)
                         }">
-                        {{ subAchievement.desc }}<sup class="hasDetailsInfo d-print-none" *ngIf="subAchievement && subAchievement.details">i</sup>
+                        {{ subAchievement.desc }}<sup class="hasDetailsInfo d-print-none" *ngIf="subAchievement && subAchievement.details && effectiveDetailLevel < 4">i</sup>
                       </div>
                       <div *ngIf="effectiveDetailLevel >= 4">
                         <div class="maxDetails" *ngFor="let detail of subAchievement.details">
