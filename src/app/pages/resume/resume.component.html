@@ -2,11 +2,18 @@
   <div class="resumeAll">
     <div class="row d-print-none">
 
-      <h4 class="offset-xl-6 col-xl-1 col-lg-2 my-1">
+      <h4 class="col-xl-1 col-lg-2 my-1">
+        Detail:
+      </h4>
+      <app-radio-list class="col-xl-5 col-lg-10 my-1" name="resumeDetail" [(ngModel)]="detailLevel"
+        [options]="[{ id: 2, value: 'Standard' },{ id: 3, value: 'High' }]">
+      </app-radio-list>
+
+      <h4 class="col-xl-1 col-lg-2 my-1">
         Style:
       </h4>
-      <app-radio-list class="col-xl-5 col-lg-10 my-1" name="resumeDetail" [(ngModel)]="programmingDisplay"
-      [options]="[{ id: true, value: 'Programming' },{ id: false, value: 'Standard' }]">
+      <app-radio-list class="col-xl-5 col-lg-10 my-1" name="display" [(ngModel)]="programmingDisplay"
+        [options]="[{ id: true, value: 'Programming' },{ id: false, value: 'Standard' }]">
       </app-radio-list>
 
     </div>
@@ -14,8 +21,8 @@
     <div class="resumePage" [ngClass]="{'calibri': !programmingDisplay}">
       <app-applicant-info [applicant]="applicant" [showDetails]="showDetails" [programmingDisplay]="programmingDisplay" >
       </app-applicant-info>
-      <div class="row" style="page-break-inside: avoid;" *ngFor="let jobModel of jobs">
-        <app-job-info [showDetails]="showDetails" [programmingDisplay]="programmingDisplay" class="col-sm-12" [jobModel]="jobModel"></app-job-info>
+      <div class="row" style="page-break-inside: avoid;" *ngFor="let jobModel of jobsSource">
+        <app-job-info [detailLevel]="detailLevel" [showDetails]="showDetails" [programmingDisplay]="programmingDisplay" class="col-sm-12" [jobModel]="jobModel"></app-job-info>
       </div>
     </div>
     <div class="row">
@@ -37,62 +44,11 @@
       </div>
       <div class="col-xl-9 d-xl-block d-none">
         <div class="row">
-          <div class="col-xl-6 text-right mt-2 codeText">
-            Frontend in
-            <a class="techBadge btn btn-danger align-middle" href="https://angular.io/">
-              Angular 11
-              <fa-icon size="lg" [icon]="faAngular"></fa-icon>
-            </a>
-          </div>
-          <div class="col-xl-6 text-right mt-2 codeText">
-            PDF generator in
-            <a class="techBadge btn btn-success" href="https://nodejs.org">
-              Node.js
-              <fa-icon size="lg" [icon]="faNodeJs" ></fa-icon>
-            </a>
-          </div>
-          <div class="col-xl-6 text-right mt-2 codeText">
-            CI/CD mananged in
-
-            <a class="techBadge btn btn-primary" href="https://dev.azure.com" >
-              Azure DevOps
-              <fa-icon size="lg" [icon]="faMicrosoft"></fa-icon>
-            </a>
-          </div>
-          <div class="col-xl-6 text-right mt-2 codeText">
-            Hosted by
-
-            <a class="techBadge btn btn-primary" href="https://azure.microsoft.com/en-us/services/cdn/" >
-              Azure CDN
-              <fa-icon size="lg" [icon]="faMicrosoft"></fa-icon>
-            </a>
-          </div>
-          <div class="col-xl-6 text-right mt-2 codeText">
-            Source Control in
-            <a class="techBadge btn btn-git" href="https://git-scm.com/" >
-              Git
-              <fa-icon size="lg" [icon]="faGitAlt"></fa-icon>
-            </a>
-          </div>
-          <div class="col-xl-6 text-right mt-2 codeText">
-            Iconography by
-            <a class="techBadge btn btn-primary" href="https://fontawesome.com/" >
-              Font Awesome
-              <fa-icon size="lg" [icon]="faFontAwesome"></fa-icon>
-            </a>
-          </div>
-          <div class="col-xl-6 text-right mt-2 codeText">
-            Base Styles from
-            <a class="techBadge btn btn-bootstrap" href="https://getbootstrap.com/" >
-              Bootstrap
-              <fa-icon size="lg" [icon]="faBootstrap"></fa-icon>
-            </a>
-          </div>
-          <div class="col-xl-6 text-right mt-2 codeText">
-            Custom Styles in
-            <a class="techBadge btn btn-sass" href="https://sass-lang.com/" >
-              Sass
-              <fa-icon size="lg" [icon]="faSass"></fa-icon>
+          <div *ngFor="let tech of techUsed" class="col-xl-6 text-right mt-2 codeText">
+            {{tech.desc}}
+            <a class="techBadge btn" [ngClass]="tech.class" [href]="tech.url" >
+              {{tech.name}}
+              <fa-icon size="lg" [icon]="tech.icon"></fa-icon>
             </a>
           </div>
         </div>

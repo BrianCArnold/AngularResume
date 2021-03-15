@@ -1,11 +1,14 @@
-import { JobSkill } from "./JobSkill";
+import { SubAchievement } from "./JobSkill";
 import { SkillTag } from "./SkillTag";
 
-export class Experience {
+export type DetailLevel = 1|2|3;
+
+export class Achievement {
   desc: string;
   details?: string[];
-  skills?: JobSkill[];
+  skills?: SubAchievement[];
   skillTags: SkillTag[];
+  detailLevel: DetailLevel;
 }
 
 

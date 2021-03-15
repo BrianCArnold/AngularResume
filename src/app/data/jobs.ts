@@ -2,58 +2,123 @@ import { Job } from '../models/Job';
 
 export const jobs: Job[] =
 [
-  // {
-  //   company: 'BNY Mellon',
-  //   title: 'Contractor',
-  //   location: 'Pittsburg, PA',
-  //   startDate: 'April 2020',
-  //   endDate: 'Current',
-  //   achievements:[],
-  //   skills: [
-  //     {
-  //       desc: 'SQL Server 2019',
-  //       skillTag: 'sqlserver'
-  //     },
-  //     {
-  //       desc: '.NET Core 3.1',
-  //       skillTag: 'dotnet'
-  //     },on
-  //     {
-  //       desc: 'Dapper ORM',
-  //       skillTag: 'entityframework',
-  //       url: 'https://github.com/StackExchange/Dapper'
-  //     },
-  //     {
-  //       desc: 'Docker 19.03',
-  //       skillTag: 'serverless'
-  //     },
-  //     {
-  //       desc: 'Traefik 2.4',
-  //       url: 'https://traefik.io/traefik/',
-  //       skillTag: 'serverless'
-  //     },
-  //     {
-  //       desc: 'Angular 9+',
-  //       skillTag: 'angular',
-  //       skills: [
-  //         {
-  //           desc: 'PrimeNG 9',
-  //           url: 'https://www.primefaces.org/primeng/'
-  //         },
-  //         {
-  //           desc: 'GoldenLayout',
-  //           url: 'https://golden-layout.com/'
-  //         },
-  //       ]
-  //     },
-  //   ]
-  // },
+  {
+    company: 'BNY Mellon',
+    url: 'https://www.bnymellon.com/',
+    title: 'Contractor',
+    location: 'Pittsburg, PA',
+    startDate: 'April 2020',
+    endDate: 'Current',
+    detailLevel: 1,
+    detailLevels: [1,2,3],
+    achievements:[
+      {
+        desc: 'Constructed an upgradable Angular library for use in 6+ projects',
+        skills: [
+          {
+            desc: 'Abstract JWT retrieval, processing, API Angular Service',
+            detailLevel: 2
+          },
+          {
+            desc: 'Upgrades for completed projects managed by Continuous integration',
+            detailLevel: 2
+          },
+          {
+            desc: 'GoldenLayout Abstraction with Component Compositor',
+            detailLevel: 2
+          }
+        ],
+        skillTags: [
+          'angular',
+          'typescript'
+        ],
+        detailLevel: 1
+      },
+      {
+        desc: 'Proposed and managed prototype GitLab CI/CD Pipelines',
+        skills: [
+        ],
+        skillTags: [
+          'serverless',
+          'architecture',
+          'devops'
+        ],
+        detailLevel: 1
+      }
+    ],
+    skills: [
+      {
+        desc: 'GitLab',
+        skillTag: 'devops',
+        detailLevel: 2,
+        skills: []
+      },
+      {
+        desc: 'SQL Server 2019',
+        skillTag: 'sqlserver',
+        detailLevel: 1,
+        skills: []
+      },
+      {
+        desc: '.NET Core 3.1',
+        skillTag: 'dotnet',
+        detailLevel: 1,
+        skills: []
+      },
+      {
+        desc: 'Dapper ORM',
+        skillTag: 'entityframework',
+        url: 'https://github.com/StackExchange/Dapper',
+        detailLevel: 2,
+        skills: []
+      },
+      {
+        desc: 'Docker 19.03',
+        skillTag: 'serverless',
+        detailLevel: 2,
+        skills: []
+      },
+      {
+        desc: 'Traefik 2.4',
+        url: 'https://traefik.io/traefik/',
+        skillTag: 'serverless',
+        detailLevel: 2,
+        skills: []
+      },
+      {
+        desc: 'TypeScript',
+        skillTag: 'typescript',
+        detailLevel: 1,
+        skills: []
+      },
+      {
+        desc: 'Angular 9+',
+        skillTag: 'angular',
+        skills: [
+          {
+            desc: 'PrimeNG 9',
+            url: 'https://www.primefaces.org/primeng/',
+            detailLevel: 2
+          },
+          {
+            desc: 'GoldenLayout',
+            url: 'https://golden-layout.com/',
+            detailLevel: 2
+          },
+        ],
+        detailLevel: 1
+      },
+    ]
+  },
   {
     company: 'Red Lobster LLC',
+    url: 'https://www.redlobster.com/',
     title: 'Senior Systems Engineer',
     location: 'Orlando, FL',
     startDate: 'May 2018',
     endDate: 'March 2020',
+    detailLevel: 1,
+    detailLevels: [1,2,3],
     achievements: [
       {
         desc: 'Architected and developed multitier Azure application as Lead',
@@ -74,7 +139,8 @@ export const jobs: Job[] =
               'oracle',
               'dotnet',
               'entityframework'
-            ]
+            ],
+            detailLevel: 2
           },
           {
             desc: 'Microservice-compatible Business Logic System',
@@ -87,7 +153,8 @@ export const jobs: Job[] =
               'rest',
               'serverless',
               'azure'
-            ]
+            ],
+            detailLevel: 2
           },
           {
             desc: 'Dynamic Angular 9 site with context dependent display',
@@ -100,7 +167,8 @@ export const jobs: Job[] =
               'typescript',
               'rest',
               'css'
-            ]
+            ],
+            detailLevel: 2
           }
         ],
         skillTags: [
@@ -113,7 +181,8 @@ export const jobs: Job[] =
           'angular',
           'typescript',
           'css'
-        ]
+        ],
+        detailLevel: 1
       },
       {
         desc: 'Created recursion serialization system for TypeScript',
@@ -126,7 +195,8 @@ export const jobs: Job[] =
         skillTags:[
           'typescript',
           'rest'
-        ]
+        ],
+        detailLevel: 2
       },
       {
         desc: 'Replaced flat file communication endpoints with modern APIs',
@@ -138,7 +208,8 @@ export const jobs: Job[] =
         skillTags:[
           'rest',
           'dotnet'
-        ]
+        ],
+        detailLevel: 1
       },
       {
         desc: 'Configured DevOps CI/CD pipelines for separate tier deployment',
@@ -149,7 +220,8 @@ export const jobs: Job[] =
         ],
         skillTags:[
           'devops'
-        ]
+        ],
+        detailLevel: 2
       },
       {
         desc: 'Utilized CI/CD pipelines to deploy bug fixes same-day',
@@ -160,11 +232,13 @@ export const jobs: Job[] =
         ],
         skillTags:[
           'devops'
-        ]
+        ],
+        detailLevel: 1
       },
       {
         desc: 'Reduced known regression occurrence to zero',
-        skillTags:[]
+        skillTags:[ 'devops' ],
+        detailLevel: 3
       },
       {
         desc: 'Upgraded frontend from Angular 7 to Angular 9 during development',
@@ -172,7 +246,8 @@ export const jobs: Job[] =
           'angular',
           'typescript',
           'css'
-        ]
+        ],
+        detailLevel: 3
       },
       {
         desc: 'Upgraded backend from EF 6.1 to EF Core 2.1',
@@ -180,65 +255,88 @@ export const jobs: Job[] =
           'entityframework',
           'dotnet',
           'oracle'
-        ]
-       }
+        ],
+        detailLevel: 3
+      }
     ],
     skills: [
       {
         desc: 'Angular 9',
-        skillTag: 'angular'
+        skillTag: 'angular',
+        detailLevel: 1,
+        skills: []
       },
       {
         desc: 'Bootstrap 4.x',
         skillTag: 'css',
-        url: 'https://getbootstrap.com/'
+        url: 'https://getbootstrap.com/',
+        detailLevel: 1,
+        skills: []
       },
       {
         desc: '.NET Core 2.x',
-        skillTag: 'dotnet'
+        skillTag: 'dotnet',
+        detailLevel: 1,
+        skills: []
       },
       {
         desc: 'Oracle 18c',
-        skillTag: 'oracle'
+        skillTag: 'oracle',
+        detailLevel: 1,
+        skills: []
       },
       {
         desc: 'TypeScript 3.7',
         skillTag: 'typescript',
-        url: 'https://www.typescriptlang.org/'
+        url: 'https://www.typescriptlang.org/',
+        detailLevel: 3,
+        skills: []
       },
       {
         desc: 'Azure Functions',
-        skillTag: 'serverless'
+        skillTag: 'serverless',
+        detailLevel: 1,
+        skills: []
       },
       {
         desc: 'Azure SQL',
-        skillTag: 'sqlserver'
+        skillTag: 'sqlserver',
+        detailLevel: 3,
+        skills: []
       },
       {
         desc: 'CDN',
         skillTag: 'serverless',
-        url: 'https://azure.microsoft.com/en-us/services/cdn/'
+        url: 'https://azure.microsoft.com/en-us/services/cdn/',
+        detailLevel: 3,
+        skills: []
       },
       {
         desc: 'Azure DevOps',
         skills: [
           {
-            desc: 'CI/CD'
+            desc: 'CI/CD',
+            detailLevel: 2
           },
           {
-            desc: 'Pull Requests'
+            desc: 'Pull Requests',
+            detailLevel: 2
           }
         ] ,
-        skillTag: 'devops'
+        skillTag: 'devops',
+        detailLevel: 1
       }
     ]
   },
   {
     company: 'Acme AtronOmatic LLC',
+    url: 'https://www.acmeaom.com/',
     title: 'Senior Software Engineer',
     location: 'Orlando, FL',
     startDate: 'Aug 2014',
     endDate: 'Apr 2018',
+    detailLevel: 1,
+    detailLevels: [1,2,3],
     achievements: [
       {
         desc: 'Designed replacement message processing architecture',
@@ -246,7 +344,8 @@ export const jobs: Job[] =
           'flight',
           'entityframework',
           'dotnet'
-        ]
+        ],
+        detailLevel: 1
       },
       {
         desc: 'Updated ASMX web services to WebAPI',
@@ -254,20 +353,23 @@ export const jobs: Job[] =
           'rest',
           'mvc',
           'dotnet'
-        ]
+        ],
+        detailLevel: 1
       },
       {
         desc: 'Created a Cosmos DB persisted flight status in-memory cache',
         skillTags:[
           'nosql',
           'azure'
-        ]
+        ],
+        detailLevel: 2
       },
       {
-        desc: 'Managed network architecture for hybrid datacenter and cloud environment',
+        desc: 'Managed network architecture for hybrid cloud environment',
         skillTags:[
           'architecture'
-        ]
+        ],
+        detailLevel: 3
       },
       {
         desc: 'Developed server management applications in WPF',
@@ -275,58 +377,80 @@ export const jobs: Job[] =
           'dotnet',
           'entityframework',
           'sqlserver'
-        ]
+        ],
+        detailLevel: 3
       }
     ],
     skills: [
       {
         desc: 'C#' ,
-        skillTag: 'dotnet'
+        skillTag: 'dotnet',
+        detailLevel: 2,
+        skills: []
       },
       {
         desc: '.NET 4.6.1' ,
-        skillTag: 'dotnet'
+        skillTag: 'dotnet',
+        detailLevel: 3,
+        skills: []
       },
       {
-        desc: 'ASP.NET ' ,
-        skillTag: 'mvc'
+        desc: 'ASP.NET' ,
+        skillTag: 'mvc',
+        detailLevel: 1,
+        skills: []
       },
       {
         desc: 'Azure SQL' ,
-        skillTag: 'sqlserver'
+        skillTag: 'sqlserver',
+        detailLevel: 1,
+        skills: []
       },
       {
         desc: 'REST' ,
-        skillTag: 'rest'
+        skillTag: 'rest',
+        detailLevel: 3,
+        skills: []
       },
       {
         desc: 'Redis',
         skillTag: 'nosql',
-        url: 'https://redis.io/'
+        url: 'https://redis.io/',
+        detailLevel: 1,
+        skills: []
       },
       {
         desc: 'CosmosDB',
         skillTag: 'nosql',
-        url: 'https://azure.microsoft.com/en-us/services/cosmos-db/'
+        url: 'https://azure.microsoft.com/en-us/services/cosmos-db/',
+        detailLevel: 1,
+        skills: []
       },
       {
         desc: 'ASDI' ,
         skillTag: 'flight',
-        url: 'https://www.fly.faa.gov/ASDI/asdi.html'
+        url: 'https://www.fly.faa.gov/ASDI/asdi.html',
+        detailLevel: 3,
+        skills: []
       },
       {
         desc: 'FLTD/SWIM',
         skillTag: 'flight',
-        url: 'https://www.faa.gov/air_traffic/technology/swim/overview/'
+        url: 'https://www.faa.gov/air_traffic/technology/swim/overview/',
+        detailLevel: 2,
+        skills: []
       },
     ]
   },
   {
     company: 'Hunt Engineering Services, Inc.',
+    url: 'http://huntinc.com/home.aspx',
     title: 'Senior Software Engineer',
-    location: 'Celebration, FL',
+    location: 'Orlando, FL',
     startDate: 'Nov 2011',
     endDate: 'Aug 2014',
+    detailLevel: 1,
+    detailLevels: [1,2,3],
     achievements: [
       {
         desc: 'Collaboration with Software Development VP for architecture design',
@@ -340,181 +464,213 @@ export const jobs: Job[] =
           'azure',
           'oracle',
           'rest'
-        ]
+        ],
+        detailLevel: 2
       },
       {
-        desc: 'Implemented and maintained visitor management systems for military bases',
+        desc: 'Implemented and maintained visitor management for military bases',
         skillTags:[
           'oracle'
-        ]
+        ],
+        detailLevel: 1
       },
       {
         desc: 'Designed and implemented REST interfaces for existing SOAP APIs',
         skillTags:[
           'rest'
-        ]
+        ],
+        detailLevel: 3
       },
       {
         desc: 'Designed and implemented SharePoint solution frontend for Oracle data',
         skillTags:[
           'sharepoint'
-        ]
+        ],
+        detailLevel: 3
       },
       {
         desc: 'Developed WPF application to interface biometric devices with website',
         skillTags:[
           'dotnet'
-        ]
+        ],
+        detailLevel: 2
       }
     ],
     skills: [
       {
         desc: 'C#/VB.NET' ,
-        skillTag: 'dotnet'
+        skillTag: 'dotnet',
+        detailLevel: 3,
+        skills: []
       },
       {
         desc: 'ASP.NET 4.5.1' ,
-        skillTag: 'dotnet'
+        skillTag: 'dotnet',
+        detailLevel: 2,
+        skills: []
       },
       {
         desc: 'MVC 5' ,
-        skillTag: 'mvc'
+        skillTag: 'mvc',
+        detailLevel: 3,
+        skills: []
       },
       {
         desc: 'EF 6' ,
-        skillTag: 'entityframework'
+        skillTag: 'entityframework',
+        detailLevel: 2,
+        skills: []
       },
       {
         desc: 'SQL Server 2014 ' ,
-        skillTag: 'sqlserver'
+        skillTag: 'sqlserver',
+        detailLevel: 2,
+        skills: []
       },
       {
         desc: 'SharePoint 2013' ,
-        skillTag: 'sharepoint'
+        skillTag: 'sharepoint',
+        detailLevel: 2,
+        skills: []
       },
       {
         desc: 'Microsoft Azure' ,
-        skillTag: 'azure'
+        skillTag: 'azure',
+        detailLevel: 2,
+        skills: []
       },
       {
         desc: 'WPF' ,
-        skillTag: 'dotnet'
+        skillTag: 'dotnet',
+        detailLevel: 3,
+        skills: []
       },
       {
         desc: 'Oracle 11g' ,
-        skillTag: 'oracle'
+        skillTag: 'oracle',
+        detailLevel: 1,
+        skills: []
       },
       {
         desc: 'PL/SQL' ,
-        skillTag: 'oracle'
+        skillTag: 'oracle',
+        detailLevel: 3,
+        skills: []
       },
       {
-        desc: 'Toad for Oracle',
+        desc: 'Toad (Oracle)',
         skillTag: 'oracle',
-        url: 'https://www.quest.com/products/toad-for-oracle/'
+        url: 'https://www.quest.com/products/toad-for-oracle/',
+        detailLevel: 3,
+        skills: []
       },
       {
         desc: 'REST',
-        skillTag: 'rest'
+        skillTag: 'rest',
+        detailLevel: 3,
+        skills: []
       }
     ]
   },
   {
     company: 'GROWMARK, Inc.',
+    url: 'https://www.growmark.com/',
     title: 'Contractor',
     location: 'Bloomington, IL',
     startDate: 'Oct 2010',
     endDate: 'Oct 2011',
+    detailLevel: 1,
+    detailLevels: [2,3],
     achievements: [
       {
         desc: 'Implemented WebNow and ImageNow forms with XML, XSLT, and iScript',
-        skillTags:[]
+        skillTags:[],
+        detailLevel: 1
       },
       {
         desc: 'Created image file processors to catalog file metadata on upload',
-        skillTags:[]
+        skillTags:[],
+        detailLevel: 3
       }
     ],
     skills: [
       {
         desc: 'C#/F#',
-        skillTag: 'dotnet'
+        skillTag: 'dotnet',
+        detailLevel: 3,
+        skills: []
       },
       {
         desc: 'ASP.NET 4.0' ,
-        skillTag: 'dotnet'
+        skillTag: 'dotnet',
+        detailLevel: 3,
+        skills: []
       },
       {
         desc: 'SharePoint 2010' ,
-        skillTag: 'sharepoint'
-      },
-      {
-        desc: 'HTML 5' ,
-        skillTag: 'web'
+        skillTag: 'sharepoint',
+        detailLevel: 3,
+        skills: []
       },
       {
         desc: 'ImageNow',
         skillTag: 'web',
-        url: 'https://www.hyland.com/en/platform/product-suite/perceptive-content'
+        url: 'https://www.hyland.com/en/platform/product-suite/perceptive-content',
+        detailLevel: 1,
+        skills: []
       },
-      {
-        desc: 'JQuery ' ,
-        skillTag: 'web'
-      },
-      {
-        desc: 'XML' ,
-        skillTag: 'web'
-      },
-      {
-        desc: 'XSLT' ,
-        skillTag: 'web'
-      },
-      {
-        desc: 'XSD' ,
-        skillTag: 'web'
-      }
     ]
   },
   {
     company: 'BAE Systems Inc.',
+    url: 'https://www.baesystems.com/',
     title: 'Contractor',
     location: 'Huntsville, AL',
     startDate: 'Dec 2007',
     endDate: 'Oct 2010',
+    detailLevel: 1,
+    detailLevels: [2,3],
     achievements: [
       {
-        desc: 'Implemented SharePoint Features to provision SharePoint sites',
-        skillTags:[]
+        desc: 'Created customized SharePoint workflows for Contract bidding',
+        details: [
+          'GoMenu: A replacement for the standard SharePoint Top Link Bar, allowing for hierarchical structure, AJAX calls to populate the menu on the fly, and SharePoint permission integration for managing menu item visibility.',
+          'LifecycleOne: System used to track all aspects of a contract lifecycle, including proposal operation, task order management, and subcontractor communication and reporting. The system includes automated data call management, providing structure, status reporting, and document storage, simplifying an manual process.',
+          'Implemented SharePoint Features to provision SharePoint sites, and automatically provisioned to sites created by workflow',
+        ],
+        skillTags:[],
+        detailLevel: 2
       },
       {
-        desc: 'Created customized SharePoint workflows for Contract bidding',
-        skillTags:[]
-      }
+        desc: 'Created a dynamic header image generator.',
+        skillTags:[],
+        detailLevel: 3
+      },
     ],
     skills: [
       {
         desc: 'C#',
-        skillTag: 'dotnet'
+        skillTag: 'dotnet',
+        detailLevel: 3,
+        skills: []
       },
       {
         desc: 'SharePoint 2007',
-        skillTag: 'sharepoint'
+        skillTag: 'sharepoint',
+        detailLevel: 1,
+        skills: []
       },
       {
         desc: 'ASP.NET 3.5',
-        skillTag: 'dotnet'
-      },
-      {
-        desc: 'HTML 4',
-        skillTag: 'web'
-      },
-      {
-        desc: 'XML',
-        skillTag: 'web'
+        skillTag: 'dotnet',
+        detailLevel: 3,
+        skills: []
       },
       {
         desc: 'SOAP',
-        skillTag: 'web'
+        skillTag: 'web',
+        detailLevel: 3,
+        skills: []
       }
     ]
   }

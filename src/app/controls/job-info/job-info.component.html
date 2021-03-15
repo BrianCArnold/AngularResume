@@ -1,6 +1,6 @@
-<div class="jobInfo" [ngClass]="{ 'codeDisplay': programmingDisplay }">
-  <div class="card mb-2" [ngClass]="{ 'shadow-sm': programmingDisplay }">
-    <div class="card-header py-1">
+<div *ngIf="jobModel.detailLevel <= inputDetailLevel" class="jobInfo" [ngClass]="{ 'codeDisplay': programmingDisplay }">
+  <div class="card mt-2" [ngClass]="{ 'shadow-sm': programmingDisplay }">
+    <div class="card-header py-1 ">
       <div class="row">
         <div class="col-xl-12 col-print-12 col-lg-12 col-md-12 col-sm-12 jobAchievementHeader">
           <div class="row">
@@ -10,7 +10,8 @@
                   <span class="jobTitle" [ngClass]="{ 'text-info': programmingDisplay, 'font-weight-bold': !programmingDisplay }">{{ jobModel.title }}</span>
                 </div>
                 <div class="col-sm-12 jobCompanyCell md-small">
-                  <span class="jobCompany"  [ngClass]="{ 'text-primary': programmingDisplay, 'font-weight-bold': !programmingDisplay }">{{ jobModel.company }}</span>
+                  <a [href]="jobModel.url" class="jobCompany" [ngClass]="{ 'text-primary': programmingDisplay, 'font-weight-bold': !programmingDisplay }">{{ jobModel.company }}</a>
+                  <!-- <span class="jobCompany" [ngClass]="{ 'text-primary': programmingDisplay, 'font-weight-bold': !programmingDisplay }">{{ jobModel.company }}</span> -->
                 </div>
               </div>
             </div>
@@ -28,6 +29,18 @@
                 </div>
               </div>
             </div>
+            <div class="col-sm-5 detailSelectorRight">
+              <div class="container">
+                <div class="pt-1">
+                  <app-radio-list class="col-sm-12 my-1" name="resumeDetail" [(ngModel)]="specificDetailLevel"
+                    [options]="availableDetailLevels">
+                  </app-radio-list>
+
+                </div>
+
+              </div>
+            </div>
+
           </div>
         </div>
         <!-- <div class="col-xl-3 col-lg-4 text-center jobSkillHeader align-bottom">
@@ -35,59 +48,96 @@
         </div> -->
       </div>
     </div>
-    <div class="card-body py-0">
+    <div *ngIf="effectiveAchievements.length + effectiveSkills.length > 0" class="card-body py-0">
       <div class="row">
-        <div class="py-1 jobAchievementSection"
-          [ngClass]="{ 'col-xl-8 col-lg-9 col-print-8': !showDetails, 'col-sm-12 col-print-12': showDetails }"
-          (mouseout)="setExperienceDetail(null)">
-          <div class="listContainer">
-            <ul class="codeList " [ngClass]="{ 'list-unstyled': programmingDisplay }">
-              <li *ngFor="let achievement of jobModel.achievements">
-                <span (mouseover)="setExperienceDetail(achievement)"
-                  (click)="clickExperienceDetail(achievement)"
-                  [ngClass]="{'hasDetails': achievement && achievement.details, 'highlight': achievement.skillTags.includes(currentSkill)}">
-                  {{ achievement.desc }}<sup class="hasDetailsInfo d-print-none" *ngIf="achievement && achievement.details">i</sup>
-                </span>
-                <ul
-                  *ngIf="achievement.skills && achievement.skills.length > 0"
-                  class="codeList subList" [ngClass]="{ 'list-unstyled': programmingDisplay }"
-                >
-                  <li *ngFor="let subAchievement of achievement.skills">
-                    <span (mouseover)="setExperienceDetail(subAchievement)"
-                      (click)="clickExperienceDetail(subAchievement)"
-                    [ngClass]="{'hasDetails': subAchievement && subAchievement.details, 'highlight': achievement.skillTags.includes(currentSkill)}">
-                      {{ subAchievement.desc }}<sup class="hasDetailsInfo d-print-none" *ngIf="subAchievement && subAchievement.details">i</sup>
-                    </span>
-                  </li>
-                </ul>
-              </li>
+        <div *ngIf="effectiveAchievements.length > 0" class="py-1 jobAchievementSection"
+          [ngClass]="{ 'col-xl-8 col-lg-9 col-print-8': !showDetails, 'col-sm-12 col-print-12': showDetails }" >
+          <div [ngClass]="{ 'listContainer': effectiveAchievements.length > 1}" >
+            <ul class="codeList list-unstyled">
+              <div *ngFor="let achievement of effectiveAchievements">
+                <li *ngIf="achievement.detailLevel <= effectiveDetailLevel">
+                  <div
+                    (click)="clickExperienceDetail(achievement)"
+                    class="jobAchievement"
+                    [ngClass]="{
+                      'hasDetails': achievement && achievement.details && effectiveDetailLevel < 3,
+                      'highlight': achievement.skillTags.includes(currentSkill)
+                    }">
+                    {{ achievement.desc }}<sup *ngIf="achievement && achievement.details" class="hasDetailsInfo d-print-none">i</sup>
+                  </div>
+
+                  <div *ngIf="effectiveDetailLevel >= 3">
+                    <div class="maxDetails" *ngFor="let detail of achievement.details">
+                      {{detail}}
+                    </div>
+                  </div>
+                  <ul
+                    *ngIf="achievement.skills && achievement.skills.length > 0"
+                    class="codeList subList list-unstyled"
+                  >
+                  <div *ngFor="let subAchievement of achievement.skills">
+
+                    <li>
+                      <div
+                        (click)="clickExperienceDetail(subAchievement)"
+                        class="jobAchievement"
+                        [ngClass]="{
+                          'hasDetails': achievement && achievement.details && effectiveDetailLevel < 3,
+                          'highlight': achievement.skillTags.includes(currentSkill)
+                        }">
+                        {{ subAchievement.desc }}<sup class="hasDetailsInfo d-print-none" *ngIf="subAchievement && subAchievement.details">i</sup>
+                      </div>
+                      <div *ngIf="effectiveDetailLevel >= 3">
+                        <div class="maxDetails" *ngFor="let detail of subAchievement.details">
+                          {{detail}}
+                        </div>
+                      </div>
+                    </li>
+                  </div>
+                  </ul>
+                </li>
+
+              </div>
             </ul>
           </div>
         </div>
-        <div class="py-1 overlayContainer jobSkillSection"
+        <div *ngIf="effectiveSkills.length > 0" class="py-1 overlayContainer jobSkillSection"
           [ngClass]="{ 'col-xl-4 col-lg-3 col-print-4': !showDetails, 'd-none': showDetails }"
           >
-          <div class="listContainer">
-            <ul class="codeList" [ngClass]="{ 'list-unstyled': programmingDisplay, 'd-none': showDetails && !programmingDisplay }">
-              <li *ngFor="let skill of jobModel.skills" (mouseover)="highlightSkill(skill)" (mouseout)="unhighlightSkill(skill)" >
-                <div *ngIf="skill.url; then urlSkill; else plainSkill">{{ skill.desc }}</div>
+          <div [ngClass]="{ 'listContainer': effectiveSkills.length > 1}" >
+            <ul class="codeList list-unstyled" [ngClass]="{'d-none': showDetails && !programmingDisplay }">
+              <li *ngFor="let skill of effectiveSkills"  >
+                <!-- (mouseover)="highlightSkill(skill)" (mouseout)="unhighlightSkill(skill)" -->
+                <div
+                *ngIf="skill.url; then urlSkill; else plainSkill"
+                 >{{ skill.desc }}</div>
                 <ng-template #urlSkill>
                   <a class="skillUrl" [href]="skill.url" >{{ skill.desc }}</a>
                   <sup class="noPrint">
                       <fa-icon class="lightExternal" size="xs" [icon]="faExternalLinkSquareAlt"></fa-icon>
                   </sup>
                 </ng-template>
-                <ng-template #plainSkill>{{ skill.desc }}</ng-template>
-                <ul *ngIf="skill.skills && skill.skills.length > 0" [ngClass]="{ 'list-unstyled': programmingDisplay }" class="dashList subList" >
+                <ng-template #plainSkill>
+                  <span class="jobSkill">
+                    {{ skill.desc }}
+                  </span>
+                </ng-template>
+                <ul *ngIf="skill.skills && skill.skills.length > 0" class="list-unstyled dashList subList" >
                   <li *ngFor="let subSkill of skill.skills || []">
-                    <div *ngIf="subSkill.url; then urlSubSkill; else plainSubSkill">{{ subSkill.desc }}</div>
+                    <div
+                      *ngIf="subSkill.url; then urlSubSkill; else plainSubSkill"
+                    >{{ subSkill.desc }}</div>
                     <ng-template #urlSubSkill>
                       <a class="skillUrl" [href]="subSkill.url" >{{ subSkill.desc }}</a>
                       <sup class="noPrint">
                           <fa-icon class="lightExternal" size="xs" [icon]="faExternalLinkSquareAlt"></fa-icon>
                       </sup>
                     </ng-template>
-                    <ng-template #plainSubSkill>{{ subSkill.desc }}</ng-template>
+                    <ng-template #plainSubSkill>
+                      <span class="jobSkill">
+                        {{ subSkill.desc }}
+                      </span>
+                    </ng-template>
                   </li>
                 </ul>
               </li>
@@ -98,7 +148,8 @@
         <div [ngClass]="{ 'd-none': !showDetails, 'd-block col-sm-12': showDetails}">
           <div class="font-weight-bold ml-3" >
             Skills:
-            <span *ngFor="let skill of jobModel.skills" (mouseover)="highlightSkill(skill)" (mouseout)="unhighlightSkill(skill)" class="skillCsl">
+            <span *ngFor="let skill of jobModel.skills"  class="skillCsl">
+              <!-- (mouseover)="highlightSkill(skill)" (mouseout)="unhighlightSkill(skill)" -->
               {{skill.desc}}
               <span *ngFor="let subSkill of skill.skills || []" class="subSkillCsl">
                 {{ subSkill.desc }}

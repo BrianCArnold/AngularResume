@@ -1,12 +1,13 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { Job } from 'src/app/models/Job';
-import { Experience } from 'src/app/models/Experience';
+import { Achievement, DetailLevel } from 'src/app/models/Experience';
 import { Skill } from 'src/app/models/Skill';
 import { ResizeService } from 'src/app/services/resize.service';
 import { SCREEN_SIZE } from 'src/app/models/SCREEN_SIZE';
 import { BsModalService } from 'ngx-bootstrap';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { SkillTag } from 'src/app/models/SkillTag';
+import { SubAchievement } from 'src/app/models/JobSkill';
 
 @Component({
   selector: 'app-job-info',
@@ -18,8 +19,39 @@ export class JobInfoComponent implements OnInit {
   jobModel: Job;
   @ViewChild('modalDetails')
   modalDetails: ElementRef;
-  nextExperienceDetail: Experience | Skill;
-  experienceDetail: Experience | Skill;
+  @Input("detailLevel")
+  inputDetailLevel: DetailLevel;
+  get availableDetailLevels(): { id: DetailLevel, value: string }[] {
+    return [{ id: <DetailLevel>1, value: 'Minimal' },{ id: <DetailLevel>2, value: 'Standard' },{ id: <DetailLevel>3, value: 'High' }].filter(d => this.jobModel.detailLevels.includes(d.id));
+  }
+  get effectiveSkills(): Skill[] {
+    return this.jobModel.skills
+    .filter(s => s.detailLevel <= this.effectiveDetailLevel)
+    .map(s => {
+      return {
+        ...s,
+        skills: s.skills.filter(k => k.detailLevel <= this.effectiveDetailLevel)
+      };
+    })
+  }
+  get effectiveAchievements(): Achievement[] {
+    return this.jobModel.achievements.filter(a => a.detailLevel <= this.effectiveDetailLevel)
+    .map(a => ({
+      ...a,
+      skills: this.getEffectiveSubAchievements(a)
+    }));
+  }
+  getEffectiveSubAchievements(a: Achievement): SubAchievement[] {
+    var result = a.skills ? a.skills.filter(a => a.detailLevel <= this.effectiveDetailLevel) : [];
+    return result.length > 0 ? result : null;
+  }
+  specificDetailLevel: DetailLevel = null;
+  get effectiveDetailLevel(): DetailLevel {
+    return this.specificDetailLevel || this.inputDetailLevel;
+  }
+
+
+  experienceDetail: Achievement | Skill;
   showExperienceDetail: boolean;
 
   faExternalLinkSquareAlt = faExternalLinkAlt;
@@ -49,44 +81,18 @@ export class JobInfoComponent implements OnInit {
     }
   }
 
-  clickExperienceDetail(detail: Experience | Skill) {
+  clickExperienceDetail(detail: Achievement | Skill) {
     // if (this.size !== SCREEN_SIZE.XL) {
       this.experienceDetail = detail;
-      this.modalService.show(this.modalDetails, {
-        class: 'modal-lg'
-      });
+      if (detail.details && detail.details.length > 0){
+        this.modalService.show(this.modalDetails, {
+          class: 'modal-lg'
+        });
+      }
     // }
   }
 
-  getExperienceDetail(): Experience | Skill {
+  getExperienceDetail(): Achievement | Skill {
     return this.experienceDetail;
-  }
-  setExperienceDetail(v: Experience | Skill) {
-    // if (this.size === SCREEN_SIZE.XL) {
-    //   if (v != null && v.details) {
-    //     if (this.experienceDetail) {
-    //       this.nextExperienceDetail = v;
-    //     } else {
-    //       this.experienceDetail = v;
-    //     }
-    //   } else {
-    //     if (this.experienceDetail) {
-    //       this.nextExperienceDetail = v;
-    //     } else {
-    //       this.experienceDetail = v;
-    //     }
-    //   }
-    //   setTimeout(() => {
-    //     if (v && v.details && this.nextExperienceDetail) {
-    //       this.experienceDetail = this.nextExperienceDetail;
-    //       this.nextExperienceDetail = null;
-    //       this.showExperienceDetail = true;
-    //     } else if (v && v.details && this.experienceDetail) {
-    //       this.showExperienceDetail = true;
-    //     } else {
-    //       this.showExperienceDetail = false;
-    //     }
-    //   }, 200);
-    // }
   }
 }

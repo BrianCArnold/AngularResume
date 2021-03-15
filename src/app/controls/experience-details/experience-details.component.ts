@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Skill } from 'src/app/models/Skill';
-import { Experience } from 'src/app/models/Experience';
+import { Achievement } from 'src/app/models/Experience';
 
 @Component({
   selector: 'app-experience-details',
@@ -10,7 +10,7 @@ import { Experience } from 'src/app/models/Experience';
 export class ExperienceDetailsComponent implements OnInit {
 
   @Input()
-  experienceDetail: Experience | Skill;
+  experienceDetail: Achievement | Skill;
 
   constructor() { }
 

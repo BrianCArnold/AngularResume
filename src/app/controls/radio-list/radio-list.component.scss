@@ -58,3 +58,42 @@
 .btn-secondary:disabled {
   display:none;
 }
+
+.smallRadio {
+
+  .btn {
+    font-size: 0.5 * 16px;
+    margin-right: 0.5 * 8px !important;
+    height: 0.5 * 28px;
+    padding: 0.5 * 2px;
+    border-radius: 0.5 * 15px !important;
+  }
+  .btn:last-child, .btn:disabled  {
+    margin-right: 0.5 * 0px !important;
+  }
+  .btn-unsel {
+    height: 0.5 * 28px;
+  }
+  .btn-unsel:hover:not([disabled]),
+  .btn-secondary:hover:not([disabled]) {
+    box-shadow: 0 0 0.5 * 2px 0.5 * 2px hsla(221, 73%, 54%, 0.5) !important;
+  }
+  .btn-success {
+    height: 0.5 * 28px;
+  }
+  .btn-group {
+    border: 0.5 * 3px #005bbb solid !important;
+    padding: 0.5 * 2px;
+    border-radius: 0.5 * 19px;
+  }
+  .btn-group.disabled {
+    padding: 0.5 * 0px;
+    border: 0.5 * 1px #bbbbbb solid !important;
+  }
+  .btn:disabled {
+    height: 0.5 * 36px;
+  }
+  .btn-success:disabled {
+    font-size: 0.5 * 18px;
+  }
+}

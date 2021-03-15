@@ -17,15 +17,21 @@ export const applicant: Applicant = {
       skills: [
         {
           desc: "Angular",
-          skillTag: 'angular'
+          skillTag: 'angular',
+          detailLevel: 1,
+        skills: []
         },
         {
           desc: "Bootstrap",
-          skillTag: 'css'
+          skillTag: 'css',
+          detailLevel: 1,
+        skills: []
         },
         {
           desc: "RxJS",
-          skillTag: 'typescript'
+          skillTag: 'typescript',
+          detailLevel: 1,
+        skills: []
         }
       ]
     },
@@ -34,15 +40,21 @@ export const applicant: Applicant = {
       skills: [
         {
           desc: "C#",
-          skillTag: 'dotnet'
+          skillTag: 'dotnet',
+          detailLevel: 1,
+        skills: []
         },
         {
           desc: "REST",
-          skillTag: 'rest'
+          skillTag: 'rest',
+          detailLevel: 1,
+        skills: []
         },
         {
           desc: "Entity Framework",
-          skillTag: 'entityframework'
+          skillTag: 'entityframework',
+          detailLevel: 1,
+        skills: []
         }
       ]
     },
@@ -51,15 +63,21 @@ export const applicant: Applicant = {
       skills: [
         {
           desc: "Oracle 18c",
-          skillTag: 'oracle'
+          skillTag: 'oracle',
+          detailLevel: 1,
+        skills: []
         },
         {
           desc: "Microsoft SQL Server",
-          skillTag: 'sqlserver'
+          skillTag: 'sqlserver',
+          detailLevel: 1,
+        skills: []
         },
         {
           desc: "Cosmos DB",
-          skillTag: 'nosql'
+          skillTag: 'nosql',
+          detailLevel: 1,
+        skills: []
         }
       ]
     },
@@ -68,15 +86,21 @@ export const applicant: Applicant = {
       skills: [
         {
           desc: "Azure Functions",
-          skillTag: 'azure'
+          skillTag: 'azure',
+          detailLevel: 1,
+        skills: []
         },
         {
           desc: "Azure CDN",
-          skillTag: 'serverless'
+          skillTag: 'serverless',
+          detailLevel: 1,
+        skills: []
         },
         {
           desc: "Azure DevOps",
-          skillTag: "devops"
+          skillTag: "devops",
+          detailLevel: 1,
+        skills: []
         }
       ]
     }
