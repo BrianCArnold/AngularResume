@@ -91,7 +91,7 @@ export class ResumeComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private resumeService: ResumeService) {
   }
-  programmingDisplay = true;
+  programmingDisplay: true | false | 'dense' = true;
   detailLevel: DetailLevel = 2;
   internalShowDetails = false;
   get showDetails(): boolean {

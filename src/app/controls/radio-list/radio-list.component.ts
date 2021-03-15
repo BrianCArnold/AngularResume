@@ -21,8 +21,24 @@ export class RadioListComponent implements OnInit, ControlValueAccessor {
     return this.internalModel;
   }
   set model(val: any) {
-    this.internalModel = val;
+    if (val == null) {
+      if (this.allowNull) {
+        this.internalModel = val;
+      }
+    }
+    else {
+      this.internalModel = val;
+    }
     this.ngModelChange.emit(this.internalModel);
+  }
+
+  _allowNull: boolean = false;
+  @Input()
+  get allowNull(): boolean {
+    return this._allowNull;
+  }
+  set allowNull(v: boolean) {
+    this._allowNull = v;
   }
 
   @Input()
@@ -33,7 +49,6 @@ export class RadioListComponent implements OnInit, ControlValueAccessor {
     this.internalModel = val;
   }
 
-  @Input()
   get value(): any {
     return this.model;
   }

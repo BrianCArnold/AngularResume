@@ -1,7 +1,7 @@
 import { SubAchievement } from "./JobSkill";
 import { SkillTag } from "./SkillTag";
 
-export type DetailLevel = 1|2|3;
+export type DetailLevel = 1|2|3|4;
 
 export class Achievement {
   desc: string;

@@ -22,7 +22,7 @@ export class JobInfoComponent implements OnInit {
   @Input("detailLevel")
   inputDetailLevel: DetailLevel;
   get availableDetailLevels(): { id: DetailLevel, value: string }[] {
-    return [{ id: <DetailLevel>1, value: 'Minimal' },{ id: <DetailLevel>2, value: 'Standard' },{ id: <DetailLevel>3, value: 'High' }].filter(d => this.jobModel.detailLevels.includes(d.id));
+    return [{ id: <DetailLevel>1, value: 'Minimal' },{ id: <DetailLevel>2, value: 'Standard' },{ id: <DetailLevel>3, value: 'High' },{ id: <DetailLevel>4, value: 'Full' }].filter(d => this.jobModel.detailLevels.includes(d.id));
   }
   get effectiveSkills(): Skill[] {
     return this.jobModel.skills
@@ -58,7 +58,7 @@ export class JobInfoComponent implements OnInit {
   @Input()
   showDetails: boolean;
   @Input()
-  programmingDisplay: false;
+  programmingDisplay: true | false | 'dense';
   // size: SCREEN_SIZE;
 
   constructor(private resizeService: ResizeService, private modalService: BsModalService) {

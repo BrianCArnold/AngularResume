@@ -10,21 +10,40 @@ export const jobs: Job[] =
     startDate: 'April 2020',
     endDate: 'Current',
     detailLevel: 1,
-    detailLevels: [1,2,3],
+    detailLevels: [1,2,4],
     achievements:[
       {
         desc: 'Constructed an upgradable Angular library for use in 6+ projects',
         skills: [
           {
             desc: 'Abstract JWT retrieval, processing, API Angular Service',
+            details: [
+              'This service provides direct simple access to Registered and Public Claim Names, as documented in RFC-7519 (4.1, 4.2).',
+              'While this service provides protected methods to Private Claim Names, enabling inherited services to access these as necessary, it provides no public methods or properties for this purpose.',
+              'This is due to the high likelihood of Private Claim Names collisions, which are inherently specific to individual applications.'
+            ],
             detailLevel: 2
           },
           {
-            desc: 'Upgrades for completed projects managed by Continuous integration',
+            desc: 'Optional upgrades for projects managed by Pipeline',
+            details: [
+              'Each project has separately managed build, publish, and deployment jobs specified in parallel stages.',
+              'As each project requires testing before deployment to QA and UAT, the latest deployments are tracked separately in Git Tags as well as with GitLabs Deployment Environment tracking',
+              'Each feature added to the universal application system is disabled by default, and only activated for applications as required',
+              'This ensures that previously developed applications do not change presentation or behavior unless desired.',
+              'As the universal application system matures, when additional features completed and added for future projects are desired in completed applications, these additional features can be enabled easily and safely.'
+            ],
             detailLevel: 2
           },
           {
             desc: 'GoldenLayout Abstraction with Component Compositor',
+            details: [
+              'This system provides a component with configuration options in an Angular Routing Module that creates a GoldenLayout configuration.',
+              'By specifying components in rows, columns, and tab groupings, panel layouts can be easily specified for each route.',
+              'This allows developers to construct layouts declaritively without needing to interact with the GoldenLayout API.'
+            ],
+            skillTags: [
+            ],
             detailLevel: 2
           }
         ],
@@ -35,8 +54,25 @@ export const jobs: Job[] =
         detailLevel: 1
       },
       {
-        desc: 'Proposed and managed prototype GitLab CI/CD Pipelines',
+        desc: 'Proposed and managed prototype CI/CD Pipelines and Merge Requests',
         skills: [
+          {
+            desc: 'Unit Testing Gated Merge Requests',
+            details: [
+              'Continuous Integration was used to ensure that complete Unit Testing was performed on all Merge Requests prior to allowing branches to be merged into the master branch.',
+              'In addition, integration testing was also performed following completion of unit testing.'
+            ],
+            detailLevel: 2
+          },
+          {
+            desc:'Project and Maintaner Approval Requirements',
+            details: [
+              'Once all automated testing was completed, change approvals were required. This was managed by GitLab\'s Code Owners file.',
+              'Changes to central library required the approval of one of the primary maintainers, who were responsible for ensuring that any requested changes did not affect the current expected default behavior of all components and services.',
+              'Changes to individual projects required the approval of the project owner, along with an optional approval by one of the primary maintainers. This was to ensure that central library features were used as intended, and to check for potential edge cases.'
+            ],
+            detailLevel: 2,
+          }
         ],
         skillTags: [
           'serverless',
@@ -118,7 +154,7 @@ export const jobs: Job[] =
     startDate: 'May 2018',
     endDate: 'March 2020',
     detailLevel: 1,
-    detailLevels: [1,2,3],
+    detailLevels: [1,2,4],
     achievements: [
       {
         desc: 'Architected and developed multitier Azure application as Lead',
@@ -234,29 +270,6 @@ export const jobs: Job[] =
           'devops'
         ],
         detailLevel: 1
-      },
-      {
-        desc: 'Reduced known regression occurrence to zero',
-        skillTags:[ 'devops' ],
-        detailLevel: 3
-      },
-      {
-        desc: 'Upgraded frontend from Angular 7 to Angular 9 during development',
-        skillTags:[
-          'angular',
-          'typescript',
-          'css'
-        ],
-        detailLevel: 3
-      },
-      {
-        desc: 'Upgraded backend from EF 6.1 to EF Core 2.1',
-        skillTags:[
-          'entityframework',
-          'dotnet',
-          'oracle'
-        ],
-        detailLevel: 3
       }
     ],
     skills: [
@@ -580,36 +593,41 @@ export const jobs: Job[] =
     startDate: 'Oct 2010',
     endDate: 'Oct 2011',
     detailLevel: 1,
-    detailLevels: [2,3],
+    detailLevels: [1,2,3],
     achievements: [
       {
-        desc: 'Implemented WebNow and ImageNow forms with XML, XSLT, and iScript',
+        desc: 'Implemented WebNow and ImageNow forms with XML, XSLT, and iScript.',
         skillTags:[],
         detailLevel: 1
       },
       {
-        desc: 'Created image file processors to catalog file metadata on upload',
+        desc: 'Created image file processors to catalog file metadata on upload.',
         skillTags:[],
-        detailLevel: 3
+        detailLevel: 2
+      },
+      {
+        desc: 'Created SharePoint Features to provide provisionable capabilities.',
+        detailLevel: 3,
+        skillTags: ['sharepoint']
       }
     ],
     skills: [
       {
         desc: 'C#/F#',
         skillTag: 'dotnet',
-        detailLevel: 3,
+        detailLevel: 2,
         skills: []
       },
       {
         desc: 'ASP.NET 4.0' ,
         skillTag: 'dotnet',
-        detailLevel: 3,
+        detailLevel: 2,
         skills: []
       },
       {
         desc: 'SharePoint 2010' ,
         skillTag: 'sharepoint',
-        detailLevel: 3,
+        detailLevel: 2,
         skills: []
       },
       {
@@ -629,7 +647,7 @@ export const jobs: Job[] =
     startDate: 'Dec 2007',
     endDate: 'Oct 2010',
     detailLevel: 1,
-    detailLevels: [2,3],
+    detailLevels: [1,2,4],
     achievements: [
       {
         desc: 'Created customized SharePoint workflows for Contract bidding',
@@ -639,19 +657,19 @@ export const jobs: Job[] =
           'Implemented SharePoint Features to provision SharePoint sites, and automatically provisioned to sites created by workflow',
         ],
         skillTags:[],
-        detailLevel: 2
+        detailLevel: 1
       },
       {
         desc: 'Created a dynamic header image generator.',
         skillTags:[],
-        detailLevel: 3
+        detailLevel: 2
       },
     ],
     skills: [
       {
         desc: 'C#',
         skillTag: 'dotnet',
-        detailLevel: 3,
+        detailLevel: 2,
         skills: []
       },
       {
@@ -663,13 +681,13 @@ export const jobs: Job[] =
       {
         desc: 'ASP.NET 3.5',
         skillTag: 'dotnet',
-        detailLevel: 3,
+        detailLevel: 2,
         skills: []
       },
       {
         desc: 'SOAP',
         skillTag: 'web',
-        detailLevel: 3,
+        detailLevel: 2,
         skills: []
       }
     ]
