@@ -83,6 +83,26 @@ ul {
     cursor: pointer;
     text-decoration: underline #c0c0c0;
   }
+  .jobAchievement {
+    position: relative;
+  }
+
+  .hasDetails .toDoIcon {
+    opacity: 0;
+    transition: 0.05s opacity;
+    transition-delay: 0.4s;
+  }
+  .codeDisplay .hasDetails:hover > .toDoIcon {
+    height: 1rem;
+    opacity: 1;
+    width: 1rem;
+    position: absolute;
+    left: -1rem;
+    background-image: url('/assets/bulb.png');
+    background-size: 0.8rem 0.8rem;
+    background-position-y: 0.1rem;
+    background-repeat: no-repeat;
+  }
   sup.hasDetailsInfo {
     color: blue;
   }
@@ -332,5 +352,5 @@ ul.codeList li ul li::before {
   .text-info, .text-primary {
     color: initial !important;
   }
-  
+
 }

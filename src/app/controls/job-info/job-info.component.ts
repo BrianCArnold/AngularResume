@@ -5,7 +5,7 @@ import { Skill } from 'src/app/models/Skill';
 import { ResizeService } from 'src/app/services/resize.service';
 import { SCREEN_SIZE } from 'src/app/models/SCREEN_SIZE';
 import { BsModalService } from 'ngx-bootstrap';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { SkillTag } from 'src/app/models/SkillTag';
 import { SubAchievement } from 'src/app/models/JobSkill';
 
@@ -55,13 +55,14 @@ export class JobInfoComponent implements OnInit {
   showExperienceDetail: boolean;
 
   faExternalLinkSquareAlt = faExternalLinkAlt;
+  faLightbulb = faLightbulb;
   @Input()
   showDetails: boolean;
   @Input()
   programmingDisplay: true | false | 'dense';
   // size: SCREEN_SIZE;
 
-  constructor(private resizeService: ResizeService, private modalService: BsModalService) {
+  constructor(private modalService: BsModalService) {
     // this.resizeService.onResize$.subscribe(x => {
     //   this.size = x;
     // });

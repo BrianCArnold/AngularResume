@@ -56,6 +56,7 @@
             <ul class="codeList list-unstyled">
               <div *ngFor="let achievement of effectiveAchievements">
                 <li *ngIf="achievement.detailLevel <= effectiveDetailLevel">
+
                   <div
                     (click)="clickExperienceDetail(achievement)"
                     class="jobAchievement"
@@ -63,6 +64,7 @@
                       'hasDetails': achievement && achievement.details && effectiveDetailLevel < 4,
                       'highlight': achievement.skillTags.includes(currentSkill)
                     }">
+                    <div class="toDoIcon" ></div>
                     {{ achievement.desc }}<sup *ngIf="achievement && achievement.details && effectiveDetailLevel < 4" class="hasDetailsInfo d-print-none">i</sup>
                   </div>
 
@@ -85,6 +87,7 @@
                           'hasDetails': subAchievement && subAchievement.details && effectiveDetailLevel < 4,
                           'highlight': achievement.skillTags.includes(currentSkill)
                         }">
+                        <div class="toDoIcon" ></div>
                         {{ subAchievement.desc }}<sup class="hasDetailsInfo d-print-none" *ngIf="subAchievement && subAchievement.details && effectiveDetailLevel < 4">i</sup>
                       </div>
                       <div *ngIf="effectiveDetailLevel >= 4">
