@@ -78,4 +78,14 @@
 }
 .techBadge {
   width: 200px;
+  transition: 0.25s transform, 0.25s box-shadow;
+}
+
+@media only screen and (hover: hover) {
+
+  .techBadge:hover {
+    transform:  translate(-0.5px,-1px);
+    box-shadow: 4px 7px 3px 0px #888 !important;
+  }
+
 }

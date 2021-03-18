@@ -50,8 +50,8 @@
     </div>
     <div *ngIf="effectiveAchievements.length + effectiveSkills.length > 0" class="card-body py-0">
       <div class="row">
-        <div *ngIf="effectiveAchievements.length > 0" class="py-1 jobAchievementSection"
-          [ngClass]="{ 'col-xl-8 col-lg-9 col-print-8': !showDetails, 'col-sm-12 col-print-12': showDetails }" >
+        <div *ngIf="effectiveAchievements.length > 0" class="py-1 jobAchievementSection col-xl-8 col-lg-9 col-print-8"
+           >
           <div [ngClass]="{ 'listContainer': effectiveAchievements.length > 1}" >
             <ul class="codeList list-unstyled">
               <div *ngFor="let achievement of effectiveAchievements">
@@ -65,7 +65,8 @@
                       'highlight': achievement.skillTags.includes(currentSkill)
                     }">
                     <div class="toDoIcon" ></div>
-                    {{ achievement.desc }}<sup *ngIf="achievement && achievement.details && effectiveDetailLevel < 4" class="hasDetailsInfo d-print-none">i</sup>
+                    {{ achievement.desc }}
+                    <!-- <sup *ngIf="achievement && achievement.details && effectiveDetailLevel < 4" class="hasDetailsInfo d-print-none">i</sup> -->
                   </div>
 
                   <div *ngIf="effectiveDetailLevel >= 4">
@@ -88,7 +89,8 @@
                           'highlight': achievement.skillTags.includes(currentSkill)
                         }">
                         <div class="toDoIcon" ></div>
-                        {{ subAchievement.desc }}<sup class="hasDetailsInfo d-print-none" *ngIf="subAchievement && subAchievement.details && effectiveDetailLevel < 4">i</sup>
+                        {{ subAchievement.desc }}
+                        <!-- <sup class="hasDetailsInfo d-print-none" *ngIf="subAchievement && subAchievement.details && effectiveDetailLevel < 4">i</sup> -->
                       </div>
                       <div *ngIf="effectiveDetailLevel >= 4">
                         <div class="maxDetails" *ngFor="let detail of subAchievement.details">
@@ -104,11 +106,10 @@
             </ul>
           </div>
         </div>
-        <div *ngIf="effectiveSkills.length > 0" class="py-1 overlayContainer jobSkillSection"
-          [ngClass]="{ 'col-xl-4 col-lg-3 col-print-4': !showDetails, 'd-none': showDetails }"
+        <div *ngIf="effectiveSkills.length > 0" class="py-1 overlayContainer jobSkillSection col-xl-4 col-lg-3 col-print-4"
           >
           <div [ngClass]="{ 'listContainer': effectiveSkills.length > 1}" >
-            <ul class="codeList list-unstyled" [ngClass]="{'d-none': showDetails && !programmingDisplay }">
+            <ul class="codeList list-unstyled" >
               <li *ngFor="let skill of effectiveSkills"  >
                 <!-- (mouseover)="highlightSkill(skill)" (mouseout)="unhighlightSkill(skill)" -->
                 <div
@@ -146,18 +147,6 @@
               </li>
             </ul>
 
-          </div>
-        </div>
-        <div [ngClass]="{ 'd-none': !showDetails, 'd-block col-sm-12': showDetails}">
-          <div class="font-weight-bold ml-3" >
-            Skills:
-            <span *ngFor="let skill of jobModel.skills"  class="skillCsl">
-              <!-- (mouseover)="highlightSkill(skill)" (mouseout)="unhighlightSkill(skill)" -->
-              {{skill.desc}}
-              <span *ngFor="let subSkill of skill.skills || []" class="subSkillCsl">
-                {{ subSkill.desc }}
-              </span>
-            </span>
           </div>
         </div>
       </div>

@@ -34,9 +34,54 @@
   }
 }
 
+
+.codeDisplay .card-header {
+  background: linear-gradient(
+    125deg,
+    rgba(0, 0, 0, 0.10) 0%,
+    rgba(0, 0, 0, 0.13) 17.7%,
+    white 18.3%,
+    rgba(0, 0, 0, 0.10) 28%,
+    rgba(0, 0, 0, 0.13)
+  );
+}
+
+
+@media screen and (min-width: 992px) {
+  .codeDisplay .card .card-header {
+    position:relative;
+    top: 0.0;
+    left: 0;
+    transition: 0.25s transform, 0.25s box-shadow, 1s background-position-x;
+    transform:  translate(0,0);
+    box-shadow: none;
+    background-position-x: 10px;
+    transition-delay: 0.0s;
+    background: linear-gradient(
+      125deg,
+      rgba(0, 0, 0, 0.03) 0,
+      rgba(0, 0, 0, 0.10) 47%,
+      rgba(0, 0, 0, 0.13) 47.7%,
+      white 48.3%,
+      rgba(0, 0, 0, 0.13) 58%,
+      rgba(0, 0, 0, 0.03)
+    );
+  }
+  @media (hover: hover) {
+
+    .codeDisplay .card .card-header:hover {
+      // transform:  translate(-1px,-2px);
+      box-shadow: 5px 5px 10px 0px #888 !important;
+
+      background-position-x: 40px;
+    }
+
+  }
+}
+
 .applicant.codeDisplay
 {
-  .contactInfo {
+  .contactInfo:last-child {
     border-left-width: 1px;
     border-left-style: solid;
     border-image: linear-gradient(
@@ -46,6 +91,7 @@
         rgba(0, 0, 0, 0)
       )
       1 100%;
+    border-right-width: 0;
   }
   .card.layUnder {
     margin-bottom: -10px;

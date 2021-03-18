@@ -93,21 +93,7 @@ export class ResumeComponent implements OnInit {
   }
   programmingDisplay: true | false | 'dense' = true;
   detailLevel: DetailLevel = 2;
-  internalShowDetails = false;
-  get showDetails(): boolean {
-    return this.internalShowDetails;
-  }
-  set showDetails(v: boolean) {
-    this.internalShowDetails = v;
-    if (v) {
-      this.programmingDisplay = false;
-    }
-    this.resumeService.getJobsSimpleAsync().then(j => {
-      this.jobsSource = j;
-      console.log(this.jobsSource);
-      console.log('Setting Jobs.');
-    });
-  }
+
   async ngOnInit() {
 
   this.activatedRoute.data.subscribe(v => {

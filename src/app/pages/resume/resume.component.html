@@ -19,10 +19,10 @@
     </div>
 
     <div class="resumePage" [ngClass]="{'calibri': !programmingDisplay}">
-      <app-applicant-info [applicant]="applicant" [showDetails]="showDetails" [programmingDisplay]="programmingDisplay" >
+      <app-applicant-info [applicant]="applicant" [programmingDisplay]="programmingDisplay" >
       </app-applicant-info>
       <div class="row" style="page-break-inside: avoid;" *ngFor="let jobModel of jobsSource">
-        <app-job-info [detailLevel]="detailLevel" [showDetails]="showDetails" [programmingDisplay]="programmingDisplay" class="col-sm-12" [jobModel]="jobModel"></app-job-info>
+        <app-job-info [detailLevel]="detailLevel" [programmingDisplay]="programmingDisplay" class="col-sm-12" [jobModel]="jobModel"></app-job-info>
       </div>
     </div>
     <div class="row">

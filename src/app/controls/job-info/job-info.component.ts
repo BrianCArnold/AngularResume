@@ -56,8 +56,7 @@ export class JobInfoComponent implements OnInit {
 
   faExternalLinkSquareAlt = faExternalLinkAlt;
   faLightbulb = faLightbulb;
-  @Input()
-  showDetails: boolean;
+
   @Input()
   programmingDisplay: true | false | 'dense';
   // size: SCREEN_SIZE;
