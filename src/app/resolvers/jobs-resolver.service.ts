@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ResumeService } from '../services/resume.service';
+import { StaticResumeService } from '../services/resume.service';
 import { Job } from '../models/Job';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class JobsResolverService implements Resolve<Job[]> {
 
-  constructor(private resumeService: ResumeService) { }
+  constructor(private resumeService: StaticResumeService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<Job[]> {
     return this.resumeService.getJobsSimpleAsync();

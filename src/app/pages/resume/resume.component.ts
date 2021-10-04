@@ -4,7 +4,7 @@ import { Job } from 'src/app/models/Job';
 import { Applicant } from 'src/app/models/Applicant';
 import { faFilePdf, faFileWord, IconDefinition } from '@fortawesome/free-regular-svg-icons';
 import { faAngular, faBootstrap, faSass, faFontAwesome, faGitAlt, faNodeJs, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
-import { ResumeService } from 'src/app/services/resume.service';
+import { StaticResumeService } from 'src/app/services/resume.service';
 import { DetailLevel } from 'src/app/models/Experience';
 @Component({
   selector: 'app-resume',
@@ -89,7 +89,7 @@ export class ResumeComponent implements OnInit {
   ];
   constructor(
     private activatedRoute: ActivatedRoute,
-    private resumeService: ResumeService) {
+    private resumeService: StaticResumeService) {
   }
   programmingDisplay: true | false | 'dense' = true;
   detailLevel: DetailLevel = 2;

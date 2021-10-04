@@ -9,11 +9,18 @@ import { applicant } from '../data/applicant';
 @Injectable({
   providedIn: 'root'
 })
-export class ResumeService {
+export class StaticResumeService {
 
-  constructor(private http: HttpClient) { }
+  //Hello, you might have ended up here, looking for where the application gets its data
+  //Normally, this would be implemented by retrieving the data from an API hosted by 
+  //a C# WebAPI project, or a Node.JS server.
 
-  apiBaseUrl = '/api/';
+  //However, in this case, running those for a relatively static application is a great deal of overhead.
+
+  //So, in this case, it's abstracted in a way that could 
+  constructor(
+    // private http: HttpClient
+  ) { }
 
   public async getJobsSimpleAsync(): Promise<Job[]> {
     return jobs;
