@@ -32,7 +32,7 @@ export class ResumeComponent implements OnInit {
     }[] = [
     {
       desc:'Frontend in',
-      name:'Angular 11',
+      name:'Angular',
       icon: faAngular,
       class: 'btn-danger',
       url: 'https://angular.io'

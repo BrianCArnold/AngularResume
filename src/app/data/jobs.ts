@@ -5,18 +5,49 @@ export const jobs: Job[] =
   {
     company: 'BNY Mellon',
     url: 'https://www.bnymellon.com/',
-    title: 'Contractor',
-    location: 'Pittsburg, PA',
+    title: 'Senior Specialist Engineer',
+    location: 'New York, NY',
     startDate: 'April 2020',
     endDate: 'Current',
     detailLevel: 1,
     detailLevels: [1,2,4],
     achievements:[
+			{
+				desc: 'Managed internal NuGet packages for use in multiple projects',
+				detailLevel: 2,
+				skillTags: [],
+				skills: [
+					{
+						desc: 'Custom .NET SQL Definition engine',
+						details: [
+							'Stored Procedures, SQL Types, and Table definitions were tracked in git as C# objects.',
+							'This allowed developers to alter definitions of tables, stored procedures, and SQL types in C#, and have changes automatically deployed to Development databases at runtime, and deployed to Production and Testing environments as part of the same CI/CD pipelines that deploy C# and Angular.',
+							'Differential comparisons were made to the Production and Testing databases nightly, and engineers responsible for their projects were notified of any discrepancies.',
+							'Stored Procedure definitions included typed information on in/out parameters and result sets, ensuring compile time safety for all SQL calls.'
+						],
+						skillTags: [],
+						detailLevel: 2
+					},
+					{
+						desc: 'Centralized AD and SQL based Authentication',
+						detailLevel: 2
+					},
+					{
+						desc: 'Attribute based Dependency Injection system',
+						details: [
+							'Interfaces and Implementations are tagged with attributes to specify supported environments.',
+							'Each implementation is added to Dependency Injection registry at runtime depending on supplied tags.',
+							'Optional logging information provided at runtime to allow administrators to view which implementations are injected.'
+						],
+						detailLevel: 2
+					}
+				]
+			},
       {
         desc: 'Constructed an upgradable Angular library for use in 6+ projects',
         skills: [
           {
-            desc: 'Abstract JWT retrieval, processing, API Angular Service',
+            desc: 'Transparent JWT API authentication and invocation',
             details: [
               'This service provides direct simple access to Registered and Public Claim Names, as documented in RFC-7519 (4.1, 4.2).',
               'While this service provides protected methods to Private Claim Names, enabling inherited services to access these as necessary, it provides no public methods or properties for this purpose.',
@@ -132,7 +163,7 @@ export const jobs: Job[] =
         skillTag: 'angular',
         skills: [
           {
-            desc: 'PrimeNG 9',
+            desc: 'PrimeNG 9+',
             url: 'https://www.primefaces.org/primeng/',
             detailLevel: 2
           },
