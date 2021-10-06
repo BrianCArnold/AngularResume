@@ -18,7 +18,7 @@ steps:
 - script: npm install -g @angular/cli
   displayName: 'Install NPM'
     
-- script: npm install
+- script: npm ci
   displayName: 'Install NPM Packages'
 
 - script: npm run prod
