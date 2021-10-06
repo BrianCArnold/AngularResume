@@ -91,7 +91,7 @@ export class ResumeComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private resumeService: StaticResumeService) {
   }
-  programmingDisplay: true | false | 'dense' = true;
+  programmingDisplay: true | false | 'dense' = false;
   detailLevel: DetailLevel = 2;
 
   async ngOnInit() {

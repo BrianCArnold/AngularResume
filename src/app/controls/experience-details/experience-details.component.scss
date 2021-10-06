@@ -6,14 +6,17 @@
     font-size: 10pt;
   }
 }
-.blockComment::before {
-  content: '/' '*';
-}
-.blockComment {
-  // font-size: 12pt;
-}
-.blockComment::after {
-  content: '*' '/';
+.codeDisplay {
+  .blockComment::before {
+    content: '/' '*';
+  }
+  .blockComment {
+    color: #28a745 !important
+    // font-size: 12pt;
+  }
+  .blockComment::after {
+    content: '*' '/';
+  }
 }
 .indentFirstLine::before {
   text-indent: 1em;

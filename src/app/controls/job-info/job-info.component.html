@@ -155,5 +155,5 @@
 </div>
 
 <ng-template #modalDetails>
-  <app-experience-details [experienceDetail]="experienceDetail"></app-experience-details>
+  <app-experience-details [ngClass]="{ 'codeDisplay': programmingDisplay, 'denseCode': programmingDisplay == 'dense', 'wideCode': programmingDisplay == true }" [experienceDetail]="experienceDetail"></app-experience-details>
 </ng-template>

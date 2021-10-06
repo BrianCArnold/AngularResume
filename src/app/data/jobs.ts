@@ -85,7 +85,7 @@ export const jobs: Job[] =
         detailLevel: 1
       },
       {
-        desc: 'Proposed and managed prototype CI/CD Pipelines and Merge Requests',
+        desc: 'Proposed, implemented, and managed CI/CD Pipelines and Merge Requests',
         skills: [
           {
             desc: 'Unit Testing Gated Merge Requests',
@@ -115,21 +115,40 @@ export const jobs: Job[] =
     ],
     skills: [
       {
-        desc: 'GitLab',
-        skillTag: 'devops',
-        detailLevel: 2,
-        skills: []
+        desc: 'Angular',
+        skillTag: 'angular',
+        url: 'https://angular.io/',
+        skills: [
+          {
+            desc: 'PrimeNG',
+            url: 'https://www.primefaces.org/primeng/',
+            detailLevel: 2
+          },
+          {
+            desc: 'GoldenLayout',
+            url: 'https://golden-layout.com/',
+            detailLevel: 2
+          },
+          {
+            desc: 'TypeScript',
+            url: 'https://www.typescriptlang.org/',
+            detailLevel: 2,
+          },
+        ],
+        detailLevel: 1
       },
       {
-        desc: 'SQL Server 2019',
+        desc: 'SQL Server',
         skillTag: 'sqlserver',
         detailLevel: 1,
+        url: 'https://www.microsoft.com/en-us/sql-server/sql-server-2019',
         skills: []
       },
       {
-        desc: '.NET Core 3.1',
+        desc: '.NET 5.0',
         skillTag: 'dotnet',
         detailLevel: 1,
+        url: 'https://dotnet.microsoft.com/',
         skills: []
       },
       {
@@ -140,40 +159,24 @@ export const jobs: Job[] =
         skills: []
       },
       {
-        desc: 'Docker 19.03',
+        desc: 'Docker',
         skillTag: 'serverless',
         detailLevel: 2,
+        url: 'https://www.docker.com/',
         skills: []
       },
       {
-        desc: 'Traefik 2.4',
+        desc: 'Traefik',
         url: 'https://traefik.io/traefik/',
         skillTag: 'serverless',
         detailLevel: 2,
         skills: []
       },
       {
-        desc: 'TypeScript',
-        skillTag: 'typescript',
-        detailLevel: 1,
+        desc: 'GitLab',
+        skillTag: 'devops',
+        detailLevel: 2,
         skills: []
-      },
-      {
-        desc: 'Angular 9+',
-        skillTag: 'angular',
-        skills: [
-          {
-            desc: 'PrimeNG 9+',
-            url: 'https://www.primefaces.org/primeng/',
-            detailLevel: 2
-          },
-          {
-            desc: 'GoldenLayout',
-            url: 'https://golden-layout.com/',
-            detailLevel: 2
-          },
-        ],
-        detailLevel: 1
       },
     ]
   },
@@ -305,10 +308,11 @@ export const jobs: Job[] =
     ],
     skills: [
       {
-        desc: 'Angular 9',
+        desc: 'Angular',
         skillTag: 'angular',
+        url: 'https://angular.io/',
+        skills: [],
         detailLevel: 1,
-        skills: []
       },
       {
         desc: 'Bootstrap 4.x',
@@ -318,57 +322,58 @@ export const jobs: Job[] =
         skills: []
       },
       {
-        desc: '.NET Core 2.x',
+        desc: '.NET Core 2.1',
         skillTag: 'dotnet',
         detailLevel: 1,
+        url: 'https://dotnet.microsoft.com/',
         skills: []
       },
       {
         desc: 'Oracle 18c',
         skillTag: 'oracle',
         detailLevel: 1,
+        url: 'https://docs.oracle.com/en/database/oracle/oracle-database/18/',
         skills: []
       },
       {
-        desc: 'TypeScript 3.7',
+        desc: 'TypeScript',
         skillTag: 'typescript',
         url: 'https://www.typescriptlang.org/',
-        detailLevel: 3,
+        detailLevel: 2,
         skills: []
       },
       {
-        desc: 'Azure Functions',
+        desc: 'Azure',
+        url: 'https://azure.microsoft.com/en-us/',
+        detailLevel: 2,
         skillTag: 'serverless',
-        detailLevel: 1,
-        skills: []
-      },
-      {
-        desc: 'Azure SQL',
-        skillTag: 'sqlserver',
-        detailLevel: 3,
-        skills: []
-      },
-      {
-        desc: 'CDN',
-        skillTag: 'serverless',
-        url: 'https://azure.microsoft.com/en-us/services/cdn/',
-        detailLevel: 3,
-        skills: []
-      },
-      {
-        desc: 'Azure DevOps',
         skills: [
           {
-            desc: 'CI/CD',
-            detailLevel: 2
+            desc: 'Functions',
+            detailLevel: 2,
+            url: 'https://azure.microsoft.com/en-us/services/functions/',
           },
           {
-            desc: 'Pull Requests',
-            detailLevel: 2
+            desc: 'SQL',
+            detailLevel: 3,
+            url: 'https://azure.microsoft.com/en-us/products/azure-sql/database/',
+          },
+          {
+            desc: 'CDN',
+            url: 'https://azure.microsoft.com/en-us/services/cdn/',
+            detailLevel: 3,
+          },
+          {
+            desc: 'DevOps',
+            url: 'https://azure.microsoft.com/en-us/services/devops/',
+            detailLevel: 3
+          },
+          {
+            desc: 'Pipelines',
+            detailLevel: 2,
+            url: 'https://azure.microsoft.com/en-us/services/devops/pipelines/'
           }
-        ] ,
-        skillTag: 'devops',
-        detailLevel: 1
+        ]
       }
     ]
   },
@@ -380,7 +385,7 @@ export const jobs: Job[] =
     startDate: 'Aug 2014',
     endDate: 'Apr 2018',
     detailLevel: 1,
-    detailLevels: [1,2,4],
+    detailLevels: [1,2],
     achievements: [
       {
         desc: 'Designed replacement message processing architecture',
@@ -413,7 +418,7 @@ export const jobs: Job[] =
         skillTags:[
           'architecture'
         ],
-        detailLevel: 3
+        detailLevel: 2
       },
       {
         desc: 'Developed server management applications in WPF',
@@ -422,26 +427,20 @@ export const jobs: Job[] =
           'entityframework',
           'sqlserver'
         ],
-        detailLevel: 3
+        detailLevel: 2
       }
     ],
     skills: [
       {
-        desc: 'C#' ,
-        skillTag: 'dotnet',
-        detailLevel: 2,
+        desc: 'ASP.NET' ,
+        skillTag: 'mvc',
+        detailLevel: 1,
         skills: []
       },
       {
         desc: '.NET 4.6.1' ,
         skillTag: 'dotnet',
-        detailLevel: 3,
-        skills: []
-      },
-      {
-        desc: 'ASP.NET' ,
-        skillTag: 'mvc',
-        detailLevel: 1,
+        detailLevel: 2,
         skills: []
       },
       {
@@ -453,7 +452,7 @@ export const jobs: Job[] =
       {
         desc: 'REST' ,
         skillTag: 'rest',
-        detailLevel: 3,
+        detailLevel: 2,
         skills: []
       },
       {
@@ -474,7 +473,7 @@ export const jobs: Job[] =
         desc: 'ASDI' ,
         skillTag: 'flight',
         url: 'https://www.fly.faa.gov/ASDI/asdi.html',
-        detailLevel: 3,
+        detailLevel: 2,
         skills: []
       },
       {
@@ -494,7 +493,7 @@ export const jobs: Job[] =
     startDate: 'Nov 2011',
     endDate: 'Aug 2014',
     detailLevel: 1,
-    detailLevels: [1,2,4],
+    detailLevels: [1,2],
     achievements: [
       {
         desc: 'Collaboration with Software Development VP for architecture design',
@@ -523,14 +522,14 @@ export const jobs: Job[] =
         skillTags:[
           'rest'
         ],
-        detailLevel: 3
+        detailLevel: 2
       },
       {
         desc: 'Designed and implemented SharePoint solution frontend for Oracle data',
         skillTags:[
           'sharepoint'
         ],
-        detailLevel: 3
+        detailLevel: 2
       },
       {
         desc: 'Developed WPF application to interface biometric devices with website',
@@ -624,7 +623,7 @@ export const jobs: Job[] =
     startDate: 'Oct 2010',
     endDate: 'Oct 2011',
     detailLevel: 1,
-    detailLevels: [1,2,4],
+    detailLevels: [1,2],
     achievements: [
       {
         desc: 'Implemented WebNow and ImageNow forms with XML, XSLT, and iScript.',
@@ -638,7 +637,7 @@ export const jobs: Job[] =
       },
       {
         desc: 'Created SharePoint Features to provide provisionable capabilities.',
-        detailLevel: 3,
+        detailLevel: 2,
         skillTags: ['sharepoint']
       }
     ],
@@ -683,9 +682,9 @@ export const jobs: Job[] =
       {
         desc: 'Created customized SharePoint workflows for Contract bidding',
         details: [
-          'GoMenu: A replacement for the standard SharePoint Top Link Bar, allowing for hierarchical structure, AJAX calls to populate the menu on the fly, and SharePoint permission integration for managing menu item visibility.',
-          'LifecycleOne: System used to track all aspects of a contract lifecycle, including proposal operation, task order management, and subcontractor communication and reporting. The system includes automated data call management, providing structure, status reporting, and document storage, simplifying an manual process.',
-          'Implemented SharePoint Features to provision SharePoint sites, and automatically provisioned to sites created by workflow',
+          'Implemented a menu based replacement for the standard SharePoint Top Link Bar, allowing for hierarchical structure, AJAX calls to populate the menu on the fly, and SharePoint permission integration for managing menu item visibility.',
+          'Designed system used to track all aspects of a contract lifecycle, including proposal operation, task order management, and subcontractor communication and reporting. The system includes automated data call management, providing structure, status reporting, and document storage, simplifying an manual process.',
+          'Developed SharePoint Features to provision SharePoint sites, and automatically provisioned to sites created by workflow',
         ],
         skillTags:[],
         detailLevel: 1
