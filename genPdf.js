@@ -54,6 +54,8 @@ const server = http.createServer((req, res) => {
           console.info('Opening Page');
           await page.goto(url,{waitUntil:['load','networkidle2']});
           console.info('Completing PDF');
+          await page.click('[ng-reflect-btn-radio=false]');
+          waits(500);
           await page.pdf(defaultPrintOptions);
           // const pdf = await page.printToPDF(defaultPrintOptions);
           // result = pdf.data;
