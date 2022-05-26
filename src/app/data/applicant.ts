@@ -17,21 +17,21 @@ export const applicant: Applicant = {
       skills: [
         {
           desc: "Angular",
-          skillTag: 'angular',
+          skillTags: ['angular', 'typescript' ],
           detailLevel: 1,
-        skills: []
+          skills: []
         },
         {
           desc: "Bootstrap",
-          skillTag: 'css',
+          skillTags: ['css'],
           detailLevel: 1,
-        skills: []
+          skills: []
         },
         {
           desc: "RxJS",
-          skillTag: 'typescript',
+          skillTags: ['typescript', 'angular' ],
           detailLevel: 1,
-        skills: []
+          skills: []
         }
       ]
     },
@@ -40,21 +40,21 @@ export const applicant: Applicant = {
       skills: [
         {
           desc: "C#",
-          skillTag: 'dotnet',
+          skillTags: ['dotnet'],
           detailLevel: 1,
-        skills: []
+          skills: []
         },
         {
           desc: "REST",
-          skillTag: 'rest',
+          skillTags: ['rest'],
           detailLevel: 1,
-        skills: []
+          skills: []
         },
         {
           desc: "Entity Framework",
-          skillTag: 'entityframework',
+          skillTags: ['entityframework', 'sqlserver', 'dotnet'],
           detailLevel: 1,
-        skills: []
+          skills: []
         }
       ]
     },
@@ -63,21 +63,21 @@ export const applicant: Applicant = {
       skills: [
         {
           desc: "Oracle 18c",
-          skillTag: 'oracle',
+          skillTags: ['oracle'],
           detailLevel: 1,
-        skills: []
+          skills: []
         },
         {
           desc: "Microsoft SQL Server",
-          skillTag: 'sqlserver',
+          skillTags: ['sqlserver'],
           detailLevel: 1,
-        skills: []
+          skills: []
         },
         {
           desc: "Cosmos DB",
-          skillTag: 'nosql',
+          skillTags: ['nosql'],
           detailLevel: 1,
-        skills: []
+          skills: []
         }
       ]
     },
@@ -86,21 +86,21 @@ export const applicant: Applicant = {
       skills: [
         {
           desc: "Azure Functions",
-          skillTag: 'azure',
+          skillTags: ['azure', 'serverless', 'cloud'],
           detailLevel: 1,
-        skills: []
+          skills: []
         },
         {
           desc: "Azure CDN",
-          skillTag: 'serverless',
+          skillTags: ['serverless', 'azure', 'cloud'],
           detailLevel: 1,
-        skills: []
+          skills: []
         },
         {
           desc: "Azure DevOps",
-          skillTag: "devops",
+          skillTags: ["devops", 'cicd', 'cloud'],
           detailLevel: 1,
-        skills: []
+          skills: []
         }
       ]
     }

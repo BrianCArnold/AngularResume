@@ -1,17 +1,11 @@
 import { DetailLevel } from "./Experience";
 import { SkillTag } from "./SkillTag";
 
-export class Skill {
+export interface Skill {
   desc: string;
-  skills: SubSkill[];
-  details?: string[];
-  skillTag: SkillTag;
-  url?: string;
-  detailLevel: DetailLevel;
-}
-
-export class SubSkill {
-  desc: string;
+  skills: Skill[];
+  // details?: string[];
+  skillTags: SkillTag[];
   url?: string;
   detailLevel: DetailLevel;
 }

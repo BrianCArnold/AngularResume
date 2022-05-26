@@ -1,6 +1,6 @@
 import { SkillArea } from "./SkillArea";
 
-export class Applicant {
+export interface Applicant {
   firstName: string;
   lastName: string;
   middleNameOrInitial: string;
@@ -13,3 +13,5 @@ export class Applicant {
   email: string;
   skillAreas: SkillArea[];
 }
+
+

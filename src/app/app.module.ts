@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RadioListComponent } from './controls/radio-list/radio-list.component';
 import { ButtonsModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { SkillCheckListComponent } from './controls/skill-check-list/skill-check-list.component';
+import { CheckswitchComponent } from './controls/checkswitch/checkswitch.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FormsModule } from '@angular/forms';
     ApplicantInfoComponent,
     SizeDetectorComponent,
     ExperienceDetailsComponent,
-    RadioListComponent
+    RadioListComponent,
+    SkillCheckListComponent,
+    CheckswitchComponent
   ],
   imports: [
     BrowserModule,

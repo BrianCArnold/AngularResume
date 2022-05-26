@@ -2,9 +2,10 @@ import { DetailLevel } from "./Experience";
 import { SkillTag } from "./SkillTag";
 
 
-export class SubAchievement {
+export interface SubAchievement {
   desc: string;
   details?: string[];
-  skillTags?: SkillTag[];
+  skills?: SubAchievement[];
+  skillTags: SkillTag[];
   detailLevel: DetailLevel;
 }

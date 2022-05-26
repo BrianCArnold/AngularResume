@@ -6,7 +6,7 @@
         Detail:
       </h4>
       <app-radio-list class="col-xl-5 col-lg-10 my-1" name="resumeDetail" [(ngModel)]="detailLevel"
-        [options]="[{ id: 1, value: 'Minimal' },{ id: 2, value: 'Standard' },{ id: 4, value: 'Full' }]">
+        [options]="[{ id: -1, value: 'Custom' },{ id: 2, value: 'Standard' },{ id: 4, value: 'Extended' }]">
       </app-radio-list>
 
       <h4 class="col-xl-1 col-lg-2 my-1">
@@ -22,7 +22,7 @@
       <app-applicant-info [applicant]="applicant" [programmingDisplay]="programmingDisplay" >
       </app-applicant-info>
       <div class="row" style="page-break-inside: avoid;" *ngFor="let jobModel of jobsSource">
-        <app-job-info [detailLevel]="detailLevel" [programmingDisplay]="programmingDisplay" class="col-sm-12" [jobModel]="jobModel"></app-job-info>
+        <app-job-info [programmingDisplay]="programmingDisplay" class="col-sm-12" [jobModel]="jobModel"></app-job-info>
       </div>
     </div>
     <div class="row">
@@ -57,3 +57,7 @@
   </div>
 
 </div>
+
+<ng-template #skillChecklist>
+  <app-skill-check-list *ngIf="detailLevel == -1"></app-skill-check-list>
+</ng-template>

@@ -1,0 +1,33 @@
+<div class="btn-group" [ngClass]="{
+    'disabled': disabled
+  }" btnRadioGroup onclick="onClick()" onchange="fireOnChange()" [(ngModel)]="model">
+    <button 
+        class="btn"
+        [ngClass]="{
+          'btn-off': model == false,
+          'btn-secondary': model == true
+        }"
+        uncheckable
+        [btnRadio]="false"
+        [disabled]="disabled"
+        tabindex="1"
+        role="button">
+        &nbsp;
+        &nbsp;
+    </button>
+    <button 
+        class="btn"
+        [ngClass]="{
+          'btn-success': model == true,
+          'btn-secondary': model == false
+        }"
+        uncheckable
+        [btnRadio]="true"
+        [disabled]="disabled"
+        tabindex="1"
+        role="button">
+        &nbsp;
+        &nbsp;
+    </button>
+  </div>
+  

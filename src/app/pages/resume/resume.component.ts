@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Job } from 'src/app/models/Job';
 import { Applicant } from 'src/app/models/Applicant';
@@ -6,12 +6,20 @@ import { faFilePdf, faFileWord, IconDefinition } from '@fortawesome/free-regular
 import { faAngular, faBootstrap, faSass, faFontAwesome, faGitAlt, faNodeJs, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
 import { StaticResumeService } from 'src/app/services/resume.service';
 import { DetailLevel } from 'src/app/models/Experience';
+import { SkillsService } from 'src/app/services/skills.service';
+import { ISkillCheckItem, SkillCheckItem } from 'src/app/models/SkillCheckItem';
+import { TechStack } from 'src/app/models/TechStack';
+import { BsModalService } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit {
+  
+  @ViewChild('skillChecklist')
+  skillChecklist: ElementRef;
+  
   applicant: Applicant;
   jobsSource: Job[];
   faFilePdf = faFilePdf;
@@ -23,13 +31,7 @@ export class ResumeComponent implements OnInit {
   faMicrosoft = faMicrosoft;
   faSass = faSass;
   faFileWord = faFileWord;
-  techUsed: {
-      desc: string,
-      name: string,
-      icon: IconDefinition,
-      class: string,
-      url: string
-    }[] = [
+  techUsed: TechStack[] = [
     {
       desc:'Frontend in',
       name:'Angular',
@@ -88,11 +90,27 @@ export class ResumeComponent implements OnInit {
     },
   ];
   constructor(
+    private modalService: BsModalService,
     private activatedRoute: ActivatedRoute,
-    private resumeService: StaticResumeService) {
+    private resumeService: StaticResumeService,
+    private skillsService: SkillsService) {
   }
   programmingDisplay: true | false | 'dense' = false;
-  detailLevel: DetailLevel = 2;
+
+  get detailLevel(): DetailLevel {
+    return this.skillsService.detailLevel;
+  }
+  set detailLevel(v: DetailLevel) {
+    if (v == -1) {
+      this.modalService.show(this.skillChecklist, {
+        class: 'modal-xl'
+      });
+    }
+    this.skillsService.detailLevel = v;
+  }
+  get skillCheckList(): ISkillCheckItem[] {
+    return this.skillsService.skillCheckList;
+  }
 
   async ngOnInit() {
 
@@ -102,5 +120,6 @@ export class ResumeComponent implements OnInit {
   });
 
   }
+  
 
 }
