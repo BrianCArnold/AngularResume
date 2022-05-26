@@ -10,11 +10,11 @@ import { Achievement } from 'src/app/models/Experience';
 export class ExperienceDetailsComponent implements OnInit {
 
   @Input()
-  experienceDetail: Achievement | Skill;
+  experienceDetail: Achievement;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  
 }

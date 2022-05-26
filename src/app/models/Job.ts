@@ -1,6 +1,6 @@
 import { DetailLevel, Achievement } from './Experience';
 import { Skill } from './Skill';
-export class Job {
+export interface Job {
   company: string;
   url: string;
   title: string;

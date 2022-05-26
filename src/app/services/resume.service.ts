@@ -17,7 +17,7 @@ export class StaticResumeService {
 
   //However, in this case, running those for a relatively static application is a great deal of overhead.
 
-  //So, in this case, it's abstracted in a way that could 
+  //So, in this case, it's abstracted in a way that could call a server, but in this case, we're just retrieving from a constant.
   constructor(
     // private http: HttpClient
   ) { }

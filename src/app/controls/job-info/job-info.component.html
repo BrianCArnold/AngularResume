@@ -1,4 +1,4 @@
-<div *ngIf="jobModel.detailLevel <= inputDetailLevel" class="jobInfo" [ngClass]="{ 'codeDisplay': programmingDisplay, 'denseCode': programmingDisplay == 'dense', 'wideCode': programmingDisplay == true }">
+<div class="jobInfo" [ngClass]="{ 'codeDisplay': programmingDisplay, 'denseCode': programmingDisplay == 'dense', 'wideCode': programmingDisplay == true }">
   <div class="card mt-2" [ngClass]="{ 'shadow-sm': programmingDisplay }">
     <div class="card-header py-1 ">
       <div class="row">
@@ -55,14 +55,14 @@
           <div [ngClass]="{ 'listContainer': effectiveAchievements.length > 1}" >
             <ul class="codeList list-unstyled">
               <div *ngFor="let achievement of effectiveAchievements">
-                <li *ngIf="achievement.detailLevel <= effectiveDetailLevel">
+                <li >
 
                   <div
                     (click)="clickExperienceDetail(achievement)"
                     class="jobAchievement"
                     [ngClass]="{
                       'hasDetails': achievement && achievement.details && effectiveDetailLevel < 4,
-                      'highlight': achievement.skillTags.includes(currentSkill)
+                      'highlight': matchesSkills(achievement.skillTags)
                     }">
                     <div class="toDoIcon" ></div>
                     {{ achievement.desc }}
@@ -86,7 +86,7 @@
                         class="jobAchievement"
                         [ngClass]="{
                           'hasDetails': subAchievement && subAchievement.details && effectiveDetailLevel < 4,
-                          'highlight': achievement.skillTags.includes(currentSkill)
+                          'highlight': matchesSkills(achievement.skillTags)
                         }">
                         <div class="toDoIcon" ></div>
                         {{ subAchievement.desc }}

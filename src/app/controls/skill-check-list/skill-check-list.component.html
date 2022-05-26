@@ -1,0 +1,27 @@
+<div class="roundedBorder card">
+    <div class="card-header">
+        <strong>Select Relevant Experience</strong>
+    </div>
+    <div class="row card-body">
+        <div class="col-lg-4 col-md-6 col-6" *ngFor="let skill of skillCheckList">
+            <ul style="list-style: none;">
+            <li>
+                
+                <app-checkswitch [name]="skill.value" [(ngModel)]="skill.isSelected"
+                  [options]="[{ id: true, value: 'On' },{ id: false, value: 'Off' }]">
+                </app-checkswitch>
+                {{skill.name}} 
+                <ul *ngIf="skill.children && skill.children.length > 0" style="list-style: none;">
+                <li *ngFor="let subskill of skill.children">
+                    
+                    <app-checkswitch [name]="subskill.value" [(ngModel)]="subskill.isSelected"
+                        [options]="[{ id: true, value: 'On' },{ id: false, value: 'Off' }]">
+                    </app-checkswitch>
+                    {{subskill.name}}
+                </li>
+                </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</div>

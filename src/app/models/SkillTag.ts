@@ -2,21 +2,20 @@
 export type SkillTag =
   'angular' |
   'css' |
-  'dotnet' |
+  'mvc' |
+  'rest' |
+  'entityframework' |
   'typescript' |
+  'sharepoint' |
+  'dotnet' |
   'serverless' |
   'cloud' |
   'devops' |
+  'cicd' |
+  'database' |
   'flight' |
   'sqlserver' |
-  'redis' |
   'oracle' |
-  'java' |
-  'mvc' |
-  'sharepoint' |
   'azure' |
-  'entityframework' |
-  'rest' |
   'nosql' |
-  'architecture' |
-  'web'
+  'containers';
