@@ -83,7 +83,7 @@ export const jobs: Job[] =
             details: [
               'This system provides a component with configuration options in an Angular Routing Module that creates a GoldenLayout configuration.',
               'By specifying components in rows, columns, and tab groupings, panel layouts can be easily specified for each route.',
-              'This allows developers to construct layouts declaritively without needing to interact with the GoldenLayout API.'
+              'This allows developers to construct layouts declaratively without needing to interact with the GoldenLayout API.'
             ],
             skillTags: [
               'angular',
