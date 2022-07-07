@@ -20,44 +20,53 @@
             {{ applicant.lastName }}
           </h5>
         </div>
-        <div class="col-print-3 col-lg-4 col-6 addressInfo xs-small sm-small">
-          <div class="row">
-            <div class="col-sm-12 text-right">
-              <span>{{ applicant.address1 }}</span>
-              <span *ngIf="applicant.address2">, {{ applicant.address2 }}</span>
-
-            </div>
-            <div class="col-sm-12 text-right">
-              <span>
-                {{ applicant.city }},
-                {{ applicant.state }}
-                {{ applicant.postalCode }}
-              </span>
-            </div>
+        <div *ngIf="!showDetails;else applicantContact" class="col-print-6 col-lg-8 col-12 showClick title"  (click)="showDetails = true" id="showDetailsClick">
+          <div>
+            <i>
+              click to show...
+            </i>
           </div>
         </div>
-        <div class="col-print-3 col-lg-4 col-6 contactInfo xs-small sm-small">
-          <div class="row">
-            <div class="col-sm-12 text-left">
-              <span>
-                <u>
-                  <a class="text-dark" [href]="'tel:' + applicant.phoneNumber">
-                    {{ applicant.phoneNumber }}
-                  </a>
-                </u>
-              </span>
-            </div>
-            <div class="col-sm-12 text-left">
-              <span>
-                <u>
-                  <a class="text-dark" [href]="'mailto:' + applicant.email">
-                    {{ applicant.email }}
-                  </a>
-                </u>
-              </span>
+        <ng-template #applicantContact>
+          <div class="col-print-3 col-lg-4 col-6 addressInfo xs-small sm-small">
+            <div class="row">
+              <div class="col-sm-12 text-right">
+                <span>{{ applicant.address1 }}</span>
+                <span *ngIf="applicant.address2">, {{ applicant.address2 }}</span>
+  
+              </div>
+              <div class="col-sm-12 text-right">
+                <span>
+                  {{ applicant.city }},
+                  {{ applicant.state }}
+                  {{ applicant.postalCode }}
+                </span>
+              </div>
             </div>
           </div>
-        </div>
+          <div class="col-print-3 col-lg-4 col-6 contactInfo xs-small sm-small">
+            <div class="row">
+              <div class="col-sm-12 text-left">
+                <span>
+                  <u>
+                    <a class="text-dark" [href]="'tel:' + applicant.phoneNumber">
+                      {{ applicant.phoneNumber }}
+                    </a>
+                  </u>
+                </span>
+              </div>
+              <div class="col-sm-12 text-left">
+                <span>
+                  <u>
+                    <a class="text-dark" [href]="'mailto:' + applicant.email">
+                      {{ applicant.email }}
+                    </a>
+                  </u>
+                </span>
+              </div>
+            </div>
+          </div>
+        </ng-template>
       </div>
     </div>
     <div class="card-body py-2 skillArea sm-small xs-small" [ngClass]="{'text-center': programmingDisplay}">

@@ -123,3 +123,14 @@
   .cloudSkills {
   }
 }
+
+.showClick{
+  
+  cursor: pointer;
+   * {
+    display:none;
+  }
+}
+.showClick:hover * {
+  display: initial;
+}

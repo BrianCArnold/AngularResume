@@ -62,4 +62,12 @@ export class SkillsService {
   get displayedSkills(): SkillTag[] {
     return this.skillCheckList.map(i => i.children.concat(i)).reduce((p,n) => p.concat(n)).filter(p => p.isSelected && p.value).map(p => p.value);
   }
+
+  private _showDetails: boolean = false;
+  get showDetails(): boolean {
+    return this._showDetails;
+  }
+  set showDetails(v: boolean) { 
+    this._showDetails = v;
+  }
 }

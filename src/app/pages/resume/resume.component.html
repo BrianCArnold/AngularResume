@@ -25,7 +25,7 @@
         <app-job-info [programmingDisplay]="programmingDisplay" class="col-sm-12" [jobModel]="jobModel"></app-job-info>
       </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="showDetails">
       <div class="col-12 text-center">
         <span class="d-none d-print-inline font-italic">
           Live Resume available at https://resume.brian-arnold.dev/
@@ -38,6 +38,13 @@
           <div class="col-12">
             <a class="btn btn-success mt-2" href="resume.pdf">
               Minimalist PDF version <fa-icon [icon]="faFilePdf" size="lg"></fa-icon>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <a class="btn btn-success mt-2" href="resume_nocontact.pdf">
+              Contactless PDF version <fa-icon [icon]="faFilePdf" size="lg"></fa-icon>
             </a>
           </div>
         </div>
