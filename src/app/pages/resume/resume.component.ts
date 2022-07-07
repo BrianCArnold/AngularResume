@@ -97,6 +97,15 @@ export class ResumeComponent implements OnInit {
   }
   programmingDisplay: true | false | 'dense' = false;
 
+
+  public get showDetails(): boolean {
+    return this.skillsService.showDetails;
+  }
+  public set showDetails(v: boolean) {
+    this.skillsService.showDetails = v;
+  }
+  
+
   get detailLevel(): DetailLevel {
     return this.skillsService.detailLevel;
   }

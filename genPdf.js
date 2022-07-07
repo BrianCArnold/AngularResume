@@ -2,19 +2,21 @@ const pup = require('puppeteer');
 const handler = require('serve-handler');
 const http = require('http');
 
-const defaultPrintOptions = {
-path: 'dist/resume/resume.pdf',// string;
-displayHeaderFooter: false,// boolean;
-printBackground: true,// boolean;
-margin: {
-  top: '1cm',
-  bottom: '1cm',
-  left: '1cm',
-  right: '1cm'
-}
-// width: "8.5 in",// LayoutDimension;
-// height: "8.5 in",// LayoutDimension;
-// preferCSSPageSize: //boolean;
+function defaultPrintOptions(fileName) {
+  return {
+    path: 'dist/resume/' + fileName,// string;
+    displayHeaderFooter: false,// boolean;
+    printBackground: true,// boolean;
+    margin: {
+      top: '1cm',
+      bottom: '1cm',
+      left: '1cm',
+      right: '1cm'
+    }
+  };
+  // width: "8.5 in",// LayoutDimension;
+  // height: "8.5 in",// LayoutDimension;
+  // preferCSSPageSize: //boolean;
 };
 const server = http.createServer((req, res) => {
   return handler(req, res, {public: 'dist/resume/' });
@@ -45,7 +47,7 @@ const server = http.createServer((req, res) => {
         timeout: 5000
       });
     };
-    async function generatePdf(browser) {
+    async function generatePdf(browser, fileName, preOperations) {
       return new Promise( async (resolve, reject) => {
         console.info('Opening Browser');
         var hasError = false;
@@ -54,9 +56,8 @@ const server = http.createServer((req, res) => {
           console.info('Opening Page');
           await page.goto(url,{waitUntil:['load','networkidle2']});
           console.info('Completing PDF');
-          // await page.click('[ng-reflect-btn-radio=false]');
-          // waits(500);
-          await page.pdf(defaultPrintOptions);
+          await preOperations(page);
+          await page.pdf(defaultPrintOptions(fileName));
           // const pdf = await page.printToPDF(defaultPrintOptions);
           // result = pdf.data;
           console.info('PDF Complete');
@@ -81,7 +82,13 @@ const server = http.createServer((req, res) => {
     try {
       console.log('Generating PDF');
       const browser = await init();
-      await generatePdf(browser);
+      await generatePdf(browser, 'resume.pdf', async (page) => {
+        await page.waitForSelector('#showDetailsClick');
+        console.info('Clicking Details');
+        await page.click('#showDetailsClick');
+      });
+      await generatePdf(browser, 'resume_nocontact.pdf', async (page) => {
+      });
       browser.close();
       console.log('Generated PDF');
     }
