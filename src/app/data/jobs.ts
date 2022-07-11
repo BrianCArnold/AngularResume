@@ -129,28 +129,42 @@ export const jobs: Job[] =
             detailLevel: 2,
           },
           {
-            desc: 'Managed Pull Requests for new library features and improvements.',
+            desc: 'Managed Pull Requests for new library features and improvements',
             detailLevel: 2,
             skillTags: [
               'cicd',
               'devops'
+            ],
+            details: [
+              'I worked with developers to encourage developing reusable features for inclusion in libraries, rather than develop highly similar features multiple times for each project.',
+              'I also identified replicated code in multiple projects and moved those features to the central library repository for Angular and .NET.'
             ]
           },
           {
-            desc: 'Reviewed proposed code for anti-patterns and areas of improvement.',
+            desc: 'Reviewed proposed code for anti-patterns and areas of improvement',
             skillTags: [
               'cicd',
               'devops'
             ],
-            detailLevel: 2
+            detailLevel: 2,
+            details: [
+              'I identified and educated developers on coding patterns that obscured errors which would normally be caught by the compiler.',
+              'I also enabled and configured several linting tools which provided feedback on code quality.',
+              'Several Roslyn Code Analysis Warnings were upgraded to Errors, and the codebase was reviewed for any remaining anti-patterns.'
+            ]
           },
           {
-            desc: 'Mentored developers on improved development approaches.',
+            desc: 'Mentored developers on improved development approaches',
             skillTags: [
               'cicd',
               'devops'
             ],
-            detailLevel: 2
+            detailLevel: 2,
+            details: [
+              'I educated developers on best practices,',
+              'which anti-patterns were affecting their code quality,',
+              'and educated them on the underlying theory of patterns and anti-patterns.'
+            ]
           },
         ],
         skillTags: [

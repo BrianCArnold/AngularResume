@@ -6,23 +6,29 @@
     font-size: 10pt;
   }
 }
-.codeDisplay {
+.indentFirstLine::before {
+  text-indent: 1em;
+}
+.codeDisplay, .denseCode {
+  .blockHeader{
+    color: #28a745 !important;
+    ::before {
+      content: '// ';
+    }
+  }
+
   .blockComment::before {
-    content: '/' '*';
+    content: '/' '*' ' ';
   }
   .blockComment {
     color: #28a745 !important
     // font-size: 12pt;
   }
   .blockComment::after {
-    content: '*' '/';
+    content:  ' ' '*' '/';
   }
 }
-.indentFirstLine::before {
-  text-indent: 1em;
-}
 .indentFirstLine:first-child {
-  padding-top: 2px;
 }
 .indentFirstLine {
   padding-top: 8px;

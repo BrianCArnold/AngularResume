@@ -91,16 +91,18 @@ ul {
     transition: 0.05s opacity;
     transition-delay: 0.4s;
   }
-  .codeDisplay .hasDetails:hover > .toDoIcon {
-    height: 1rem;
-    opacity: 1;
-    width: 1rem;
-    position: absolute;
-    left: -1rem;
-    background-image: url('/assets/bulb.png');
-    background-size: 0.8rem 0.8rem;
-    background-position-y: 0.1rem;
-    background-repeat: no-repeat;
+  .codeDisplay, .denseCode {
+    .hasDetails:hover > .toDoIcon {
+      height: 1rem;
+      opacity: 1;
+      width: 1rem;
+      position: absolute;
+      left: -1rem;
+      background-image: url('/assets/bulb.png');
+      background-size: 0.8rem 0.8rem;
+      background-position-y: 0.1rem;
+      background-repeat: no-repeat;
+    }
   }
   sup.hasDetailsInfo {
     color: blue;
@@ -185,18 +187,43 @@ a {
 }
 
 
+@media only screen  {
 
-.jobHeaderRight:hover .jobLocationDate {
-  display:none;
-}
-.jobHeaderRight .detailSelectorRight {
-  display:none;
+  .jobHeaderRight {
+    position: relative;
+    left: 0;
+    top: 0;
+    .jobLocationDate {
+      opacity: 1;
+      transition: 0.5s opacity;
+      transition-delay: 0.5s;
+    }
+    .detailSelectorRight {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: 0.5s opacity;
+      transition-delay: 0.5s;
+    }
+  }
+
+  .jobHeaderRight:hover {
+    .jobLocationDate {
+      opacity: 0;
+    }
+    .detailSelectorRight {
+      opacity: 1;
+    }
+  }
 }
 
-.jobHeaderRight:hover .detailSelectorRight {
-  display:inherit;
-}
 
+@media print {
+  .detailSelectorRight {
+    display: none;
+  }
+}
 ul {
   margin-bottom: 0.5rem;
 }
@@ -213,13 +240,13 @@ ul {
   font-size: 12pt;
 }
 
-.codeDisplay.denseCode {
+.denseCode {
   .jobAchievement::after {
-    // content: ';';
+    content: ';';
   }
 }
 
-.codeDisplay.wideCode {
+.codeDisplay.wideCode{
   .listContainer::before {
     color:lightgray;
     margin-left:-2px;
@@ -242,7 +269,7 @@ ul {
     left: -2px;
   }
 }
-.codeDisplay {
+.codeDisplay, .denseCode {
   .jobTitle::before {
     content:'[';
   }
@@ -317,27 +344,32 @@ ul.codeList li ul li::before {
 .card-header {
   background-color: white;
 }
-.codeDisplay .card {
-  position:relative;
-  top: 0.0;
-  left: 0;
+.card {
   transition: 0.25s transform, 0.25s box-shadow;
-  transform:  translate(0,0);
-  box-shadow: none;
-  .card-header {
-    border-bottom: 1px solid rgb(224, 224, 224);
-    background-position-x: 10px;
-    transition: 1s background-position-x;
-    transition-delay: 0.0s;
-    background: linear-gradient(
-      125deg,
-      rgba(0, 0, 0, 0.03) 0,
-      rgba(0, 0, 0, 0.10) 55%,
-      rgba(0, 0, 0, 0.13) 55.7%,
-      white 56.3%,
-      rgba(0, 0, 0, 0.13) 66%,
-      rgba(0, 0, 0, 0.03)
-    );
+  // transform:  translate(0,0);
+}
+.codeDisplay, .denseCode {
+  .card {
+    position:relative;
+    top: 0.0;
+    left: 0;
+    // transform:  translate(0,0);
+    box-shadow: none;
+    .card-header {
+      border-bottom: 1px solid rgb(224, 224, 224);
+      background-position-x: 10px;
+      transition: 1s background-position-x;
+      transition-delay: 0.0s;
+      background: linear-gradient(
+        125deg,
+        rgba(0, 0, 0, 0.03) 0,
+        rgba(0, 0, 0, 0.10) 55%,
+        rgba(0, 0, 0, 0.13) 55.7%,
+        white 56.3%,
+        rgba(0, 0, 0, 0.13) 66%,
+        rgba(0, 0, 0, 0.03)
+      );
+    }
   }
 }
 @media only screen and (hover: none) {
@@ -346,17 +378,20 @@ ul.codeList li ul li::before {
     text-decoration: underline !important;
   }
 }
+/*
+transition-delay:1s;
+*/
 @media only screen and (hover: hover) {
+  .codeDisplay, .denseCode {
+    .card:hover {
+      transform:  translate(-1px,-1px);
+      box-shadow: 4px 7px 3px 0px #888 !important;
+      .card-header {
 
-  .codeDisplay .card:hover {
-    transform:  translate(-0.5px,-1px);
-    box-shadow: 4px 7px 3px 0px #888 !important;
-    .card-header {
-
-      background-position-x: 40px;
+        background-position-x: 40px;
+      }
     }
   }
-
 }
 * {
   font-family: firaCode;

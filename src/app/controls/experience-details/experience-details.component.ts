@@ -9,6 +9,9 @@ import { Achievement } from 'src/app/models/Experience';
 })
 export class ExperienceDetailsComponent implements OnInit {
 
+
+  @Input()
+  programmingDisplay: true | false | 'dense';
   @Input()
   experienceDetail: Achievement;
 
@@ -16,5 +19,5 @@ export class ExperienceDetailsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
 }

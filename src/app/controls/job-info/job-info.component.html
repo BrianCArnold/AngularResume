@@ -63,11 +63,7 @@
                     [ngClass]="{
                       'hasDetails': achievement && achievement.details && effectiveDetailLevel < 4,
                       'highlight': matchesSkills(achievement.skillTags)
-                    }">
-                    <div class="toDoIcon" ></div>
-                    {{ achievement.desc }}
-                    <!-- <sup *ngIf="achievement && achievement.details && effectiveDetailLevel < 4" class="hasDetailsInfo d-print-none">i</sup> -->
-                  </div>
+                    }"><div class="toDoIcon" ></div>{{ achievement.desc }}</div>
 
                   <div *ngIf="effectiveDetailLevel >= 4">
                     <div class="maxDetails" *ngFor="let detail of achievement.details">
@@ -87,11 +83,7 @@
                         [ngClass]="{
                           'hasDetails': subAchievement && subAchievement.details && effectiveDetailLevel < 4,
                           'highlight': matchesSkills(achievement.skillTags)
-                        }">
-                        <div class="toDoIcon" ></div>
-                        {{ subAchievement.desc }}
-                        <!-- <sup class="hasDetailsInfo d-print-none" *ngIf="subAchievement && subAchievement.details && effectiveDetailLevel < 4">i</sup> -->
-                      </div>
+                        }"><div class="toDoIcon" ></div>{{ subAchievement.desc }}</div>
                       <div *ngIf="effectiveDetailLevel >= 4">
                         <div class="maxDetails" *ngFor="let detail of subAchievement.details">
                           {{detail}}
@@ -155,5 +147,5 @@
 </div>
 
 <ng-template #modalDetails>
-  <app-experience-details [ngClass]="{ 'codeDisplay': programmingDisplay, 'denseCode': programmingDisplay == 'dense', 'wideCode': programmingDisplay == true }" [experienceDetail]="experienceDetail"></app-experience-details>
+  <app-experience-details [programmingDisplay]="programmingDisplay" [experienceDetail]="experienceDetail"></app-experience-details>
 </ng-template>
