@@ -17,26 +17,6 @@ export const jobs: Job[] =
 				detailLevel: 2,
 				skillTags: ['dotnet', 'cicd'],
 				skills: [
-          {
-            desc: 'Lead creation and deployment of shared implementations to improve system reliability, development efficiency, reduce risk of disruptions, and increase productivity.',
-            skillTags: ['dotnet', 'cicd'],
-            detailLevel: 2
-          },
-          {
-            desc: 'Managed Pull Requests and Unit testing for new features and improvements.',
-            detailLevel: 2,
-            skillTags: ['dotnet', 'cicd']
-          },
-          {
-            desc: 'Reviewed new and existing code for anti-patterns and areas of improvement; educated developers on improved processes and developmental approaches.',
-            skillTags: ['dotnet', 'cicd'],
-            detailLevel: 2
-          },
-          {
-            desc: 'Developed unit testing policies for multiple projects and oversaw the creation of test plans and test cases.',
-            skillTags: ['dotnet', 'cicd'],
-            detailLevel: 2
-          },
 					{
 						desc: 'Custom .NET SQL Definition engine',
 						details: [
@@ -120,12 +100,12 @@ export const jobs: Job[] =
         detailLevel: 1
       },
       {
-        desc: 'Proposed, implemented, and managed CI/CD Pipelines and Merge Requests',
+        desc: 'Proposed, implemented, and managed CI/CD Pipelines and Pull Requests',
         skills: [
           {
-            desc: 'Unit Testing Gated Merge Requests',
+            desc: 'Unit Testing Gated Pull Requests',
             details: [
-              'Continuous Integration was used to ensure that complete Unit Testing was performed on all Merge Requests prior to allowing branches to be merged into the master branch.',
+              'Continuous Integration was used to ensure that complete Unit Testing was performed on all Pull Requests prior to allowing branches to be merged into the master branch.',
               'In addition, integration testing was also performed following completion of unit testing.'
             ],
 						skillTags: [
@@ -136,7 +116,7 @@ export const jobs: Job[] =
             detailLevel: 2
           },
           {
-            desc:'Project and Maintaner Approval Requirements',
+            desc:'Required Project and Maintaner Approval',
             details: [
               'Once all automated testing was completed, change approvals were required. This was managed by GitLab\'s Code Owners file.',
               'Changes to central library required the approval of one of the primary maintainers, who were responsible for ensuring that any requested changes did not affect the current expected default behavior of all components and services.',
@@ -147,14 +127,38 @@ export const jobs: Job[] =
               'devops'
             ],
             detailLevel: 2,
-          }
+          },
+          {
+            desc: 'Managed Pull Requests for new library features and improvements.',
+            detailLevel: 2,
+            skillTags: [
+              'cicd',
+              'devops'
+            ]
+          },
+          {
+            desc: 'Reviewed proposed code for anti-patterns and areas of improvement.',
+            skillTags: [
+              'cicd',
+              'devops'
+            ],
+            detailLevel: 2
+          },
+          {
+            desc: 'Mentored developers on improved development approaches.',
+            skillTags: [
+              'cicd',
+              'devops'
+            ],
+            detailLevel: 2
+          },
         ],
         skillTags: [
           'serverless',
           'devops'
         ],
         detailLevel: 1
-      }
+      },
     ],
     skills: [
       {

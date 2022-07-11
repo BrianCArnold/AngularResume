@@ -82,12 +82,12 @@ const server = http.createServer((req, res) => {
     try {
       console.log('Generating PDF');
       const browser = await init();
-      await generatePdf(browser, 'resume.pdf', async (page) => {
+      await generatePdf(browser, 'resume.pdf', async page => {
         await page.waitForSelector('#showDetailsClick');
         console.info('Clicking Details');
         await page.click('#showDetailsClick');
       });
-      await generatePdf(browser, 'resume_nocontact.pdf', async (page) => {
+      await generatePdf(browser, 'resume_nocontact.pdf', async _ => {
       });
       browser.close();
       console.log('Generated PDF');
