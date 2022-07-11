@@ -13,10 +13,30 @@ export const jobs: Job[] =
     detailLevels: [1,2,4],
     achievements:[
 			{
-				desc: 'Managed internal NuGet packages for use in multiple projects',
+				desc: 'Managed shared internal NuGet packages for use in multiple projects',
 				detailLevel: 2,
 				skillTags: ['dotnet', 'cicd'],
 				skills: [
+          {
+            desc: 'Lead creation and deployment of shared implementations to improve system reliability, development efficiency, reduce risk of disruptions, and increase productivity.',
+            skillTags: ['dotnet', 'cicd'],
+            detailLevel: 2
+          },
+          {
+            desc: 'Managed Pull Requests and Unit testing for new features and improvements.',
+            detailLevel: 2,
+            skillTags: ['dotnet', 'cicd']
+          },
+          {
+            desc: 'Reviewed new and existing code for anti-patterns and areas of improvement; educated developers on improved processes and developmental approaches.',
+            skillTags: ['dotnet', 'cicd'],
+            detailLevel: 2
+          },
+          {
+            desc: 'Developed unit testing policies for multiple projects and oversaw the creation of test plans and test cases.',
+            skillTags: ['dotnet', 'cicd'],
+            detailLevel: 2
+          },
 					{
 						desc: 'Custom .NET SQL Definition engine',
 						details: [
@@ -166,7 +186,7 @@ export const jobs: Job[] =
         ],
         detailLevel: 1
       },
-      { 
+      {
         desc: 'Sass/SCSS',
         detailLevel: 2,
         skillTags: ['css'],
