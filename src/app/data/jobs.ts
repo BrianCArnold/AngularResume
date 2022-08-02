@@ -5,7 +5,7 @@ export const jobs: Job[] =
   {
     company: 'BNY Mellon',
     url: 'https://www.bnymellon.com/',
-    title: 'Senior Specialist Engineer',
+    title: 'Principal Senior Specialist Engineer',
     location: 'New York, NY',
     startDate: 'April 2020',
     endDate: 'Current',
