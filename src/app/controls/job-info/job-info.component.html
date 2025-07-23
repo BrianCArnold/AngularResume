@@ -1,44 +1,21 @@
 <div class="jobInfo" [ngClass]="{ 'codeDisplay': programmingDisplay, 'denseCode': programmingDisplay == 'dense', 'wideCode': programmingDisplay == true }">
   <div class="card mt-2" [ngClass]="{ 'shadow-sm': programmingDisplay }">
-    <div class="card-header py-1 ">
+    <div class=" py-1 ">
       <div class="row">
         <div class="col-xl-12 col-print-12 col-lg-12 col-md-12 col-sm-12 jobAchievementHeader">
           <div class="row">
-            <div class="col-sm-7 jobHeaderLeft">
+            <div class="col-sm-12 jobHeaderLeft">
               <div class="row">
                 <div class="col-sm-12 jobTitleCell md-small">
-                  <span class="jobTitle" [ngClass]="{ 'text-info': programmingDisplay, 'font-weight-bold': !programmingDisplay }">{{ jobModel.title }}</span>
-                </div>
-                <div class="col-sm-12 jobCompanyCell md-small">
-                  <a [href]="jobModel.url" class="jobCompany" [ngClass]="{ 'text-primary': programmingDisplay, 'font-weight-bold': !programmingDisplay }">{{ jobModel.company }}</a>
-                  <!-- <span class="jobCompany" [ngClass]="{ 'text-primary': programmingDisplay, 'font-weight-bold': !programmingDisplay }">{{ jobModel.company }}</span> -->
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-5 jobHeaderRight">
-              <div class="row text-right jobLocationDate">
-                <div class="col-sm-12 jobLocation md-small" [ngClass]="{ 'text-success font-italic ': programmingDisplay, 'font-weight-bold': !programmingDisplay }">
-                  <span>
-                    {{ jobModel.location }}
-                  </span>
-                </div>
-                <div class="col-sm-12 jobDate md-small"  [ngClass]="{ 'text-success font-italic ': programmingDisplay, 'font-weight-bold': !programmingDisplay }">
-                  <span>
+                    <span class="jobTitle" [ngClass]="{ '': programmingDisplay, 'font-weight-bold': !programmingDisplay }">{{ jobModel.title }}</span>
+—
+                  {{ jobModel.company }}, {{ jobModel.location }}
+—
+                  <i>
                     {{ jobModel.startDate }} - {{ jobModel.endDate }}
-                  </span>
+                  </i>
                 </div>
               </div>
-              <div class="container detailSelectorRight">
-                <div class="pt-1">
-                  <app-radio-list class="col-sm-12 my-1" name="resumeDetail" [(ngModel)]="specificDetailLevel"
-                    [allowNull]="true"
-                    [options]="availableDetailLevels">
-                  </app-radio-list>
-
-                </div>
-
-              </div>
-
             </div>
 
           </div>
@@ -50,8 +27,7 @@
     </div>
     <div *ngIf="effectiveAchievements.length + effectiveSkills.length > 0" class="card-body py-0">
       <div class="row">
-        <div *ngIf="effectiveAchievements.length > 0" class="py-1 jobAchievementSection col-xl-8 col-lg-9 col-print-8"
-           >
+        <div *ngIf="effectiveAchievements.length > 0" class="py-1 jobAchievementSection col-xl-12 col-lg-12 col-print-12" >
           <div [ngClass]="{ 'listContainer': effectiveAchievements.length > 1}" >
             <ul class="codeList list-unstyled">
               <div *ngFor="let achievement of effectiveAchievements">
@@ -96,49 +72,6 @@
 
               </div>
             </ul>
-          </div>
-        </div>
-        <div *ngIf="effectiveSkills.length > 0" class="py-1 overlayContainer jobSkillSection col-xl-4 col-lg-3 col-print-4"
-          >
-          <div [ngClass]="{ 'listContainer': effectiveSkills.length > 1}" >
-            <ul class="codeList list-unstyled" >
-              <li *ngFor="let skill of effectiveSkills"  >
-                <!-- (mouseover)="highlightSkill(skill)" (mouseout)="unhighlightSkill(skill)" -->
-                <div
-                *ngIf="skill.url; then urlSkill; else plainSkill"
-                 >{{ skill.desc }}</div>
-                <ng-template #urlSkill>
-                  <a class="skillUrl" [href]="skill.url" >{{ skill.desc }}</a>
-                  <sup class="">
-                      <fa-icon class="noPrint lightExternal" size="xs" [icon]="faExternalLinkSquareAlt"></fa-icon>
-                  </sup>
-                </ng-template>
-                <ng-template #plainSkill>
-                  <span class="jobSkill">
-                    {{ skill.desc }}
-                  </span>
-                </ng-template>
-                <ul *ngIf="skill.skills && skill.skills.length > 0" class="list-unstyled dashList subList" >
-                  <li *ngFor="let subSkill of skill.skills || []">
-                    <div
-                      *ngIf="subSkill.url; then urlSubSkill; else plainSubSkill"
-                    >{{ subSkill.desc }}</div>
-                    <ng-template #urlSubSkill>
-                      <a class="skillUrl" [href]="subSkill.url" >{{ subSkill.desc }}</a>
-                      <sup class="">
-                          <fa-icon class="noPrint lightExternal" size="xs" [icon]="faExternalLinkSquareAlt"></fa-icon>
-                      </sup>
-                    </ng-template>
-                    <ng-template #plainSubSkill>
-                      <span class="jobSkill">
-                        {{ subSkill.desc }}
-                      </span>
-                    </ng-template>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-
           </div>
         </div>
       </div>

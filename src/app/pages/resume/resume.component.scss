@@ -1,3 +1,16 @@
+.card {
+
+ border-width: 0;
+}
+.skillArea {
+  border-width: 0;
+  font-size: 1.10rem;
+}
+.skillArea.tighter {
+}
+.skillGroup {
+  margin-bottom: 1rem;
+}
 @media screen and (max-width: 575px) {
   .resumeAll {
     box-shadow: none !important;
@@ -58,7 +71,7 @@
 }
 
 .resumePage.calibri {
-  font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-family: "Times New Roman", Times, serif;
   font-size: 15pt;
 }
 @media print {

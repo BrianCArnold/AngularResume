@@ -1,5 +1,18 @@
 .skillArea {
   border-width: 0;
+  font-size: 0.99rem;
+}
+.skillArea.tighter {
+  font-size: 0.95rem;
+}
+.statement-content{
+  padding-left: 1rem;
+}
+.statement {
+  font-size: 1.5rem;
+}
+h3 {
+    font-weight: 600;
 }
 .applicant:not(.codeDisplay)
 {
@@ -18,7 +31,9 @@
   .title h6 {
     position: absolute;
     bottom: 0;
+    font-weight: 900;
     left: 0;
+    font-family: "Times New Roman", Times, serif;
     margin-bottom: 0;
   }
   .addressInfo {
@@ -106,6 +121,7 @@
   .resumeName {
     margin-bottom: 0px;
     margin-top: auto;
+    font-weight: bolder;
   }
   .extendBackgroundDown {
     padding-bottom: 10px;
@@ -125,7 +141,7 @@
 }
 
 .showClick{
-  
+
   cursor: pointer;
    * {
     display:none;

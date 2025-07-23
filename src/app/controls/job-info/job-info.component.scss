@@ -46,7 +46,15 @@
     column-count: 1;
   }
 }
+.card {
 
+ border-bottom-width: 0;
+ border-right-width: 0;
+ border-left-width: 0;
+}
+.card-header {
+ border-bottom-width: 0;
+}
 
 @media print {
   a {
@@ -115,7 +123,7 @@ ul {
     // content: ' : Job Experience';
   // }
   .jobSkillSection {
-    border-left-width:1px;
+    border-left-width:0px;
     border-left-style: solid;
     border-image:
       linear-gradient(
@@ -209,14 +217,15 @@ a {
   }
 
   .jobHeaderRight:hover {
-    .jobLocationDate {
-      opacity: 0;
-    }
-    .detailSelectorRight {
-      opacity: 1;
-    }
   }
 }
+.jobAchievement {
+  font-size: 18pt;
+}
+.jobAchievementHeader {
+  font-size: 16pt;
+}
+
 
 
 @media print {
@@ -234,15 +243,14 @@ ul {
   font-size: 11pt;
 }
 .jobAchievementSection {
-  font-size: 11pt;
+  font-size: 14pt;
 }
 .jobAchievementHeader {
-  font-size: 12pt;
+  font-size: 16pt;
 }
 
 .denseCode {
   .jobAchievement::after {
-    content: ';';
   }
 }
 
@@ -250,42 +258,38 @@ ul {
   .listContainer::before {
     color:lightgray;
     margin-left:-2px;
-    content: '{';
   }
   .listContainer::after {
     color:lightgray;
-    content: '}';
   }
   ul.codeList li ul::before {
     color:lightgray;
     margin-left:-2px;
-    content: '{';
   }
   ul.codeList li ul::after {
     color:lightgray;
     // margin-left:-2px;
-    content: '}';
     position: relative;
     left: -2px;
   }
 }
+.jobTitle::after {
+}
+.jobTitle {
+  font-size: 1.5rem;
+}
 .codeDisplay, .denseCode {
   .jobTitle::before {
-    content:'[';
   }
 
   .jobTitle::after {
-    content:']';
   }
 
   .jobLocation::before, .jobDate::before {
-    content: '//';
   }
   .blockComment::before {
-  content: '/' '*';
   }
   .blockComment::after {
-    content: '*' '/';
   }
 
 }
@@ -394,7 +398,6 @@ transition-delay:1s;
   }
 }
 * {
-  font-family: firaCode;
 
 }
 .subSkillCsl::after {

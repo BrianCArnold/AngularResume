@@ -3,17 +3,13 @@
     <div class="row d-print-none">
 
       <h4 class="col-xl-1 col-lg-2 my-1">
-        Detail:
       </h4>
-      <app-radio-list class="col-xl-5 col-lg-10 my-1" name="resumeDetail" [(ngModel)]="detailLevel"
-        [options]="[{ id: -1, value: 'Custom' },{ id: 2, value: 'Standard' },{ id: 4, value: 'Extended' }]">
-      </app-radio-list>
+      <span class="col-xl-5 col-lg-10 my-1" name="resumeDetail" >&nbsp;</span>
 
       <h4 class="col-xl-1 col-lg-2 my-1">
-        Style:
       </h4>
       <app-radio-list class="col-xl-5 col-lg-10 my-1" name="display" [(ngModel)]="programmingDisplay"
-        [options]="[{ id: true, value: 'Stylized' },{ id: 'dense', value: 'Dense'},{ id: false, value: 'Minimalist' }]">
+        [options]="[{ id: true, value: 'Stylized' },{ id: false, value: 'Minimalist' }]">
       </app-radio-list>
 
     </div>
@@ -21,47 +17,29 @@
     <div class="resumePage" [ngClass]="{'calibri': !programmingDisplay}">
       <app-applicant-info [applicant]="applicant" [programmingDisplay]="programmingDisplay" >
       </app-applicant-info>
+      <div class="card">
+      <div class="card-body">
       <div class="row" style="page-break-inside: avoid;" *ngFor="let jobModel of jobsSource">
         <app-job-info [programmingDisplay]="programmingDisplay" class="col-sm-12" [jobModel]="jobModel"></app-job-info>
       </div>
+      </div>
+      </div>
+      <div class="card">
+         <div class="card-body py-2 skillArea sm-small xs-small" [ngClass]="{'tighter': programmingDisplay}">
+         <div class="row">
+           <div class="col-print-6 skillGroup col-lg-6 col-md-6 col-6" *ngFor="let skillArea of applicant.skillAreas">
+             <div class="col-sm-12 font-weight-bold">
+               {{skillArea.desc}}
+             </div>
+             <div class="col-sm-12" *ngFor="let skill of skillArea.skills">
+               • {{skill.desc}}
+             </div>
+           </div>
+        </div>
+      </div>
     </div>
-    <div class="row" *ngIf="showDetails">
-      <div class="col-12 text-center">
-        <span class="d-none d-print-inline font-italic">
-          Live Resume available at https://resume.brian-arnold.dev/
-        </span>
-      </div>
-    </div>
-    <div class="row d-print-none">
-      <div class="col-xl-3 col-lg-12">
-        <div class="row">
-          <div class="col-12">
-            <a class="pdfBadge btn btn-success mt-2" href="resume.pdf">
-              Minimalist PDF version <fa-icon [icon]="faFilePdf" size="lg"></fa-icon>
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <a class="pdfBadge btn btn-success mt-2" href="resume_nocontact.pdf">
-              Contactless PDF version <fa-icon [icon]="faFilePdf" size="lg"></fa-icon>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-9 d-xl-block d-none">
-        <div class="row">
-          <div *ngFor="let tech of techUsed" class="col-xl-6 text-right mt-2 codeText">
-            {{tech.desc}}
-            <a class="techBadge btn" [ngClass]="tech.class" [href]="tech.url" >
-              {{tech.name}}
-              <fa-icon size="lg" [icon]="tech.icon"></fa-icon>
-            </a>
-          </div>
-        </div>
-      </div>
 
-  </div>
+    </div>
 
 </div>
 

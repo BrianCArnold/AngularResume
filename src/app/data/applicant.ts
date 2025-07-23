@@ -1,108 +1,126 @@
 import { Applicant } from "../models/Applicant";
 
 export const applicant: Applicant = {
-  firstName: "Brian",
-  lastName: "Arnold",
-  middleNameOrInitial: "C.",
-  address1: "86 Suydam St",
-  address2: "Apt 1L",
+  firstName: "Caela",
+  lastName: "Scott",
+  middleNameOrInitial: "",
+  address1: "",
+  address2: "",
   city: "Brooklyn",
   state: "NY",
-  postalCode: "11221",
-  phoneNumber: "256-652-6754",
-  email: "connect@brian-arnold.dev",
+  postalCode: "",
+  phoneNumber: "(626) 354-4898",
+  email: "@HELLHOUNDATTACK",
   skillAreas: [
     {
-      desc: "Frontend",
+      desc: "Bartending Knowledge",
       skills: [
         {
-          desc: "Angular",
-          skillTags: ['angular', 'typescript' ],
+          desc: "Beer and Wine",
+          skillTags: [],
           detailLevel: 1,
           skills: []
         },
         {
-          desc: "Bootstrap",
+          desc: "Liquor and Craft Cocktails",
+          skillTags: [],
+          detailLevel: 1,
+          skills: []
+        },
+        {
+          desc: "Opening/Closing Bar and Register",
           skillTags: ['css'],
           detailLevel: 1,
           skills: []
         },
         {
-          desc: "RxJS",
-          skillTags: ['typescript', 'angular' ],
+          desc: "Managing Cash, Charge, Float, and Till",
+          skillTags: [],
+          detailLevel: 1,
+          skills: []
+        },
+      ]
+    },
+    {
+      desc: "Management",
+      skills: [
+        {
+          desc: "Lead Bartender and Staff Management",
+          skillTags: [],
+          detailLevel: 1,
+          skills: []
+        },
+        {
+          desc: "Exudes confidence and Proficiency",
+          skillTags: [],
+          detailLevel: 1,
+          skills: []
+        },
+        {
+          desc: "Daily Stock Control",
+          skillTags: [],
+          detailLevel: 1,
+          skills: []
+        },
+        {
+          desc: "Weekly Stockroom Audits",
+          skillTags: [],
           detailLevel: 1,
           skills: []
         }
       ]
     },
     {
-      desc: "Backend",
+      desc: "Interpersonal Skills",
       skills: [
         {
-          desc: "C#",
-          skillTags: ['dotnet'],
-          detailLevel: 1,
-          skills: []
-        },
-        {
-          desc: "REST",
-          skillTags: ['rest'],
-          detailLevel: 1,
-          skills: []
-        },
-        {
-          desc: "Entity Framework",
-          skillTags: ['entityframework', 'sqlserver', 'dotnet'],
-          detailLevel: 1,
-          skills: []
-        }
-      ]
-    },
-    {
-      desc: "Database",
-      skills: [
-        {
-          desc: "Oracle 18c",
+          desc: "Customer Service Focused",
           skillTags: ['oracle'],
           detailLevel: 1,
           skills: []
         },
         {
-          desc: "Microsoft SQL Server",
+          desc: "Clear Communication Style",
           skillTags: ['sqlserver'],
           detailLevel: 1,
           skills: []
         },
         {
-          desc: "Cosmos DB",
+          desc: "Builds strong work relationships",
           skillTags: ['nosql'],
           detailLevel: 1,
           skills: []
-        }
+        },
+        {
+          desc: "Friendly and Inviting",
+          skillTags: ['nosql'],
+          detailLevel: 1,
+          skills: []
+        },
       ]
     },
     {
-      desc: "Cloud",
+      desc: "POS Systems",
       skills: [
         {
-          desc: "Azure Functions",
-          skillTags: ['azure', 'serverless', 'cloud'],
+          desc: "Aloha POSitouch",
+          skillTags: ['oracle'],
           detailLevel: 1,
           skills: []
         },
         {
-          desc: "Azure CDN",
-          skillTags: ['serverless', 'azure', 'cloud'],
+          desc: "Revel",
+          skillTags: ['sqlserver'],
           detailLevel: 1,
           skills: []
         },
         {
-          desc: "Azure DevOps",
-          skillTags: ["devops", 'cicd', 'cloud'],
+          desc: "Square",
+          skillTags: ['nosql'],
           detailLevel: 1,
           skills: []
-        }
+        },
       ]
-    }
+    },
   ]
 }

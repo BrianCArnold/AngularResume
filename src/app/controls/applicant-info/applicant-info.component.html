@@ -3,6 +3,7 @@
     <div class="card-header text-center py-1 contactArea align-items-center">
       <div class="form-row">
         <div class="col-print-6 col-lg-4 col-12 title">
+          <b>
           <h1 class="resumeName d-none d-xl-inline d-print-inline" >
             {{ applicant.firstName }} {{ applicant.middleNameOrInitial }}
             {{ applicant.lastName }}
@@ -19,65 +20,54 @@
             {{ applicant.firstName }} {{ applicant.middleNameOrInitial }}
             {{ applicant.lastName }}
           </h5>
+          </b>
         </div>
-        <div *ngIf="!showDetails;else applicantContact" class="col-print-6 col-lg-8 col-12 showClick title"  (click)="showDetails = true" id="showDetailsClick">
-          <div>
-            <i>
-              click to show...
-            </i>
-          </div>
-        </div>
-        <ng-template #applicantContact>
-          <div class="col-print-3 col-lg-5 col-6 addressInfo xs-small sm-small">
-            <div class="row">
-              <div class="col-sm-12 text-right">
-                <span>{{ applicant.address1 }}</span>
-                <span *ngIf="applicant.address2">, {{ applicant.address2 }}</span>
+        <div class="col-print-3 col-lg-5 col-6 addressInfo xs-small sm-small">
+          <div class="row">
+            <div class="col-sm-12 text-right">
+              <span>&nbsp;{{ applicant.address1 }}</span>
+              <span *ngIf="applicant.address2">, {{ applicant.address2 }}</span>
 
-              </div>
-              <div class="col-sm-12 text-right">
-                <span>
-                  {{ applicant.city }},
-                  {{ applicant.state }}
-                  {{ applicant.postalCode }}
-                </span>
-              </div>
             </div>
           </div>
-          <div class="col-print-3 col-lg-3 col-6 contactInfo xs-small sm-small">
-            <div class="row">
-              <div class="col-sm-12 text-left">
-                <span>
-                  <u>
-                    <a class="text-dark" [href]="'tel:' + applicant.phoneNumber">
-                      {{ applicant.phoneNumber }}
-                    </a>
-                  </u>
-                </span>
-              </div>
-              <div class="col-sm-12 text-left">
-                <span>
-                  <u>
-                    <a class="text-dark" [href]="'mailto:' + applicant.email">
-                      {{ applicant.email }}
-                    </a>
-                  </u>
-                </span>
-              </div>
+          <div class="row">
+            <div class="col-sm-12 text-right">
+              <span>
+                {{ applicant.city }},
+                {{ applicant.state }}
+                {{ applicant.postalCode }}
+              </span>
             </div>
           </div>
-        </ng-template>
+        </div>
+        <div class="col-print-3 col-lg-3 col-6 contactInfo xs-small sm-small">
+          <div class="row">
+            <div class="col-sm-12 text-left">
+              <span>
+                  <a class="text-dark" [href]="'tel:' + applicant.phoneNumber">
+                    {{ applicant.phoneNumber }}
+                  </a>
+              </span>
+            </div>
+            <div class="col-sm-12 text-left">
+              <span>
+                  <a class="text-dark" [href]="'mailto:' + applicant.email">
+                    {{ applicant.email }}
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="card-body py-2 skillArea sm-small xs-small" [ngClass]="{'text-center': programmingDisplay}">
+    <div class="card-body statement py-2 sm-small xs-small" [ngClass]="{'text-center': programmingDisplay}">
       <div class="row">
-        <div class="col-print-3 col-lg-3 col-md-6 col-6" *ngFor="let skillArea of applicant.skillAreas">
-          <div class="row">
-            <div class="col-sm-12 font-weight-bold">
-              {{skillArea.desc}}
-            </div>
-            <div class="col-sm-12" *ngFor="let skill of skillArea.skills">
-              {{skill.desc}}
+        <div class="col-print-12 col-12" >
+          <h3>Profile</h3>
+          <hr/>
+          <div class="row statement-content">
+            <div class="col-sm-12">
+            Exceptionally talented and energetic bartender with 16 years of solid experience in busy bar settings. A strong multitasker who thrives in a hectic, high-pressure working environment.
             </div>
           </div>
         </div>
