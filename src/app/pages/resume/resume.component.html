@@ -19,6 +19,11 @@
       </app-applicant-info>
       <div class="card">
       <div class="card-body">
+      <div class="row">
+        <div class="col-print-12 col-12" >
+          <h2>Experience</h2>
+      </div>
+      </div>
       <div class="row" style="page-break-inside: avoid;" *ngFor="let jobModel of jobsSource">
         <app-job-info [programmingDisplay]="programmingDisplay" class="col-sm-12" [jobModel]="jobModel"></app-job-info>
       </div>
@@ -26,6 +31,8 @@
       </div>
       <div class="card">
          <div class="card-body py-2 skillArea sm-small xs-small" [ngClass]="{'tighter': programmingDisplay}">
+         <h2>Skills</h2>
+          <hr/>
          <div class="row">
            <div class="col-print-6 skillGroup col-lg-6 col-md-6 col-6" *ngFor="let skillArea of applicant.skillAreas">
              <div class="col-sm-12 font-weight-bold">

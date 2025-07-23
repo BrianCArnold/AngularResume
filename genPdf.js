@@ -47,6 +47,8 @@ const server = http.createServer((req, res) => {
         timeout: 5000
       });
     };
+    const delay = ms => new Promise(res => setTimeout(res, ms));
+
     async function generatePdf(browser, fileName, preOperations) {
       return new Promise( async (resolve, reject) => {
         console.info('Opening Browser');
@@ -83,11 +85,10 @@ const server = http.createServer((req, res) => {
       console.log('Generating PDF');
       const browser = await init();
       await generatePdf(browser, 'resume.pdf', async page => {
-        await page.waitForSelector('#showDetailsClick');
-        console.info('Clicking Details');
-        await page.click('#showDetailsClick');
+        await delay(2000);
       });
       await generatePdf(browser, 'resume_nocontact.pdf', async _ => {
+        await delay(2000);
       });
       browser.close();
       console.log('Generated PDF');
