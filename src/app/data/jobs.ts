@@ -2,8 +2,7 @@ import { Job } from '../models/Job';
 
 export const jobs: Job[] =
   [
-    {
-      company: 'Alaska 2',
+    { company: 'Alaska 2',
       url: 'https://www.instagram.com/alaska2bk/',
       title: 'Bartender',
       location: 'Brooklyn',
@@ -27,8 +26,7 @@ export const jobs: Job[] =
       ],
       skills: []
     },
-    {
-      company: 'Gold Sounds',
+    { company: 'Gold Sounds',
       url: 'https://www.instagram.com/goldsoundsbar/',
       title: 'Bartender',
       location: 'Brooklyn',
@@ -52,8 +50,7 @@ export const jobs: Job[] =
       ],
       skills: []
     },
-    {
-      company: 'Bootleg Bar',
+    { company: 'Bootleg Bar',
       url: 'https://www.instagram.com/bootlegbarnyc/',
       title: 'Bartender',
       location: 'Brooklyn',
@@ -79,8 +76,7 @@ export const jobs: Job[] =
       skills: [
       ]
     },
-    {
-      company: 'Overthrow Boxing',
+    { company: 'Overthrow Boxing',
       url: 'https://www.instagram.com/overthrownewyork/',
       title: 'Manager',
       location: 'Brooklyn',
@@ -106,8 +102,7 @@ export const jobs: Job[] =
       skills: [
       ]
     },
-    {
-      company: 'The Globe',
+    { company: 'The Globe',
       url: 'https://www.instagram.com/theglobebarnyc/',
       title: 'Bartender',
       location: 'New York',
@@ -133,8 +128,7 @@ export const jobs: Job[] =
       skills: [
       ]
     },
-    {
-      company: 'Blue Ruin',
+    { company: 'Blue Ruin',
       url: 'https://www.instagram.com/explore/locations/239960566',
       title: 'Bartender',
       location: 'New York',
@@ -160,8 +154,7 @@ export const jobs: Job[] =
       skills: [
       ]
     },
-    {
-      company: 'Captain Dan\'s Tavern',
+    { company: 'Captain Dan\'s Tavern',
       url: 'https://www.instagram.com/captdansgoodtimetavern/',
       title: 'Bartender',
       location: 'Brooklyn',
@@ -187,8 +180,7 @@ export const jobs: Job[] =
       skills: [
       ]
     },
-    {
-      company: 'The Anchored Inn',
+    { company: 'The Anchored Inn',
       url: 'https://www.instagram.com/theanchoredinn/',
       title: 'Bartender',
       location: 'Brooklyn',
